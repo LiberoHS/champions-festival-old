@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from '@material-ui/core';
+import { Tournament } from './components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// HOME PAGE
+
+// FOR TOURNAMENT LIST
+// Tournament Name (Include Quarters)
+// Number of Players
+// Date of Tournament
+
+// FOR TOURNAMENT DATA
+// Tournament Name (Include Quarters)
+// Number of Players
+// Date of Tournament
+// Top 4/8 Players+Decks
+
+class App extends React.Component {
+    state = {
+        data: [
+            { player: 'Bob', deck: 'MewMew' }, { player: 'Bob1', deck: 'MewMew1' }, { player: 'Bob2', deck: 'MewMew2' }
+        ]
+    }
+    render () {
+        return (
+            <Grid>
+                <Grid>
+                    {/* HOME PAGE */}
+                </Grid>
+                <Grid>
+                    <Tournament playerData={this.state.data} />
+                </Grid>
+            </Grid>
+        )
+    }
 }
 
 export default App;
