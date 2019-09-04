@@ -1,0 +1,28 @@
+/* Use in online production code, otherwise not needed in local hosting */
+/* @import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); */
+
+@font-face {
+    font-family: 'Muli';
+    src: local('Muli'), url(./fonts/Muli-Regular.ttf) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Muli';
+    src: local('@'), url(./fonts/Muli-Bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+div {
+    font-size: 20px;
+    font-family: 'Muli', sans-serif;
+}
+
+button {
+    height: 100px;
+    width: 250px;
+    font-size: 20px;
+    font-family: 'Muli';
+    border-radius: 20px;
+    padding: 10px;
+}
