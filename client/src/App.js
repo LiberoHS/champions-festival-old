@@ -18,6 +18,53 @@ import { Tournament, TournamentList } from './components';
 // Date of Tournament
 // Top 4/8 Players+Decks
 
+// TO-DO LIST
+// Will have database in another folder
+
+// class Player {
+//     constructor(name) {
+//         this.name = name;
+//         this.achievements = [];
+//     }
+//
+//     addAchievement(tournament, deck, placing) {
+//         this.achievements.push({tournament: tournament, deck: deck, placing: placing})
+//     }
+//
+//     deleteAchievement(tournament) {
+//         function remove(arr, value) {
+//             return arr.filter(function(ele){
+//                 return ele != value;
+//             });
+//         }
+//         for (let i = 0; i < this.achievements.length; i++) {
+//             if (this.achievements[i].tournament === tournament) {
+//                 this.achievements[i].remove()
+//             }
+//         }
+//     }
+// }
+//
+// class Tournament {
+//     constructor(name, attendance, type, format, date) {
+//         this.name = name;
+//         this.attendance = attendance;
+//         this.type = type;
+//         this.format = format;
+//         this.date = date;
+//         this.standings = [];
+//     }
+//
+//     addPlayer(player, deck) {
+//         this.standings.push({name: player, deck: deck});
+//     }
+//
+//     deletePlayer(player, deck) {
+//
+//     }
+//
+// }
+
 class App extends React.Component {
     state = {
         tournamentList: [
@@ -47,6 +94,12 @@ class App extends React.Component {
                 { name: 'Joshua Bradley', deck: 'Green\'s Reshiram & Charizard-GX' }
             ]},
         ],
+        decks: [
+            { archetype: 'Pikachu & Zekrom-GX', thumbnails: ['../assets/sprites/31.png', '../assets/sprites/720.png'] },
+            { archetype: 'Green\'s Reshiram & Charizard-GX', thumbnails: ['../assets/sprites/719.png', '../assets/sprites/14.png']},
+            { archetype: 'Ability Reshiram & Charizard-GX', thumbnails: ['../assets/sprites/719.png', '../assets/sprites/14.png']},
+            { archetype: 'Mew & Mewtwo-GX Toolbox', thumbnails: ['../assets/sprites/156.png', '../assets/sprites/155.png']}
+        ],
         currentTournament: null,
         showTournament: false,
         showList: false
@@ -69,7 +122,7 @@ class App extends React.Component {
     }
 
     render () {
-        const { tournamentList, currentTournament } = this.state;
+        const { tournamentList, currentTournament, decks} = this.state;
         return (
             <Grid>
                 <Grid>
@@ -82,7 +135,7 @@ class App extends React.Component {
                     {this.state.showList && <TournamentList setCurrentTournament={this.setCurrentTournament} tournamentList={tournamentList}/>}
                 </Grid>
                 <Grid>
-                    {this.state.showTournament && <Tournament currentTournament={currentTournament} />}
+                    {this.state.showTournament && <Tournament currentTournament={currentTournament} decks={decks} />}
                 </Grid>
             </Grid>
         )
