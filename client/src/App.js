@@ -68,31 +68,61 @@ import { Tournament, TournamentList } from './components';
 class App extends React.Component {
     state = {
         tournamentList: [
-            { name: 'Newcastle LC', attendance: '14', type: 'League Challenge', format: 'SUM-UNB', date: '10/08/19',
+            { name: 'Newcastle LC', region: 'NSW', attendance: '14', type: 'League Challenge', format: 'SUM-UNB', date: '10/08/19',
             standings: [
-                { name: 'Ying Hao Tou', deck: 'Ability Reshiram & Charizard-GX' },
-                { name: 'Jake Cruwys', deck: 'Zoroark-GX Checkmate' },
-                { name: 'Shane Quinn', deck: 'Vileplume Stall' },
-                { name: 'Joshua Stone', deck: 'Pikachu & Zekrom-GX' },
+                { name: 'Ying Hao Tou', deck: 'Ability Reshiram & Charizard-GX', placing: 1 },
+                { name: 'Jake Cruwys', deck: 'Zoroark-GX Checkmate', placing: 2 },
+                { name: 'Shane Quinn', deck: 'Vileplume Stall', placing: 3 },
+                { name: 'Joshua Stone', deck: 'Pikachu & Zekrom-GX', placing: 4 },
             ]},
-            { name: 'Penrith LC', attendance: '7', type: 'League Challenge', format: 'SUM-UNB', date: '11/08/19',
+            { name: 'Penrith LC', region: 'NSW', attendance: '7', type: 'League Challenge', format: 'SUM-UNB', date: '11/08/19',
             standings: [
-                { name: 'Mehul Gajwani', deck: 'Unown Hand / Donphan' },
-                { name: 'Ying Hao Tou', deck: 'Green\'s Reshiram & Charizard-GX' },
-                { name: 'Joshua Stone', deck: 'Pikachu & Zekrom-GX' },
-                { name: 'Nicole Manasan', deck: 'Zoroark-GX / Greninja & Zoroark-GX' },
+                { name: 'Mehul Gajwani', deck: 'Unown Hand / Donphan', placing: 1 },
+                { name: 'Ying Hao Tou', deck: 'Green\'s Reshiram & Charizard-GX', placing: 2 },
+                { name: 'Joshua Stone', deck: 'Pikachu & Zekrom-GX', placing: 3 },
+                { name: 'Nicole Manasan', deck: 'Zoroark-GX / Greninja & Zoroark-GX', placing: 4 },
             ]},
-            { name: 'Melbourne SPE', attendance: '127', type: 'Special Event', format: 'UPR-UNM', date: '31/08/19',
+            { name: 'Melbourne SPE', region: 'VIC', attendance: '127', type: 'Special Event', format: 'UPR-UNM', date: '31/08/19',
             standings: [
-                { name: 'Kaiwen Cabbabe', deck: 'Pikachu & Zekrom-GX' },
-                { name: 'Angus Johnson', deck: 'Ability Reshiram & Charizard-GX' },
-                { name: 'Carol Poyner', deck: 'Green\'s Reshiram & Charizard-GX' },
-                { name: 'Henry Brand', deck: 'Mew & Mewtwo-GX Toolbox' },
-                { name: 'Brent Tonisson', deck: 'Pikachu & Zekrom-GX' },
-                { name: 'Aaron Stringfellow', deck: 'Ability Reshiram & Charizard-GX' },
-                { name: 'Jay Tyrell', deck: 'Quagsire / Naganadel' },
-                { name: 'Joshua Bradley', deck: 'Green\'s Reshiram & Charizard-GX' }
+                { name: 'Kaiwen Cabbabe', deck: 'Pikachu & Zekrom-GX', placing: 1 },
+                { name: 'Angus Johnson', deck: 'Ability Reshiram & Charizard-GX', placing: 2 },
+                { name: 'Carol Poyner', deck: 'Green\'s Reshiram & Charizard-GX', placing: 3 },
+                { name: 'Henry Brand', deck: 'Mew & Mewtwo-GX Toolbox', placing: 4 },
+                { name: 'Brent Tonisson', deck: 'Pikachu & Zekrom-GX', placing: 5 },
+                { name: 'Aaron Stringfellow', deck: 'Ability Reshiram & Charizard-GX', placing: 6 },
+                { name: 'Jay Tyrell', deck: 'Quagsire / Naganadel', placing: 7 },
+                { name: 'Joshua Bradley', deck: 'Green\'s Reshiram & Charizard-GX', placing: 8 },
+                { name: 'Ashton Bradley', deck: 'Blacephalon-GX / Naganadel', placing: 9 },
+                { name: 'Sameer Sangwan', deck: 'Ability Reshiram & Charizard-GX', placing: 10 },
+                { name: 'Darcy Ryan', deck: 'Blacephalon-GX / Naganadel', placing: 11 },
+                { name: 'Jack Millar', deck: 'Ability Reshiram & Charizard-GX', placing: 12 },
+                { name: 'Matthew Burris', deck: 'Pikachu & Zekrom-GX', placing: 13 },
+                { name: 'Nicholas Apostolou', deck: 'Ability Reshiram & Charizard-GX', placing: 14 },
+                { name: 'James Cox', deck: 'Naganadel-GX Checkmate', placing: 15 },
+                { name: 'Michael Kan', deck: 'Pikachu & Zekrom-GX', placing: 16 },
+                { name: 'Mikaere Newey', deck: 'Blastoise / Keldeo-GX', placing: 17 },
+                { name: 'Mitch Knuckey', deck: 'Ability Reshiram & Charizard-GX', placing: 18 },
+                { name: 'Clifton Goh', deck: 'Pikachu & Zekrom-GX', placing: 19 },
+                { name: 'Klive Aw', deck: 'Ability Reshiram & Charizard-GX', placing: 20 },
+                { name: 'York Robson', deck: 'Malamar / Garchomp & Giratina-GX', placing: 21 },
+                { name: 'Alex Crockford', deck: 'Pikachu & Zekrom-GX', placing: 22 },
+                { name: 'Anders Balle', deck: 'Quagsire / Naganadel', placing: 23 },
+                { name: 'Jack Fone', deck: 'Mew & Mewtwo-GX Toolbox', placing: 24 },
+                { name: 'Tripp May', deck: 'Green\'s Blacephalon', placing: 25 },
+                { name: 'Robin Sangwan', deck: 'Pikachu & Zekrom-GX', placing: 26 },
+                { name: 'Edward Mouanoutoua', deck: 'Ability Reshiram & Charizard-GX', placing: 27 },
+                { name: 'Ehren Roebuck', deck: 'Ability Reshiram & Charizard-GX', placing: 28 },
+                { name: 'Ying Hao Tou', deck: 'Ability Reshiram & Charizard-GX', placing: 29 },
+                { name: 'Ben D. Hall', deck: 'Ability Reshiram & Charizard-GX', placing: 30 },
+                { name: 'Corey Munro', deck: 'Mew & Mewtwo-GX Toolbox', placing: 31 },
+                { name: 'Naomi Murn', deck: 'Ability Reshiram & Charizard-GX', placing: 32 }
             ]},
+            { name: 'Q1 Newcastle Cup', region: 'NSW', attendance: '', type: 'League Cup', format: 'UPR-UNM', date: '07/09/19',
+            standings: [
+            ]},
+            { name: 'Q1 Maitland Cup', region: 'NSW', attendance: '', type: 'League Cup', format: 'UPR-UNM', date: '08/09/19',
+            standings: [
+            ]}
         ],
         decks: [
             { archetype: 'Pikachu & Zekrom-GX', thumbnails: ['../assets/sprites/31.png', '../assets/sprites/720.png'] },
@@ -122,7 +152,7 @@ class App extends React.Component {
         this.setState({ showTournament: true, showList: false });
     }
 
-    // EXPRESS BACK-END
+    // EXPRESS BACKEND
     componentDidMount() {
         // Call our fetch function below once the component mounts
         this.callBackendAPI()

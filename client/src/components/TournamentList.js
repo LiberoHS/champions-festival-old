@@ -9,6 +9,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
                     <TableRow>
                         <TableCell align="center">Date</TableCell>
                         <TableCell align="center">Name</TableCell>
+                        <TableCell align="center">State</TableCell>
                         <TableCell align="center">Type</TableCell>
                         <TableCell align="center">Attendance</TableCell>
                     </TableRow>
@@ -20,6 +21,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
                             <TableCell component="th" align="center">
                                 <button onClick={() => setCurrentTournament(item)}> {item.name}</button>
                             </TableCell>
+                            <TableCell align="center">{item.region}</TableCell>
                             <TableCell align="center">{item.type}</TableCell>
                             <TableCell align="center">{item.attendance}</TableCell>
                         </TableRow>

@@ -26,7 +26,7 @@ const Tournament = ({ currentTournament, decks }) => {
                 <TableBody>
                     {currentTournament.standings.map((player, key) => (
                         <TableRow key={key}>
-                            <TableCell align="center">{key+1}</TableCell>
+                            <TableCell align="center">{player.placing}</TableCell>
                             <TableCell component="th" align="center">
                                 {player.name}
                             </TableCell>
