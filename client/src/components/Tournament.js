@@ -1,15 +1,35 @@
 import React from 'react';
 import { Grid, Paper, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 
+const headerStyle = {
+    fontFamily: 'Muli',
+    fontSize: '16px'
+};
+
+const cellStyle = {
+    fontFamily: 'Muli',
+    fontSize: '20px'
+};
+
 // Tournament templating
 
 const Tournament = ({ currentTournament, decks }) => {
+    function compareDecks(target) {
+        for (var i = 0; i < decks.length; i++) {
+            if (decks[i].archetype === target.deck) {
+                return decks[i];
+            }
+        }
+
+        return target
+    }
     return(
         <Grid item xs={12}>
         <Paper>
             <h2> {currentTournament.name} </h2>
             <p> <b>Date:</b> {currentTournament.date} </p>
             <p> <b>Number of players:</b> {currentTournament.attendance} </p>
+            <p> <b>Cycle:</b> {currentTournament.cycle}</p>
             <p> <b>Type of event:</b> {currentTournament.type} </p>
             <p> <b>Format:</b> {currentTournament.format} </p>
         </Paper>
@@ -17,30 +37,37 @@ const Tournament = ({ currentTournament, decks }) => {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell align="center">Placing</TableCell>
-                        <TableCell align="center">Name</TableCell>
-                        <TableCell align="center">Deck</TableCell>
+                        <TableCell align="center" style={headerStyle}>Placing</TableCell>
+                        <TableCell align="center" style={headerStyle}>Name</TableCell>
+                        <TableCell align="center" style={headerStyle}>Deck</TableCell>
                         <TableCell align="center"></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {currentTournament.standings.map((player, key) => (
+                    {currentTournament.standings.map((player, key) => {
+                        var search = compareDecks(player);
+                        if (search.hasOwnProperty('thumbnails')) {
+                            var sprites = search.thumbnails.map((img, key) => {
+                            return <img src={img} style={{height: '70px', width: '70px'}}  alt="rekt" />
+                        })};
+
+                        return(
                         <TableRow key={key}>
-                            <TableCell align="center">{player.placing}</TableCell>
-                            <TableCell component="th" align="center">
+                            <TableCell align="center" style={cellStyle}>{player.placing}</TableCell>
+                            <TableCell component="th" align="center" style={cellStyle}>
                                 {player.name}
                             </TableCell>
-                            <TableCell align="center">{player.deck}</TableCell>
-                            <TableCell align="center"><img src={decks[0].thumbnails[0]}></img><p>{console.log(decks[0])}</p></TableCell>
+                            <TableCell align="center" style={cellStyle}>{player.deck}</TableCell>
+                            <TableCell align="center">
+                            <p>{sprites}</p>
+                            </TableCell>
                         </TableRow>
-                        ))}
+                    )})}
                 </TableBody>
             </Table>
         </Grid>
         </Grid>
     )
 }
-
-// decks.filter(deck => { return (deck.archetype === player.deck) } ).thumbnails
 
 export default Tournament;

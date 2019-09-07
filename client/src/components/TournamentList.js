@@ -1,29 +1,41 @@
 import React from 'react';
 import { Grid, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 
+const headerStyle = {
+    fontFamily: 'Muli',
+    fontSize: '16px'
+};
+
+const cellStyle = {
+    fontFamily: 'Muli',
+    fontSize: '20px'
+};
+
 const TournamentList = ({ setCurrentTournament, tournamentList }) => {
     return (
         <Grid>
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell align="center">Date</TableCell>
-                        <TableCell align="center">Name</TableCell>
-                        <TableCell align="center">State</TableCell>
-                        <TableCell align="center">Type</TableCell>
-                        <TableCell align="center">Attendance</TableCell>
+                        <TableCell align="center" style={headerStyle}>Date</TableCell>
+                        <TableCell align="center" style={headerStyle}>Name</TableCell>
+                        <TableCell align="center" style={headerStyle}>Region</TableCell>
+                        <TableCell align="center" style={headerStyle}>Type</TableCell>
+                        <TableCell align="center" style={headerStyle}>Cycle</TableCell>
+                        <TableCell align="center" style={headerStyle}>Attendance</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {tournamentList.map((item, key) => (
                         <TableRow key={key}>
-                            <TableCell align="center">{item.date}</TableCell>
+                            <TableCell align="center" style={cellStyle}>{item.date}</TableCell>
                             <TableCell component="th" align="center">
                                 <button onClick={() => setCurrentTournament(item)}> {item.name}</button>
                             </TableCell>
-                            <TableCell align="center">{item.region}</TableCell>
-                            <TableCell align="center">{item.type}</TableCell>
-                            <TableCell align="center">{item.attendance}</TableCell>
+                            <TableCell align="center" style={cellStyle}>{item.region}</TableCell>
+                            <TableCell align="center" style={cellStyle}>{item.type}</TableCell>
+                            <TableCell align="center" style={cellStyle}>{item.cycle}</TableCell>
+                            <TableCell align="center" style={cellStyle}>{item.attendance}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
