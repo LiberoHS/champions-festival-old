@@ -8,7 +8,7 @@ competitive circuit, in order to be used for analytical uses by other people.
 There are plenty of extensible improvements, such as automated tournament collection,
 decklist integration, player data, etc.
 The front-end is built using JavaScript and React.js and the back-end is built
-using Express.js, Node.js and PostgreSQL.
+using Node.js.
 
 ### Prerequisites
 
@@ -25,6 +25,15 @@ yarn start
 
 Go on ```http://localhost:3000/``` for the front-end
 
+There is currently no back-end implementation at the moment.
+For any updates to the tournament or deck database, please run the scripts
+provided to generate new player data.
+
+```
+cd client/src/scripts
+node init_players.js
+```
+
 ### Running server
 
 ```
@@ -39,7 +48,6 @@ Go on ```http://localhost:5000/``` for the back-end
 
 * [React](https://reactjs.org/)
 * [create-react-app](https://facebook.github.io/create-react-app/)
-* [Express.js](https://expressjs.com)
 * [Node.js](https://nodejs.org/en/)
 
 Thanks for all the support!
