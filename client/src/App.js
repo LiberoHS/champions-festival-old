@@ -2,23 +2,16 @@
 
 import React from 'react';
 import { Grid, Switch, FormControlLabel } from '@material-ui/core';
-import { SearchBar, TournamentInfo, TournamentList } from './components';
+import { PlayerInfo, SearchBar, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
+import players from './data/players.js';
 
 // HOME PAGE
-// Tournament Table with clickable links
-
-// FOR TOURNAMENT LIST
-// Tournament Name (Include Quarters)
-// Number of Players
-// Date of Tournament
-
-// FOR TOURNAMENT DATA
-// Tournament Name (Include Quarters)
-// Number of Players
-// Date of Tournament
-// Top 4/8 Players+Decks
+// Top performing decks this week
+// Top performing players
+// Latest tournament
+// Upcoming tournaments
 
 // TO-DO LIST
 // Sorting tournaments
@@ -27,30 +20,6 @@ import tournamentList from './data/tournaments.js';
 // Need to refactor Challenges filter
 // Filter functionality for Cups
 
-// class Player {
-//     constructor(name) {
-//         this.name = name;
-//         this.achievements = [];
-//     }
-//
-//     addAchievement(tournament, deck, placing) {
-//         this.achievements.push({tournament: tournament, deck: deck, placing: placing})
-//     }
-//
-//     deleteAchievement(tournament) {
-//         function remove(arr, value) {
-//             return arr.filter(function(ele){
-//                 return ele != value;
-//             });
-//         }
-//         for (let i = 0; i < this.achievements.length; i++) {
-//             if (this.achievements[i].tournament === tournament) {
-//                 this.achievements[i].remove()
-//             }
-//         }
-//     }
-// }
-//
 // class Tournament {
 //     constructor(name, attendance, type, format, date) {
 //         this.name = name;
@@ -75,7 +44,9 @@ class App extends React.Component {
     state = {
         tournamentList: tournamentList,
         decks: decks,
+        players: players,
         currentTournament: null,
+        currentPlayer: null,
         show: 'home',
         data: null,
         checkedChallenge: false
@@ -84,6 +55,10 @@ class App extends React.Component {
     // Changed states
     setCurrentTournament = (tournament) => {
         this.setState({ currentTournament: tournament, show: 'tournament' });
+    }
+
+    setCurrentPlayer = (player) => {
+        this.setState({ currentPlayer: players[players.findIndex(x => x.name === player.name)], show: 'player' });
     }
 
     homePage = () => {
@@ -167,7 +142,7 @@ class App extends React.Component {
     };
 
     render () {
-        const { tournamentList, currentTournament, decks, show, checkedChallenge } = this.state;
+        const { tournamentList, currentTournament, currentPlayer, decks, show, checkedChallenge } = this.state;
         return (
             <Grid>
                 <Grid>
@@ -185,7 +160,10 @@ class App extends React.Component {
                     {show === 'list' && <TournamentList setCurrentTournament={this.setCurrentTournament} tournamentList={tournamentList}/>}
                 </Grid>
                 <Grid>
-                    {show === 'tournament' && <TournamentInfo currentTournament={currentTournament} decks={decks} />}
+                    {show === 'tournament' && <TournamentInfo currentTournament={currentTournament} setCurrentPlayer={this.setCurrentPlayer} decks={decks} />}
+                </Grid>
+                <Grid>
+                    {show === 'player' && <PlayerInfo currentPlayer={currentPlayer} setCurrentPlayer={this.setCurrentPlayer} decks={decks} />}
                 </Grid>
             </Grid>
         )

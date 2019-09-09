@@ -11,9 +11,9 @@ const cellStyle = {
     fontSize: '20px'
 };
 
-// Tournament templating
+// Player templating
 
-const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
+const PlayerInfo = ({ currentPlayer, decks }) => {
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
             if (decks[i].archetype === target.deck) {
@@ -26,25 +26,22 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
     return(
         <Grid item xs={12}>
             <Grid>
-                <h2> {currentTournament.name} </h2>
-                <p> <b>Date:</b> {currentTournament.date} </p>
-                <p> <b>Number of players:</b> {currentTournament.attendance} </p>
-                <p> <b>Cycle:</b> {currentTournament.cycle}</p>
-                <p> <b>Type of event:</b> {currentTournament.type} </p>
-                <p> <b>Format:</b> {currentTournament.format} </p>
+                <h2> {currentPlayer.name} </h2>
             </Grid>
             <Grid>
                 <Table>
                     <TableHead>
                         <TableRow>
+                            <TableCell align="center" style={headerStyle}>Date</TableCell>
+                            <TableCell align="center" style={headerStyle}>Tournament</TableCell>
+                            <TableCell align="center" style={headerStyle}>Cycle</TableCell>
                             <TableCell align="center" style={headerStyle}>Placing</TableCell>
-                            <TableCell align="center" style={headerStyle}>Name</TableCell>
                             <TableCell align="center" style={headerStyle}>Deck</TableCell>
                             <TableCell align="center"></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {currentTournament.standings.map((player, key) => {
+                        {currentPlayer.achievements.map((player, key) => {
                             var search = compareDecks(player);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
@@ -53,9 +50,11 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
 
                             return(
                             <TableRow key={key}>
-                                <TableCell align="center" style={cellStyle}>{player.placing}</TableCell>
-                                <TableCell component="th" align="center">
-                                    <button onClick={() => setCurrentPlayer(player)}> {player.name}</button>
+                                <TableCell align="center" style={cellStyle}>{player.date}</TableCell>
+                                <TableCell align="center" style={cellStyle}>{player.tournament}</TableCell>
+                                <TableCell align="center" style={cellStyle}>{player.cycle}</TableCell>
+                                <TableCell component="th" align="center" style={cellStyle}>
+                                    {player.placing}
                                 </TableCell>
                                 <TableCell align="center" style={cellStyle}>{player.deck}</TableCell>
                                 <TableCell align="center">
@@ -70,4 +69,4 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
     )
 }
 
-export default TournamentInfo;
+export default PlayerInfo;

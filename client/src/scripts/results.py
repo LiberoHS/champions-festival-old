@@ -1,3 +1,6 @@
+# This script is used to convert some text files into output for data collection
+
+# opens files to be analysed
 f = open('results.txt','r')
 g = open('output.txt','w+')
 line = f.readline()
