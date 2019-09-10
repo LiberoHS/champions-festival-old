@@ -18,10 +18,12 @@ const buttonStyle = {
 // Home page (done v2.2)
 // Table paginations
 // Sorting tournaments
-// Data analytics (v3)
+// Data analytics (v4)
 // Need to refactor Challenges filter
+// Need to refactor styling
 // Filter functionality for Cups
 // Back button (done v2.1)
+// Decklist integration (v5)
 
 // class Tournament {
 //     constructor(name, attendance, type, format, date) {
@@ -178,7 +180,9 @@ class App extends React.Component {
                 </Grid>
                 <Grid>
                     {/* WIP */}
-                    {show === 'home' && <HomeMenu tournaments={tournamentList} decks={decks} />}
+                    {show === 'home' && <HomeMenu
+                    tournaments={tournamentList}
+                    decks={decks}/>}
                 </Grid>
                 <Grid>
                     {show === 'list' && <SearchBar onFormSubmit={this.handleChange}/>}

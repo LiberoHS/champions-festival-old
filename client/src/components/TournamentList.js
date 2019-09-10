@@ -32,7 +32,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
                             <TableRow key={key}>
                                 <TableCell align="center" style={cellStyle}>{item.date}</TableCell>
                                 <TableCell component="th" align="center">
-                                    <button onClick={() => setCurrentTournament(item)}> {item.name}</button>
+                                    <button onClick={() => setCurrentTournament(item)}>{item.name}</button>
                                 </TableCell>
                                 <TableCell align="center" style={cellStyle}>{item.region}</TableCell>
                                 <TableCell align="center" style={cellStyle}>{item.type}</TableCell>

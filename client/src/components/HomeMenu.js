@@ -107,7 +107,7 @@ const HomeMenu = ({ tournaments, decks }) => {
                         <h2 style={text}>Top Performing Decks of the Week</h2>
                         <Paper classname={classes.root}>
                             <div className={classes.tableWrapper}>
-                                <p style={wip} align="center">Coming Soon in v3!</p>
+                                <p style={wip} align="center">Coming Soon in v4!</p>
                             </div>
                         </Paper>
                     </Grid>
