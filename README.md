@@ -1,4 +1,4 @@
-# Champion's Festival - A PTCG Results Database by Jeremy Lim
+# Champions Festival - A PTCG Results Database by Jeremy Lim
 
 ### Description
 
