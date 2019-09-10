@@ -1,11 +1,26 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000;
+// include modules
+var express = require('express'),
+    app = express(),
+    path = require('path'),
+    less = require('less-middleware');
 
-// console.log that your server is up and running
-app.listen(port, () => console.log(`Listening on port ${port}`));
+// compile and serve css
+app.use(less(path.join(__dirname,'source','less'),{
+    dest: path.join(__dirname, 'public'),
+    options: {
+        compiler: {
+            compress: false,
+        },
+    },
+    preprocess: {
+        path: function(pathname, req) {
+            return pathname.replace('/css/','/');
+        },
+    },
+    force: true,
+}));
+// serve static content
+app.use(express.static(path.join(__dirname, 'public')));
 
-// create a GET route
-app.get('/express_backend', (req, res) => {
-    res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-});
+// setup server
+var server = app.listen(5000);

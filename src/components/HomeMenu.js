@@ -1,4 +1,4 @@
-import React from 'react';
+classNameimport React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
 import { Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
@@ -60,7 +60,7 @@ const HomeMenu = ({ tournaments, decks }) => {
                 <Grid item xs={11} style={tableGrid}>
                     <h2 style={text}>Latest Tournament</h2>
                     <h3 style={text}>{tournaments[0].name} | {tournaments[0].date}</h3>
-                    <Paper classname={classes.root}>
+                    <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
                                 <TableHead>
@@ -97,7 +97,7 @@ const HomeMenu = ({ tournaments, decks }) => {
                 <Grid container>
                     <Grid item xs={3} style={tableGrid}>
                         <h2 style={text}>Upcoming Tournaments</h2>
-                        <Paper classname={classes.root}>
+                        <Paper className={classes.root}>
                             <div className={classes.tableWrapper}>
                                 <p style={wip} align="center">Coming Soon in v3!</p>
                             </div>
@@ -105,7 +105,7 @@ const HomeMenu = ({ tournaments, decks }) => {
                     </Grid>
                     <Grid item xs={4} style={tableGrid}>
                         <h2 style={text}>Top Performing Decks of the Week</h2>
-                        <Paper classname={classes.root}>
+                        <Paper className={classes.root}>
                             <div className={classes.tableWrapper}>
                                 <p style={wip} align="center">Coming Soon in v4!</p>
                             </div>
@@ -113,7 +113,7 @@ const HomeMenu = ({ tournaments, decks }) => {
                     </Grid>
                     <Grid item xs={3} style={tableGrid}>
                         <h2 style={text}>Top Performing Players</h2>
-                        <Paper classname={classes.root}>
+                        <Paper className={classes.root}>
                             <div className={classes.tableWrapper}>
                                 <p style={wip} align="center">Coming Soon in v3!</p>
                             </div>
