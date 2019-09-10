@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 
 const headerStyle = {
+    color: 'white',
     fontFamily: 'Muli',
     fontSize: '16px'
 };
@@ -13,7 +14,7 @@ const cellStyle = {
 
 // Player templating
 
-const PlayerInfo = ({ currentPlayer, decks }) => {
+const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList }) => {
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
             if (decks[i].archetype === target.deck) {
@@ -21,8 +22,19 @@ const PlayerInfo = ({ currentPlayer, decks }) => {
             }
         }
 
-        return target
+        return target;
     }
+
+    function compareTournaments(name, date) {
+        for (var i = 0; i < tournamentList.length; i++) {
+            if (tournamentList[i].name === name && tournamentList[i].date === date) {
+                return tournamentList[i];
+            }
+        }
+
+        return name
+    }
+
     return(
         <Grid item xs={12}>
             <Grid>
@@ -31,18 +43,17 @@ const PlayerInfo = ({ currentPlayer, decks }) => {
             <Grid>
                 <Table>
                     <TableHead>
-                        <TableRow>
+                        <TableRow style={{backgroundColor: '#424242'}}>
                             <TableCell align="center" style={headerStyle}>Date</TableCell>
                             <TableCell align="center" style={headerStyle}>Tournament</TableCell>
-                            <TableCell align="center" style={headerStyle}>Cycle</TableCell>
-                            <TableCell align="center" style={headerStyle}>Placing</TableCell>
                             <TableCell align="center" style={headerStyle}>Deck</TableCell>
                             <TableCell align="center"></TableCell>
+                            <TableCell align="center" style={headerStyle}>Placing</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {currentPlayer.achievements.map((player, key) => {
-                            var search = compareDecks(player);
+                        {currentPlayer.achievements.map((achievement, key) => {
+                            var search = compareDecks(achievement);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
                                 return <img key={key} src={img} style={{height: '70px', width: '70px'}}  alt="rekt" />
@@ -50,15 +61,16 @@ const PlayerInfo = ({ currentPlayer, decks }) => {
 
                             return(
                             <TableRow key={key}>
-                                <TableCell align="center" style={cellStyle}>{player.date}</TableCell>
-                                <TableCell align="center" style={cellStyle}>{player.tournament}</TableCell>
-                                <TableCell align="center" style={cellStyle}>{player.cycle}</TableCell>
-                                <TableCell component="th" align="center" style={cellStyle}>
-                                    {player.placing}
+                                <TableCell align="center" style={cellStyle}>{achievement.date}</TableCell>
+                                <TableCell component="th" align="center">
+                                    <button onClick={() => setCurrentTournament(compareTournaments(achievement.tournament, achievement.date))}> {achievement.tournament}</button>
                                 </TableCell>
-                                <TableCell align="center" style={cellStyle}>{player.deck}</TableCell>
+                                <TableCell align="center" style={cellStyle}>{achievement.deck}</TableCell>
                                 <TableCell align="center">
                                 <p>{sprites}</p>
+                                </TableCell>
+                                <TableCell align="center" style={cellStyle}>
+                                    {achievement.placing}
                                 </TableCell>
                             </TableRow>
                         )})}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 
 const headerStyle = {
+    color: 'white',
     fontFamily: 'Muli',
     fontSize: '16px'
 };
@@ -17,7 +18,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
             <Grid>
                 <Table>
                     <TableHead>
-                        <TableRow>
+                        <TableRow style={{backgroundColor: '#424242'}}>
                             <TableCell align="center" style={headerStyle}>Date</TableCell>
                             <TableCell align="center" style={headerStyle}>Name</TableCell>
                             <TableCell align="center" style={headerStyle}>Region</TableCell>

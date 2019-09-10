@@ -1,24 +1,27 @@
 // Started by Jeremy Lim on 03/09/2019
+// Currently on v2 deployed, v2.1 local, unreleased
 
 import React from 'react';
-import { Grid, Switch, FormControlLabel } from '@material-ui/core';
-import { PlayerInfo, SearchBar, TournamentInfo, TournamentList } from './components';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { Grid, Switch, FormControlLabel, IconButton } from '@material-ui/core';
+import { HomeMenu, PlayerInfo, SearchBar, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
 import players from './data/players.js';
 
-// HOME PAGE
-// Top performing decks this week
-// Top performing players
-// Latest tournament
-// Upcoming tournaments
+const buttonStyle = {
+    height: '100px',
+    width: '100px'
+};
 
 // TO-DO LIST
+// Home page (done v2.2)
+// Table paginations
 // Sorting tournaments
-// Player functionality
-// Data analytics
+// Data analytics (v3)
 // Need to refactor Challenges filter
 // Filter functionality for Cups
+// Back button (done v2.1)
 
 // class Tournament {
 //     constructor(name, attendance, type, format, date) {
@@ -53,6 +56,24 @@ class App extends React.Component {
     }
 
     // Changed states
+    backButton = () => {
+        var filteredList = tournamentList.filter((tournament, key) => {
+            return (tournament.type !== 'League Challenge');
+        });
+
+        if (this.state.show === 'list') {
+            this.setState({ show: 'home', currentTournament: null })
+        } else if (this.state.show === 'tournament') {
+            if (this.state.checkedChallenge === true) {
+                this.setState({ show: 'list', currentTournament: null, tournamentList: filteredList });
+            } else {
+                this.setState({ show: 'list', currentTournament: null, tournamentList: tournamentList });
+            }
+        } else if (this.state.show === 'player') {
+            this.setState({ show: 'tournament', currentPlayer: null })
+        }
+    }
+
     setCurrentTournament = (tournament) => {
         this.setState({ currentTournament: tournament, show: 'tournament' });
     }
@@ -145,11 +166,19 @@ class App extends React.Component {
         const { tournamentList, currentTournament, currentPlayer, decks, show, checkedChallenge } = this.state;
         return (
             <Grid>
-                <Grid>
-                    <Grid>
+                <Grid container>
+                    <Grid item xs={10}>
+                        {show !== 'home' && <IconButton style={buttonStyle} onClick={this.backButton} aria-label="back">
+                            <ArrowBackIosIcon />
+                        </IconButton>}
                         <button onClick={this.homePage}>Home</button>
                         <button onClick={this.tournamentList}>Tournaments</button>
+                        <button>Coming Soon in v4!</button>
                     </Grid>
+                </Grid>
+                <Grid>
+                    {/* WIP */}
+                    {show === 'home' && <HomeMenu tournaments={tournamentList} decks={decks} />}
                 </Grid>
                 <Grid>
                     {show === 'list' && <SearchBar onFormSubmit={this.handleChange}/>}
@@ -157,13 +186,23 @@ class App extends React.Component {
                     {show === 'list' && <FormControlLabel control={
                         <Switch checked={checkedChallenge} onChange={this.filterChallenges} value="checkedChallenge"/>
                     } label='No Challenges' />}
-                    {show === 'list' && <TournamentList setCurrentTournament={this.setCurrentTournament} tournamentList={tournamentList}/>}
+                    {show === 'list' && <TournamentList
+                    setCurrentTournament={this.setCurrentTournament}
+                    tournamentList={tournamentList}/>}
                 </Grid>
                 <Grid>
-                    {show === 'tournament' && <TournamentInfo currentTournament={currentTournament} setCurrentPlayer={this.setCurrentPlayer} decks={decks} />}
+                    {show === 'tournament' && <TournamentInfo
+                    currentTournament={currentTournament}
+                    setCurrentPlayer={this.setCurrentPlayer}
+                    decks={decks} />}
                 </Grid>
                 <Grid>
-                    {show === 'player' && <PlayerInfo currentPlayer={currentPlayer} setCurrentPlayer={this.setCurrentPlayer} decks={decks} />}
+                    {show === 'player' && <PlayerInfo
+                    currentPlayer={currentPlayer}
+                    setCurrentPlayer={this.setCurrentPlayer}
+                    setCurrentTournament={this.setCurrentTournament}
+                    decks={decks}
+                    tournamentList={tournamentList} />}
                 </Grid>
             </Grid>
         )

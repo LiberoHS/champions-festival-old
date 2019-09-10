@@ -26,7 +26,3 @@ button {
     border-radius: 20px;
     padding: 10px;
 }
-
-TableRow, Table, TableBody, TableCell {
-    font-size: 200px;
-}
