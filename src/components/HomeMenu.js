@@ -31,7 +31,7 @@ const text = {
     padding: '10px'
 }
 
-const HomeMenu = ({ tournaments, decks }) => {
+const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
             if (decks[i].archetype === target.deck) {
@@ -54,11 +54,15 @@ const HomeMenu = ({ tournaments, decks }) => {
 
     const classes = useStyles();
 
+    var currFormat = tournaments.filter((tournament, key) => {
+        return (tournament.format === 'UPR-HIF');
+    });
+
     return (
         <Grid>
             <Grid container>
                 <Grid item xs={11} style={tableGrid}>
-                    <h2 style={text}>Latest Tournament Winners</h2>
+                    <h2 style={text}>Latest Tournament Winners | {tournaments[0].format}</h2>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
@@ -72,7 +76,7 @@ const HomeMenu = ({ tournaments, decks }) => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                {tournaments.map((tournament, key) => {
+                                {currFormat.map((tournament, key) => {
                                     var search = compareDecks(tournament.standings[0]);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
@@ -82,7 +86,9 @@ const HomeMenu = ({ tournaments, decks }) => {
                                     return(
                                     <TableRow key={key}>
                                         <TableCell align="center" style={cellStyle}>{tournament.date}</TableCell>
-                                        <TableCell align="center" style={cellStyle}>{tournament.name}</TableCell>
+                                        <TableCell component="th" align="center">
+                                            <button onClick={() => setCurrentTournament(tournament)}>{tournament.name}</button>
+                                        </TableCell>
                                         <TableCell align="center" style={cellStyle}>{tournament.standings[0].name}</TableCell>
                                         <TableCell align="center" style={cellStyle}>{tournament.standings[0].deck}</TableCell>
                                         <TableCell align="center">

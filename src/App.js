@@ -181,6 +181,7 @@ class App extends React.Component {
                 <Grid>
                     {/* WIP */}
                     {show === 'home' && <HomeMenu
+                    setCurrentTournament={this.setCurrentTournament}
                     tournaments={tournamentList}
                     decks={decks}/>}
                 </Grid>
