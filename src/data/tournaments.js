@@ -139,7 +139,7 @@ const tournaments = [
     ]},
     { name: "Newcastle LC", date: "10/08/19", region: "NSW", attendance: 14, type: "League Challenge", cycle: "August", format: "SUM-UNB",
     standings: [
-        { name: "Ying Hao Tou", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
+        { name: "Ying Hao Tou", deck: "Green's Reshiram & Charizard-GX", placing: 1 },
         { name: "Jake Cruwys", deck: "Zoroark-GX Checkmate", placing: 2 },
         { name: "Shane Quinn", deck: "Vileplume Stall", placing: 3 },
         { name: "Joshua Stone", deck: "Pikachu & Zekrom-GX", placing: 4 }
