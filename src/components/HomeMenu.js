@@ -54,9 +54,16 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
 
     const classes = useStyles();
 
+    var newestFormat = tournaments[0].format;
     var currFormat = tournaments.filter((tournament, key) => {
-        return (tournament.format === 'UPR-HIF');
+        return (tournament.format === newestFormat);
     });
+
+    if (currFormat.length < 5) {
+        currFormat = tournaments.filter((tournament, key) => {
+            return (key < 5);
+        });
+    }
 
     return (
         <Grid>
