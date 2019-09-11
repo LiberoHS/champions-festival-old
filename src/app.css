@@ -1,0 +1,63 @@
+.headerCell {
+    color: 'white';
+    font-family: 'Muli';
+    font-size: 16px;
+}
+
+.bodyCell {
+    font-family: 'Muli';
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 450px) and (max-height: 850px) {
+    body {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        background-color: lightblue;
+    }
+
+    .homeButton {
+        height: 50px;
+        width: 100px;
+        font-size: 10px;
+        font-family: 'Muli';
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 450px) and (max-height: 850px) {
+    .tableRow {
+        display: flex;
+        width: 100px;
+        height: 100px;
+    }
+
+    .tableCell {
+        display: flex;
+        /* width: 100px;
+        height: 100px; */
+        /* font-size: 12px; */
+    }
+
+    .headerCell {
+        color: 'white';
+        font-family: 'Muli';
+        font-size: 16px;
+    }
+
+    .bodyCell {
+        font-family: 'Muli';
+        font-size: 20px;
+    }
+}
