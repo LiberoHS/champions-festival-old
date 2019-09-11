@@ -10,7 +10,7 @@ import tournamentList from './data/tournaments.js';
 import players from './data/players.js';
 
 const buttonStyle = {
-    height: '100px',
+    height: '80px',
     width: '100px'
 };
 

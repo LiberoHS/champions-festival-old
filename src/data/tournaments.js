@@ -112,6 +112,13 @@ const tournaments = [
         { name: "Aaron Stringfellow", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
         { name: "Jack Millar", deck: "Pikachu & Zekrom-GX", placing: 4 }
     ]},
+    { name: "Neo Tokyo LC", date: "24/08/19", region: "QLD", attendance: 18, type: "League Challenge", cycle: "August", format: "UPR-UNM",
+    standings: [
+        { name: "Nicholas Moore", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
+        { name: "Ehren Roebuck", deck: "Ability Reshiram & Charizard-GX", placing: 2 },
+        { name: "Matthew Burris", deck: "Pikachu & Zekrom-GX", placing: 3 },
+        { name: "Jack Millar", deck: "Ability Reshiram & Charizard-GX", placing: 4 }
+    ]},
     { name: "Ormond LC", date: "24/08/19", region: "VIC", attendance: 25, type: "League Challenge", cycle: "August", format: "UPR-UNM",
     standings: [
         { name: "Kaiwen Cabbabe", deck: "Blacephalon-GX / Naganadel", placing: 1 },

@@ -58,22 +58,22 @@ const HomeMenu = ({ tournaments, decks }) => {
         <Grid>
             <Grid container>
                 <Grid item xs={11} style={tableGrid}>
-                    <h2 style={text}>Latest Tournament</h2>
-                    <h3 style={text}>{tournaments[0].name} | {tournaments[0].date}</h3>
+                    <h2 style={text}>Latest Tournament Winners</h2>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
                                 <TableHead>
                                     <TableRow style={{backgroundColor: '#424242'}}>
-                                        <TableCell align="center" style={headerStyle}>Placing</TableCell>
+                                        <TableCell align="center" style={headerStyle}>Date</TableCell>
+                                        <TableCell align="center" style={headerStyle}>Tournament</TableCell>
                                         <TableCell align="center" style={headerStyle}>Name</TableCell>
                                         <TableCell align="center" style={headerStyle}>Deck</TableCell>
                                         <TableCell align="center"></TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                {tournaments[0].standings.map((player, key) => {
-                                    var search = compareDecks(player);
+                                {tournaments.map((tournament, key) => {
+                                    var search = compareDecks(tournament.standings[0]);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
                                         return <img key={key} src={img} style={{height: '70px', width: '70px'}}  alt="rekt" />
@@ -81,9 +81,10 @@ const HomeMenu = ({ tournaments, decks }) => {
 
                                     return(
                                     <TableRow key={key}>
-                                        <TableCell align="center" style={cellStyle}>{player.placing}</TableCell>
-                                        <TableCell align="center" style={cellStyle}>{player.name}</TableCell>
-                                        <TableCell align="center" style={cellStyle}>{player.deck}</TableCell>
+                                        <TableCell align="center" style={cellStyle}>{tournament.date}</TableCell>
+                                        <TableCell align="center" style={cellStyle}>{tournament.name}</TableCell>
+                                        <TableCell align="center" style={cellStyle}>{tournament.standings[0].name}</TableCell>
+                                        <TableCell align="center" style={cellStyle}>{tournament.standings[0].deck}</TableCell>
                                         <TableCell align="center">
                                         <p>{sprites}</p>
                                         </TableCell>
