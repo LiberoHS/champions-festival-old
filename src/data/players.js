@@ -245,7 +245,7 @@ achievements: [{ date: "24/08/19", tournament: "Ormond LC", cycle: "August", dec
 achievements: [{ date: "24/08/19", tournament: "Ormond LC", cycle: "August", deck: "Pikachu & Zekrom-GX", placing: 6 },
 ], points: 8 },
 { name: "Mehul Gajwani",
-achievements: [{ date: "11/08/19", tournament: "Penrith LC", cycle: "August", deck: "Unown Hand / Donphan", placing: 1 },
+achievements: [{ date: "11/08/19", tournament: "Penrith LC", cycle: "August", deck: "Donphan / Florges", placing: 1 },
 ], points: 15 },
 { name: "Nicole Manasan",
 achievements: [{ date: "11/08/19", tournament: "Penrith LC", cycle: "August", deck: "Zoroark-GX / Greninja & Zoroark-GX", placing: 4 },

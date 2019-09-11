@@ -12,7 +12,7 @@ standings: [
 ]}, */
 
 const tournaments = [
-    { name: "Baydragon Cup", date: "08/09/19", region: "NZ", attendance: 24, type: "League Cup", cycle: "Quarter 1", format: "UPR-UNM",
+    { name: "Baydragon Cup", date: "08/09/19", region: "NZ", attendance: 24, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
          { name: "Louis Chi", deck: "Pikachu & Zekrom-GX", placing: 1 },
          { name: "Jiawei Sun", deck: "Ability Reshiram & Charizard-GX", placing: 2 },
@@ -23,14 +23,14 @@ const tournaments = [
          { name: "Kelvin Cheung", deck: "Pikachu & Zekrom-GX", placing: 7 },
          { name: "Tommy Xie", deck: "Mew & Mewtwo-GX Toolbox", placing: 8 }
     ]},
-    { name: "Cannington Cup", date: "08/09/19", region: "WA", attendance: 10, type: "League Cup", cycle: "Quarter 1", format: "UPR-UNM",
+    { name: "Cannington Cup", date: "08/09/19", region: "WA", attendance: 10, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
          { name: "Matthew Bray", deck: "Pikachu & Zekrom-GX", placing: 1 },
          { name: "Stephen Kirk", deck: "Ability Reshiram & Charizard-GX", placing: 2 },
          { name: "Andrew Tandianus", deck: "Malamar / Giratina", placing: 3 },
          { name: "Terrence Wong", deck: "Spiritomb / Froslass", placing: 4 },
     ]},
-    { name: "Maitland Cup", date: "08/09/19", region: "NSW", attendance: 24, type: "League Cup", cycle: "Quarter 1", format: "UPR-UNM",
+    { name: "Maitland Cup", date: "08/09/19", region: "NSW", attendance: 24, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
         { name: "Christian Hasbani", deck: "Malamar / Giratina", placing: 1 },
         { name: "Paul Coletta", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
@@ -41,7 +41,7 @@ const tournaments = [
         { name: "Chuyao Zhou", deck: "Beheeyem", placing: 7 },
         { name: "Joshua Stone", deck: "Pikachu & Zekrom-GX", placing: 8 },
     ]},
-    { name: "Singapore Cup", date: "07/09/19", region: "SG", attendance: 63, type: "League Cup", cycle: "Quarter 1", format: "UPR-UNM",
+    { name: "Singapore Cup", date: "07/09/19", region: "SG", attendance: 63, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
         { name: "Wei Jie Fo", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
         { name: "Jit Min Lim", deck: "Pidgeotto Control", placing: 2 },
@@ -52,7 +52,7 @@ const tournaments = [
         { name: "Clifton Goh", deck: "Ability Reshiram & Charizard-GX", placing: 7 },
         { name: "Jeremy Leong", deck: "Pikachu & Zekrom-GX", placing: 8 }
     ]},
-    { name: "Newcastle Cup", date: "07/09/19", region: "NSW", attendance: 38, type: "League Cup", cycle: "Quarter 1", format: "UPR-UNM",
+    { name: "Newcastle Cup", date: "07/09/19", region: "NSW", attendance: 38, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
         { name: "Christian Hasbani", deck: "Malamar / Giratina", placing: 1 },
         { name: "Shane Quinn", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
@@ -132,7 +132,7 @@ const tournaments = [
     ]},
     { name: "Penrith LC", date: "11/08/19", region: "NSW", attendance: 7, type: "League Challenge", cycle: "August", format: "SUM-UNB",
     standings: [
-        { name: "Mehul Gajwani", deck: "Unown Hand / Donphan", placing: 1 },
+        { name: "Mehul Gajwani", deck: "Donphan / Florges", placing: 1 },
         { name: "Ying Hao Tou", deck: "Green's Reshiram & Charizard-GX", placing: 2 },
         { name: "Joshua Stone", deck: "Pikachu & Zekrom-GX", placing: 3 },
         { name: "Nicole Manasan", deck: "Zoroark-GX / Greninja & Zoroark-GX", placing: 4 }

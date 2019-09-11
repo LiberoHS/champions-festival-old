@@ -12,7 +12,7 @@ const decks = [
     { archetype: "Baby Blacephalon", thumbnails: ["./assets/sprites/1156.png"] },
     { archetype: "Quagsire / Naganadel", thumbnails: ["./assets/sprites/198.png","./assets/sprites/1155.png"] },
     { archetype: "Naganadel-GX Checkmate", thumbnails: ["./assets/sprites/1155.png"] },
-    { archetype: "Unown Hand / Donphan", thumbnails: ["./assets/sprites/211.png","./assets/sprites/262.png"] },
+    { archetype: "Donphan / Florges", thumbnails: ["./assets/sprites/262.png","./assets/sprites/781.png"] },
     { archetype: "Zoroark-GX / Greninja & Zoroark-GX", thumbnails: ["./assets/sprites/637.png","./assets/sprites/742.png"] },
     { archetype: "Blastoise / Keldeo-GX", thumbnails: ["./assets/sprites/16.png","./assets/sprites/726.png"] },
     { archetype: "Malamar / Garchomp & Giratina-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/486.png","./assets/sprites/534.png"] },
