@@ -27,7 +27,7 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
     return(
         <Grid item xs={12}>
             <Grid>
-                <h2> {currentTournament.name} </h2>
+                <h2> {currentTournament.name} ({currentTournament.region}) </h2>
                 <p> <b>Date:</b> {currentTournament.date} </p>
                 <p> <b>Number of players:</b> {currentTournament.attendance} </p>
                 <p> <b>Cycle:</b> {currentTournament.cycle}</p>

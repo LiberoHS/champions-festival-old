@@ -21,6 +21,8 @@ const decks = [
     { archetype: "Vileplume Stall", thumbnails: ["./assets/sprites/51.png"] },
     { archetype: "Zoroark-GX Checkmate", thumbnails: ["./assets/sprites/637.png","./assets/sprites/1155.png"] },
     { archetype: "Zoroark-GX / Dewgong", thumbnails: ["./assets/sprites/637.png","./assets/sprites/93.png"] },
+    { archetype: "Zoroark-GX / Persian", thumbnails: ["./assets/sprites/637.png","./assets/sprites/59.png"] },
+    { archetype: "Zoroark-GX / Silvally-GX", thumbnails: ["./assets/sprites/637.png","./assets/sprites/1107.png"] },
     { archetype: "Zapdos / Ultra Beasts", thumbnails: ["./assets/sprites/150.png","./assets/sprites/1128.png","./assets/sprites/1127.png"] },
     { archetype: "Beast Box", thumbnails: ["./assets/sprites/1155.png","./assets/sprites/1128.png","./assets/sprites/1157.png"] }
 ];

@@ -56,7 +56,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
 
     var newestFormat = tournaments[0].format;
     var currFormat = tournaments.filter((tournament, key) => {
-        return (tournament.format === newestFormat);
+        return (tournament.format === 'UPR-UNM' || tournament.format === newestFormat);
     });
 
     if (currFormat.length < 5) {
@@ -69,7 +69,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
         <Grid>
             <Grid container>
                 <Grid item xs={11} style={tableGrid}>
-                    <h2 style={text}>Latest Tournament Winners | {tournaments[0].format}</h2>
+                    <h2 style={text}>Latest Tournament Winners | UPR-UNM and {newestFormat}</h2>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>

@@ -98,7 +98,18 @@ const tournaments = [
         { name: "Corey Munro", deck: "Mew & Mewtwo-GX Toolbox", placing: 31 },
         { name: "Naomi Murn", deck: "Ability Reshiram & Charizard-GX", placing: 32 }
     ]},
-    { name: "Adelaide LC", date: "25/08/19", region: "SA", attendance: 19, type: "League Challenge", cycle: "August", format: "SUM-UNB",
+    { name: "Courtside Cup", date: "25/08/19", region: "PH", attendance: 45, type: "League Cup", cycle: "Quarter 1", format: "UPR-UNM",
+        standings: [
+            { name: "Adrian Velasco", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
+            { name: "Adrian Acuzar", deck: "Blacephalon-GX / Naganadel", placing: 2 },
+            { name: "Alexander Jason Macaraniag", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+            { name: "Antoni Acuzar", deck: "Green's Reshiram & Charizard-GX", placing: 4 },
+            { name: "Joshua Doctolero", deck: "Green's Reshiram & Charizard-GX", placing: 5 },
+            { name: "Paul Neilmer Feliciano", deck: "Blacephalon-GX / Naganadel", placing: 6 },
+            { name: "Kenneth Chan", deck: "Malamar / Ultra Necrozma-GX", placing: 7 },
+            { name: "Carlo Neria", deck: "Green's Reshiram & Charizard-GX", placing: 8 },
+    ]},
+    { name: "Adelaide LC", date: "25/08/19", region: "SA", attendance: 19, type: "League Challenge", cycle: "August", format: "UPR-UNM",
     standings: [
         { name: "Aaron van der Kolk", deck: "Blacephalon-GX / Naganadel", placing: 1 },
         { name: "Carol Poyner", deck: "Green's Reshiram & Charizard-GX", placing: 2 },
@@ -143,6 +154,17 @@ const tournaments = [
         { name: "Jake Cruwys", deck: "Zoroark-GX Checkmate", placing: 2 },
         { name: "Shane Quinn", deck: "Vileplume Stall", placing: 3 },
         { name: "Joshua Stone", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Kuala Lumpur Cup", date: "10/08/19", region: "MY", attendance: 43, type: "League Cup", cycle: "Quarter 1", format: "SUM-UNB",
+    standings: [
+         { name: "Melvyn Lee", deck: "Zoroark-GX / Persian", placing: 1 },
+         { name: "Izmir Armani", deck: "Pikachu & Zekrom-GX", placing: 2 },
+         { name: "Jinn Chung", deck: "Zygarde-GX", placing: 3 },
+         { name: "Fabian Kenel", deck: "Zoroark-GX / Silvally-GX", placing: 4 },
+         { name: "Syahmi Razak", deck: "Pikachu & Zekrom-GX", placing: 5 },
+         { name: "Rinesh John", deck: "Baby Blacephalon", placing: 6 },
+         { name: "Alex Chee", deck: "Malamar / Ultra Necrozma-GX", placing: 7 },
+         { name: "Ismat Myron", deck: "Malamar / Ultra Necrozma-GX", placing: 8 }
     ]},
     { name: "Neo Tokyo LC", date: "27/07/19", region: "QLD", attendance: 9, type: "League Challenge", cycle: "July", format: "SUM-UNB",
     standings: [
