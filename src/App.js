@@ -4,10 +4,10 @@
 import React from 'react';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
-import { HomeMenu, PlayerInfo, SearchBar, TournamentInfo, TournamentList } from './components';
+import { HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
-import players from './data/players.js';
+import playerList from './data/players.js';
 
 const buttonStyle = {
     height: '25px',
@@ -50,30 +50,38 @@ class App extends React.Component {
     state = {
         tournamentList: tournamentList,
         decks: decks,
-        players: players,
+        playerList: playerList,
         currentTournament: null,
         currentPlayer: null,
         show: 'home',
         data: null,
-        checkedChallenge: false
+        checkedChallenge: false,
+        checkedPoints: false,
+        tracker: 0
     }
 
     // Changed states
     backButton = () => {
-        var filteredList = tournamentList.filter((tournament, key) => {
+        var filteredTournaments = tournamentList.filter((tournament, key) => {
             return (tournament.type !== 'League Challenge');
         });
 
-        if (this.state.show === 'list') {
+        if (this.state.show === 'tournamentList' || this.state.show === 'playerList') {
             this.setState({ show: 'home', currentTournament: null })
         } else if (this.state.show === 'tournament') {
             if (this.state.checkedChallenge === true) {
-                this.setState({ show: 'list', currentTournament: null, tournamentList: filteredList });
+                this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: filteredTournaments });
             } else {
-                this.setState({ show: 'list', currentTournament: null, tournamentList: tournamentList });
+                this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: tournamentList });
             }
         } else if (this.state.show === 'player') {
-            this.setState({ show: 'tournament', currentPlayer: null })
+            if (this.state.tracker === 1) {
+                this.setState({ show: 'tournament', currentPlayer: null })
+            } else if (this.state.tracker === 2) {
+                this.setState({ show: 'playerList', currentPlayer: null })
+            } else {
+                this.setState({ show: 'home', currentPlayer: null })
+            }
         }
     }
 
@@ -82,7 +90,12 @@ class App extends React.Component {
     }
 
     setCurrentPlayer = (player) => {
-        this.setState({ currentPlayer: players[players.findIndex(x => x.name === player.name)], show: 'player' });
+        this.setState({ currentPlayer: playerList[playerList.findIndex(x => x.name === player.name)], show: 'player' });
+        if (this.state.show === 'tournament') {
+            this.setState({ tracker: 1 });
+        } else if (this.state.show === 'playerList') {
+            this.setState({ tracker: 2 });
+        }
     }
 
     homePage = () => {
@@ -90,64 +103,98 @@ class App extends React.Component {
     }
 
     tournamentList = () => {
-        var filteredList = tournamentList.filter((tournament, key) => {
+        var filteredTournaments = tournamentList.filter((tournament, key) => {
             return (tournament.type !== 'League Challenge');
         });
 
         if (this.state.checkedChallenge === true) {
-            this.setState({ show: 'list', currentTournament: null, tournamentList: filteredList });
+            this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: filteredTournaments });
         } else {
-            this.setState({ show: 'list', currentTournament: null, tournamentList: tournamentList });
+            this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: tournamentList });
         }
+    }
+
+    playerList = () => {
+        this.setState({ show: 'playerList', currentPlayer: null, playerList: playerList });
     }
 
     // Filter for search bar (WIP for refactoring)
     handleChange = async (searchTerm) => {
         var searchedList;
-        var filteredList = tournamentList.filter((tournament, key) => {
+        var searchedPlayers;
+        var filteredTournaments = tournamentList.filter((tournament, key) => {
             return (tournament.type !== 'League Challenge');
         });
 
-        if (this.state.checkedChallenge === true) {
-            searchedList = filteredList.filter((tournament, key) => {
-                if(tournament.name.toLowerCase().search(searchTerm.toLowerCase()) === 0) {
-                    return tournament;
+        if (this.state.show === 'tournamentList') {
+            if (this.state.checkedChallenge === true) {
+                searchedList = filteredTournaments.filter((tournament, key) => {
+                    if(tournament.name.toLowerCase().search(searchTerm.toLowerCase()) === 0) {
+                        return tournament;
+                    }
+
+                    return 0;
+                });
+
+                this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: filteredTournaments });
+            } else {
+                searchedList = tournamentList.filter((tournament, key) => {
+                    if(tournament.name.toLowerCase().search(searchTerm.toLowerCase()) === 0) {
+                        return tournament;
+                    }
+
+                    return 0;
+                });
+            }
+
+            this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: searchedList });
+        } else if (this.state.show === 'playerList') {
+            searchedPlayers = playerList.filter((player, key) => {
+                if(player.name.toLowerCase().search(searchTerm.toLowerCase()) === 0) {
+                    return player;
                 }
 
                 return 0;
             });
 
-            this.setState({ show: 'list', currentTournament: null, tournamentList: filteredList });
-        } else {
-            searchedList = tournamentList.filter((tournament, key) => {
-                if(tournament.name.toLowerCase().search(searchTerm.toLowerCase()) === 0) {
-                    return tournament;
-                }
-
-                return 0;
-            });
-
-            this.setState({ show: 'list', currentTournament: null, tournamentList: tournamentList });
+            this.setState({ show: 'playerList', currentPlayer: null, playerList: searchedPlayers });
         }
-
-        this.setState({ show: 'list', currentTournament: null, tournamentList: searchedList });
     }
 
     // Filter out League Challenges (WIP for refactoring)
     filterChallenges = () => {
-        var filteredList = tournamentList.filter((tournament, key) => {
+        var filteredTournaments = tournamentList.filter((tournament, key) => {
             return (tournament.type !== 'League Challenge');
         });
 
         if (this.state.checkedChallenge === true) {
-            this.setState({ show: 'list', currentTournament: null, tournamentList: tournamentList, checkedChallenge: false });
+            this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: tournamentList, checkedChallenge: false });
         } else {
-            this.setState({ show: 'list', currentTournament: null, tournamentList: filteredList, checkedChallenge: true });
+            this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: filteredTournaments, checkedChallenge: true });
+        }
+    }
+
+    sortPoint = () => {
+        if (this.state.checkedPoints === true) {
+            playerList.sort(function (a, b) {
+                return a.name.localeCompare(b.name);
+            });
+
+            this.setState({ playerList: playerList, checkedPoints: false });
+        } else if (this.state.checkedPoints === false) {
+            playerList.sort(function (a, b) {
+                return b.points - a.points;
+            });
+
+            this.setState({ playerList: playerList, checkedPoints: true });
         }
     }
 
     // EXPRESS BACKEND
     componentDidMount() {
+        playerList.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
         // Call our fetch function below once the component mounts
         this.callBackendAPI()
         .then(res => this.setState({ data: res.express }))
@@ -166,7 +213,8 @@ class App extends React.Component {
     };
 
     render () {
-        const { tournamentList, currentTournament, currentPlayer, decks, show, checkedChallenge } = this.state;
+        const { tournamentList, currentTournament, playerList, currentPlayer,
+        decks, show, checkedChallenge, checkedPoints } = this.state;
 
         return (
             <Grid>
@@ -180,6 +228,7 @@ class App extends React.Component {
                                 <ul>
                                 <li><Link style={{cursor: 'pointer'}} onClick={this.homePage}>Home</Link></li>
                                 <li><Link style={{cursor: 'pointer'}} onClick={this.tournamentList}>Tournaments</Link></li>
+                                <li><Link style={{cursor: 'pointer'}} onClick={this.playerList}>Players</Link></li>
                                 {/* <li>Coming Soon in v4!</li> */}
                                 </ul>
                             </div>
@@ -191,17 +240,26 @@ class App extends React.Component {
                     {show === 'home' && <HomeMenu
                     setCurrentTournament={this.setCurrentTournament}
                     tournaments={tournamentList}
-                    decks={decks}/>}
+                    decks={decks}
+                    players={playerList}/>}
                 </Grid>
                 <Grid>
-                    {show === 'list' && <SearchBar onFormSubmit={this.handleChange}/>}
+                    {show === 'tournamentList' && <SearchBar onFormSubmit={this.handleChange}/>}
+                    {show === 'playerList' && <SearchBar onFormSubmit={this.handleChange}/>}
                     {/* SORT FUNCTIONALITY */}
-                    {show === 'list' && <FormControlLabel control={
+                    {show === 'tournamentList' && <FormControlLabel control={
                         <Switch checked={checkedChallenge} onChange={this.filterChallenges} value="checkedChallenge"/>
                     } label='No Challenges' />}
-                    {show === 'list' && <TournamentList
+                    {show === 'tournamentList' && <TournamentList
                     setCurrentTournament={this.setCurrentTournament}
                     tournamentList={tournamentList}/>}
+
+                    {show === 'playerList' && <FormControlLabel control={
+                        <Switch checked={checkedPoints} onChange={this.sortPoint} value="checkedPoints"/>
+                    } label='Sort Points' />}
+                    {show === 'playerList' && <PlayerList
+                    setCurrentPlayer={this.setCurrentPlayer}
+                    playerList={playerList}/>}
                 </Grid>
                 <Grid>
                     {show === 'tournament' && <TournamentInfo

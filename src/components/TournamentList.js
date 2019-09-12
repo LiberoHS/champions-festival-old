@@ -6,6 +6,7 @@ import { useStyles } from './useStyles';
 const TournamentList = ({ setCurrentTournament, tournamentList }) => {
     const classes = useStyles();
     const isNotMobile = useMediaQuery({ minWidth: 768 });
+    const isNotTablet = useMediaQuery({ minWidth: 991 });
     const headerStyle = {
         color: 'white',
         fontFamily: 'Muli',
@@ -37,7 +38,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
                             <TableCell align="left" style={headerStyle}>Region</TableCell>
                             {isNotMobile && <TableCell align="left" style={headerStyle}>Type</TableCell>}
                             {isNotMobile && <TableCell align="left" style={headerStyle}>Cycle</TableCell>}
-                            {isNotMobile && <TableCell align="left" style={headerStyle}>Attendance</TableCell>}
+                            {isNotTablet && <TableCell align="left" style={headerStyle}>Attendance</TableCell>}
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -50,7 +51,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
                                 <TableCell align="left" style={cellStyle}>{item.region}</TableCell>
                                 {isNotMobile && <TableCell align="left" style={cellStyle}>{item.type}</TableCell>}
                                 {isNotMobile && <TableCell align="left" style={cellStyle}>{item.cycle}</TableCell>}
-                                {isNotMobile && <TableCell align="left" style={cellStyle}>{item.attendance}</TableCell>}
+                                {isNotTablet && <TableCell align="left" style={cellStyle}>{item.attendance}</TableCell>}
                             </TableRow>
                         ))}
                     </TableBody>

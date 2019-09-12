@@ -4,38 +4,57 @@ import { Grid, Link, Paper } from '@material-ui/core';
 import { Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useMediaQuery } from 'react-responsive';
 
-const tableGrid = {
-    margin: '20px',
-    width: '450px',
-    height: '700px',
-    backgroundColor: 'white'
-};
-
 const text = {
     margin: '15px',
     padding: '10px'
 }
 
-const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
+const HomeMenu = ({ setCurrentTournament, tournaments, decks, players }) => {
+    players = players.sort(function (a, b) {
+        return b.points - a.points;
+    });
+
+    players = players.filter((player, key) => {
+        return (key < 10);
+    });
+
     const isDesktop = useMediaQuery({ minWidth: 992 });
     const isNotMobile = useMediaQuery({ minWidth: 768 });
-    const headerStyle = {
-        color: 'white',
-        fontFamily: 'Muli',
-        fontSize: '16px'
-    };
-
+    let headerStyle = {};
     let cellStyle = {};
+    let tableGrid = {};
 
     if (isNotMobile) {
+        headerStyle = {
+            color: 'white',
+            fontFamily: 'Muli',
+            fontSize: '16px'
+        };
         cellStyle = {
             fontFamily: 'Muli',
             fontSize: '20px'
         };
+        tableGrid = {
+            margin: '20px',
+            width: '40%',
+            height: '80%',
+            backgroundColor: 'white'
+        };
     } else {
+        headerStyle = {
+            color: 'white',
+            fontFamily: 'Muli',
+            fontSize: '12px'
+        };
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '16px'
+            fontSize: '10px'
+        };
+        tableGrid = {
+            margin: '20px',
+            width: '90%',
+            height: '85%',
+            backgroundColor: 'white'
         };
     }
     function compareDecks(target) {
@@ -53,9 +72,9 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
             width: '100%',
         },
         tableWrapper: {
-            maxHeight: 600,
+            maxHeight: 750,
             minWidth: 100,
-            overflow: 'auto',
+            overflow: 'hidden',
         },
     });
 
@@ -63,20 +82,14 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
 
     var newestFormat = tournaments[0].format;
     var currFormat = tournaments.filter((tournament, key) => {
-        return (tournament.format === 'UPR-UNM' || tournament.format === newestFormat);
+        return key < 5;
     });
-
-    if (currFormat.length < 5) {
-        currFormat = tournaments.filter((tournament, key) => {
-            return (key < 5);
-        });
-    }
 
     return (
         <Grid>
             <Grid container>
                 <Grid item xs={11} style={tableGrid}>
-                    <h3 style={text}>Latest Tournament Winners | UPR-UNM and {newestFormat}</h3>
+                    <h3 style={text}>Latest Tournament Winners | {newestFormat}</h3>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
@@ -145,6 +158,30 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
                         </Paper>
                     </Grid>
                 </Grid> */}
+            </Grid>
+            <Grid item xs={11} style={tableGrid}>
+                <h3 style={text}>Top Performing Players</h3>
+                <Paper className={classes.root}>
+                    <div className={classes.tableWrapper}>
+                        <Table>
+                            <TableHead>
+                                <TableRow style={{backgroundColor: '#424242'}}>
+                                    <TableCell align="left" style={headerStyle}>Name</TableCell>
+                                    <TableCell align="left" style={headerStyle}>Points</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            {players.map((player, key) => {
+                                return(
+                                <TableRow key={key}>
+                                    <TableCell align="left" style={cellStyle}>{player.name}</TableCell>
+                                    <TableCell align="left" style={cellStyle}>{player.points}</TableCell>
+                                </TableRow>
+                            )})}
+                            </TableBody>
+                        </Table>
+                    </div>
+                </Paper>
             </Grid>
         </Grid>
     )
