@@ -16,6 +16,10 @@
     "react-responsive": "^8.0.1",
     "react-scripts": "^3.1.1"
   },
+  "engine": {
+      "node": "10.16.0",
+      "npm": "6.11.3"
+  },
   "scripts": {
     "test": "react-scripts test",
     "start": "react-scripts start",
