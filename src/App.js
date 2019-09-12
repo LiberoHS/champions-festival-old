@@ -3,15 +3,16 @@
 
 import React from 'react';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Grid, Switch, FormControlLabel, IconButton } from '@material-ui/core';
+import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
 import { HomeMenu, PlayerInfo, SearchBar, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
 import players from './data/players.js';
 
 const buttonStyle = {
-    height: '80px',
-    width: '100px'
+    height: '25px',
+    width: '40px',
+    bottom: '10px'
 };
 
 // TO-DO LIST
@@ -166,16 +167,23 @@ class App extends React.Component {
 
     render () {
         const { tournamentList, currentTournament, currentPlayer, decks, show, checkedChallenge } = this.state;
+
         return (
             <Grid>
                 <Grid container>
                     <Grid item xs={10}>
-                        {show !== 'home' && <IconButton style={buttonStyle} onClick={this.backButton} aria-label="back">
-                            <ArrowBackIosIcon />
-                        </IconButton>}
-                        <button onClick={this.homePage}>Home</button>
-                        <button onClick={this.tournamentList}>Tournaments</button>
-                        <button>Coming Soon in v4!</button>
+                        <nav className="nav-bar">
+                            {show !== 'home' && <IconButton style={buttonStyle} onClick={this.backButton} aria-label="back">
+                                <ArrowBackIosIcon />
+                            </IconButton>}
+                            <div className="nav-bar-items">
+                                <ul>
+                                <li><Link style={{cursor: 'pointer'}} onClick={this.homePage}>Home</Link></li>
+                                <li><Link style={{cursor: 'pointer'}} onClick={this.tournamentList}>Tournaments</Link></li>
+                                {/* <li>Coming Soon in v4!</li> */}
+                                </ul>
+                            </div>
+                        </nav>
                     </Grid>
                 </Grid>
                 <Grid>

@@ -1,43 +1,56 @@
 import React from 'react';
-import { Grid, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
-
-const headerStyle = {
-    color: 'white',
-    fontFamily: 'Muli',
-    fontSize: '16px'
-};
-
-const cellStyle = {
-    fontFamily: 'Muli',
-    fontSize: '20px'
-};
+import { useMediaQuery } from 'react-responsive';
+import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
+import { useStyles } from './useStyles';
 
 const TournamentList = ({ setCurrentTournament, tournamentList }) => {
+    const classes = useStyles();
+    const isNotMobile = useMediaQuery({ minWidth: 768 });
+    const headerStyle = {
+        color: 'white',
+        fontFamily: 'Muli',
+        fontSize: '16px'
+    };
+
+    let cellStyle = {};
+
+    if (isNotMobile) {
+        cellStyle = {
+            fontFamily: 'Muli',
+            fontSize: '20px'
+        };
+    } else {
+        cellStyle = {
+            fontFamily: 'Muli',
+            fontSize: '16px'
+        };
+    }
+
     return (
         <Grid>
-            <Grid>
-                <Table>
+            <Grid className={classes.root}>
+                <Table className={classes.table}>
                     <TableHead>
                         <TableRow style={{backgroundColor: '#424242'}}>
-                            <TableCell align="center" style={headerStyle}>Date</TableCell>
-                            <TableCell align="center" style={headerStyle}>Name</TableCell>
-                            <TableCell align="center" style={headerStyle}>Region</TableCell>
-                            <TableCell align="center" style={headerStyle}>Type</TableCell>
-                            <TableCell align="center" style={headerStyle}>Cycle</TableCell>
-                            <TableCell align="center" style={headerStyle}>Attendance</TableCell>
+                            <TableCell align="left" style={headerStyle}>Date</TableCell>
+                            <TableCell align="left" style={headerStyle}>Name</TableCell>
+                            <TableCell align="left" style={headerStyle}>Region</TableCell>
+                            {isNotMobile && <TableCell align="left" style={headerStyle}>Type</TableCell>}
+                            {isNotMobile && <TableCell align="left" style={headerStyle}>Cycle</TableCell>}
+                            {isNotMobile && <TableCell align="left" style={headerStyle}>Attendance</TableCell>}
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {tournamentList.map((item, key) => (
                             <TableRow key={key}>
-                                <TableCell align="center" style={cellStyle}>{item.date}</TableCell>
-                                <TableCell component="th" align="center">
-                                    <button onClick={() => setCurrentTournament(item)}>{item.name}</button>
+                                <TableCell align="left" style={cellStyle}>{item.date}</TableCell>
+                                <TableCell component="th" align="left" style={cellStyle}>
+                                    <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(item)}>{item.name}</Link>
                                 </TableCell>
-                                <TableCell align="center" style={cellStyle}>{item.region}</TableCell>
-                                <TableCell align="center" style={cellStyle}>{item.type}</TableCell>
-                                <TableCell align="center" style={cellStyle}>{item.cycle}</TableCell>
-                                <TableCell align="center" style={cellStyle}>{item.attendance}</TableCell>
+                                <TableCell align="left" style={cellStyle}>{item.region}</TableCell>
+                                {isNotMobile && <TableCell align="left" style={cellStyle}>{item.type}</TableCell>}
+                                {isNotMobile && <TableCell align="left" style={cellStyle}>{item.cycle}</TableCell>}
+                                {isNotMobile && <TableCell align="left" style={cellStyle}>{item.attendance}</TableCell>}
                             </TableRow>
                         ))}
                     </TableBody>

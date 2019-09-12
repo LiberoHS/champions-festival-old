@@ -1,26 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, Link, Paper } from '@material-ui/core';
 import { Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
-
-const headerStyle = {
-    color: 'white',
-    fontFamily: 'Muli',
-    fontSize: '16px'
-};
-
-const cellStyle = {
-    fontFamily: 'Muli',
-    fontSize: '20px'
-};
-
-const wip = {
-    fontFamily: 'Muli',
-    fontSize: '48px',
-}
+import { useMediaQuery } from 'react-responsive';
 
 const tableGrid = {
-    margin: '50px',
+    margin: '20px',
     width: '450px',
     height: '700px',
     backgroundColor: 'white'
@@ -32,6 +17,27 @@ const text = {
 }
 
 const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
+    const isDesktop = useMediaQuery({ minWidth: 992 });
+    const isNotMobile = useMediaQuery({ minWidth: 768 });
+    const headerStyle = {
+        color: 'white',
+        fontFamily: 'Muli',
+        fontSize: '16px'
+    };
+
+    let cellStyle = {};
+
+    if (isNotMobile) {
+        cellStyle = {
+            fontFamily: 'Muli',
+            fontSize: '20px'
+        };
+    } else {
+        cellStyle = {
+            fontFamily: 'Muli',
+            fontSize: '16px'
+        };
+    }
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
             if (decks[i].archetype === target.deck) {
@@ -48,6 +54,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
         },
         tableWrapper: {
             maxHeight: 600,
+            minWidth: 100,
             overflow: 'auto',
         },
     });
@@ -69,17 +76,17 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
         <Grid>
             <Grid container>
                 <Grid item xs={11} style={tableGrid}>
-                    <h2 style={text}>Latest Tournament Winners | UPR-UNM and {newestFormat}</h2>
+                    <h3 style={text}>Latest Tournament Winners | UPR-UNM and {newestFormat}</h3>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
                                 <TableHead>
                                     <TableRow style={{backgroundColor: '#424242'}}>
-                                        <TableCell align="center" style={headerStyle}>Date</TableCell>
-                                        <TableCell align="center" style={headerStyle}>Tournament</TableCell>
-                                        <TableCell align="center" style={headerStyle}>Name</TableCell>
-                                        <TableCell align="center" style={headerStyle}>Deck</TableCell>
-                                        <TableCell align="center"></TableCell>
+                                        <TableCell align="left" style={headerStyle}>Date</TableCell>
+                                        <TableCell align="left" style={headerStyle}>Tournament</TableCell>
+                                        <TableCell align="left" style={headerStyle}>Name</TableCell>
+                                        {isNotMobile && <TableCell align="left" style={headerStyle}>Deck</TableCell>}
+                                        {isNotMobile && <TableCell align="left"></TableCell>}
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -87,20 +94,24 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
                                     var search = compareDecks(tournament.standings[0]);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
-                                        return <img key={key} src={img} style={{height: '70px', width: '70px'}}  alt="rekt" />
+                                            if (isDesktop) {
+                                                return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
+                                            } else {
+                                                return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
+                                            }
                                     })};
 
                                     return(
                                     <TableRow key={key}>
-                                        <TableCell align="center" style={cellStyle}>{tournament.date}</TableCell>
-                                        <TableCell component="th" align="center">
-                                            <button onClick={() => setCurrentTournament(tournament)}>{tournament.name}</button>
+                                        <TableCell align="left" style={cellStyle}>{tournament.date}</TableCell>
+                                        <TableCell component="th" align="left" style={cellStyle}>
+                                            <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(tournament)}>{tournament.name}</Link>
                                         </TableCell>
-                                        <TableCell align="center" style={cellStyle}>{tournament.standings[0].name}</TableCell>
-                                        <TableCell align="center" style={cellStyle}>{tournament.standings[0].deck}</TableCell>
-                                        <TableCell align="center">
+                                        <TableCell align="left" style={cellStyle}>{tournament.standings[0].name}</TableCell>
+                                        {isNotMobile && <TableCell align="left" style={cellStyle}>{tournament.standings[0].deck}</TableCell>}
+                                        {isNotMobile && <TableCell align="left">
                                         <p>{sprites}</p>
-                                        </TableCell>
+                                        </TableCell>}
                                     </TableRow>
                                 )})}
                                 </TableBody>
@@ -108,12 +119,12 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
                         </div>
                     </Paper>
                 </Grid>
-                <Grid container>
+                {/* <Grid container flex>
                     <Grid item xs={3} style={tableGrid}>
                         <h2 style={text}>Upcoming Tournaments</h2>
                         <Paper className={classes.root}>
                             <div className={classes.tableWrapper}>
-                                <p style={wip} align="center">Coming Soon in v3!</p>
+                                <p style={wip} align="left">Coming Soon in v3!</p>
                             </div>
                         </Paper>
                     </Grid>
@@ -121,7 +132,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
                         <h2 style={text}>Top Performing Decks of the Week</h2>
                         <Paper className={classes.root}>
                             <div className={classes.tableWrapper}>
-                                <p style={wip} align="center">Coming Soon in v4!</p>
+                                <p style={wip} align="left">Coming Soon in v4!</p>
                             </div>
                         </Paper>
                     </Grid>
@@ -129,11 +140,11 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks }) => {
                         <h2 style={text}>Top Performing Players</h2>
                         <Paper className={classes.root}>
                             <div className={classes.tableWrapper}>
-                                <p style={wip} align="center">Coming Soon in v3!</p>
+                                <p style={wip} align="left">Coming Soon in v3!</p>
                             </div>
                         </Paper>
                     </Grid>
-                </Grid>
+                </Grid> */}
             </Grid>
         </Grid>
     )
