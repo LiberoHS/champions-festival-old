@@ -63,6 +63,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
             backgroundColor: 'white'
         };
     }
+    
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
             if (decks[i].archetype === target.deck) {
@@ -80,7 +81,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
         tableWrapper: {
             maxHeight: 800,
             minWidth: 100,
-            overflow: 'hidden',
+            overflow: 'auto',
         },
     });
 
