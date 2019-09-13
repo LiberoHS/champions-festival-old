@@ -8,6 +8,7 @@ import { HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, Tournament
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
 import playerList from './data/players.js';
+import topDecks from './data/topDecks.js';
 
 const buttonStyle = {
     height: '25px',
@@ -51,10 +52,14 @@ class App extends React.Component {
         tournamentList: tournamentList,
         decks: decks,
         playerList: playerList,
+        topDecks: topDecks,
+
         currentTournament: null,
         currentPlayer: null,
+
         show: 'home',
         data: null,
+
         checkedChallenge: false,
         checkedPoints: false,
         tracker: 0
@@ -195,6 +200,11 @@ class App extends React.Component {
         playerList.sort(function (a, b) {
             return a.name.localeCompare(b.name);
         });
+        topDecks.sort(function (a, b) {
+            return b.currCP - a.currCP;
+        });
+
+        this.setState({ playerList: playerList, topDecks: topDecks})
         // Call our fetch function below once the component mounts
         this.callBackendAPI()
         .then(res => this.setState({ data: res.express }))
@@ -214,7 +224,7 @@ class App extends React.Component {
 
     render () {
         const { tournamentList, currentTournament, playerList, currentPlayer,
-        decks, show, checkedChallenge, checkedPoints } = this.state;
+        decks, topDecks, show, checkedChallenge, checkedPoints } = this.state;
 
         return (
             <Grid>
@@ -241,7 +251,8 @@ class App extends React.Component {
                     setCurrentTournament={this.setCurrentTournament}
                     tournaments={tournamentList}
                     decks={decks}
-                    players={playerList}/>}
+                    players={playerList}
+                    topDecks={topDecks}/>}
                 </Grid>
                 <Grid>
                     {show === 'tournamentList' && <SearchBar onFormSubmit={this.handleChange}/>}

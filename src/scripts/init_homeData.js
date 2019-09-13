@@ -1,4 +1,4 @@
-/* This script is primarily only used to initialise players into the objects
+/* This script is primarily only used to initialise players and decks into the objects
 to be exported for data use.
 The class initialisation is included and the script will go through the
 tournament list to insert any new occurrence of players. */
@@ -47,6 +47,29 @@ function calcPointPayout(tournament, player) {
     return 0;
 };
 
+// Class declaration for Deck
+class Deck {
+    constructor(deck) {
+        this.deck = deck;
+        this.totalCP = 0; // total CP earnt
+        this.currCP = 0; // CP earnt in last 10 tournaments
+    }
+
+    get string() {
+        var string = '';
+        string += '{ deck: "' + this.deck + '", currCP: ' + this.currCP + ', totalCP: ' + this.totalCP + ' },\n'
+        return string
+    }
+
+    addCurrCP(value) {
+        this.currCP += value;
+    }
+
+    addTotalCP(value) {
+        this.totalCP += value;
+    }
+}
+
 // Class declaration for Player
 class Player {
     constructor(name) {
@@ -90,40 +113,62 @@ class Player {
 }
 
 // Inputs all the players from all the tournaments into a PlayerList database
-var PlayerList = []
+var PlayerList = [];
+var DeckList = [];
 
 // Iterates through each tournament and the standings
 for (let i = 0; i < tournaments.length; i++) {
     tournaments[i].standings.map((player, key) => {
-        var search = PlayerList.some(entry => entry.name === player.name);
+        var playerSearch = PlayerList.some(entry => entry.name === player.name);
+        var deckSearch = DeckList.some(entry => entry.deck === player.deck);
 
         // If the player is already in the database
-        if (search) {
+        if (playerSearch) {
         } else {
             PlayerList.push(new Player(player.name));
+        }
+
+        if (deckSearch) {
+        } else {
+            DeckList.push(new Deck(player.deck));
         }
 
         // Adds the achievement into the database
         PlayerList[PlayerList.findIndex(x => x.name === player.name)].addAchievement(tournaments[i].date, tournaments[i].name, tournaments[i].cycle, player.deck, player.placing);
         PlayerList[PlayerList.findIndex(x => x.name === player.name)].addPoints(calcPointPayout(tournaments[i], player));
+        if (i < 10) {
+            DeckList[DeckList.findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[i], player));
+        }
+        DeckList[DeckList.findIndex(x => x.deck === player.deck)].addTotalCP(calcPointPayout(tournaments[i], player));
     });
 }
 
 // Debugging purposes
-// for (let j = 0; j < PlayerList.length; j++) {
-//     if (PlayerList[j].name === 'Brent Tonisson' || PlayerList[j].name === 'Henry Brand')
-//     console.log(PlayerList[j].achievements);
+// for (let j = 0; j < DeckList.length; j++) {
+//     // if (PlayerList[j].name === 'Brent Tonisson' || PlayerList[j].name === 'Henry Brand')
+//     console.log(DeckList[j]);
 // }
-// console.log(PlayerList.length)
+// console.log(DeckList.length);
 
-var data = 'const players = [\n';
+var playerData = 'const players = [\n';
 for (var i = 0; i < PlayerList.length; i++) {
-    data += '{ name: "' + PlayerList[i].name + '",\nachievements: [' + PlayerList[i].achievementList + '], points: ' + PlayerList[i].points + ' },\n';
+    playerData += '{ name: "' + PlayerList[i].name + '",\nachievements: [' + PlayerList[i].achievementList + '], points: ' + PlayerList[i].points + ' },\n';
 }
 
-data += '];\n\nmodule.exports = players;'
+playerData += '];\n\nmodule.exports = players;'
+
+var deckData = 'const topDecks = [\n';
+for (var i = 0; i < DeckList.length; i++) {
+    deckData += DeckList[i].string;
+}
+
+deckData += '];\n\nmodule.exports = topDecks;'
 
 var fs = require('fs');
-fs.writeFile('../data/players.js', data, function (err, file) {
+fs.writeFile('../data/players.js', playerData, function (err, file) {
+    if (err) throw err;
+});
+
+fs.writeFile('../data/topDecks.js', deckData, function (err, file) {
     if (err) throw err;
 });

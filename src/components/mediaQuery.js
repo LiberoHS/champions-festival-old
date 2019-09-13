@@ -4,6 +4,7 @@ const isDesktop = useMediaQuery({ minWidth: 992 });
 const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
 const isMobile = useMediaQuery({ maxWidth: 767 });
 const isNotMobile = useMediaQuery({ minWidth: 768 });
+const isNotTablet = useMediaQuery({ minWidth: 992 });
 
 module.exports = isMobile;
 
