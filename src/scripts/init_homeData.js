@@ -6,7 +6,6 @@ tournament list to insert any new occurrence of players. */
 // var decks = require('../data/decks.js');
 var tournaments = require('../data/tournaments.js');
 
-//
 function calcPointPayout(tournament, player) {
     if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
@@ -41,6 +40,10 @@ function calcPointPayout(tournament, player) {
             return 80;
         } else if (player.placing <= 32) {
             return 60;
+        } else if (player.placing <= 64) {
+            return 50;
+        } else if (player.placing <= 128) {
+            return 40;
         }
     }
 
@@ -119,23 +122,29 @@ var DeckList = [];
 // Iterates through each tournament and the standings
 for (let i = 0; i < tournaments.length; i++) {
     tournaments[i].standings.map((player, key) => {
+        if (player.name === "") {
+            return;
+        }
         var playerSearch = PlayerList.some(entry => entry.name === player.name);
-        var deckSearch = DeckList.some(entry => entry.deck === player.deck);
-
         // If the player is already in the database
         if (playerSearch) {
         } else {
             PlayerList.push(new Player(player.name));
         }
 
+        // Adds the achievement into the database
+        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addAchievement(tournaments[i].date, tournaments[i].name, tournaments[i].cycle, player.deck, player.placing);
+        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addPoints(calcPointPayout(tournaments[i], player));
+
+        if (player.deck === "") {
+            return;
+        }
+        var deckSearch = DeckList.some(entry => entry.deck === player.deck);
         if (deckSearch) {
         } else {
             DeckList.push(new Deck(player.deck));
         }
 
-        // Adds the achievement into the database
-        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addAchievement(tournaments[i].date, tournaments[i].name, tournaments[i].cycle, player.deck, player.placing);
-        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addPoints(calcPointPayout(tournaments[i], player));
         if (i < 10) {
             DeckList[DeckList.findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[i], player));
         }
@@ -149,6 +158,15 @@ for (let i = 0; i < tournaments.length; i++) {
 //     console.log(DeckList[j]);
 // }
 // console.log(DeckList.length);
+
+// For data reports
+DeckList.sort(function (a, b) {
+    return b.currCP - a.currCP;
+});
+for (var j = 0; j < 10; j++) {
+    console.log(DeckList[j].deck + ": " + DeckList[j].currCP);
+}
+
 
 var playerData = 'const players = [\n';
 for (var i = 0; i < PlayerList.length; i++) {
