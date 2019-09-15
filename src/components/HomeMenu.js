@@ -10,7 +10,7 @@ const text = {
 }
 
 const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players }) => {
-    players = players.sort(function (a, b) {
+    players.sort(function (a, b) {
         return b.points - a.points;
     });
 
@@ -63,7 +63,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
             backgroundColor: 'white'
         };
     }
-    
+
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
             if (decks[i].archetype === target.deck) {
@@ -168,7 +168,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
             </Grid>
             <Grid style={flexContainer}>
                 <Grid item xs={11} style={tableGrid}>
-                    <h3 style={text}>Top Performing Decks of the Week</h3>
+                    <h3 style={text}>Top Performing Decks</h3>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>

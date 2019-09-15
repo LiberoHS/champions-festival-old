@@ -23,9 +23,12 @@ const buttonStyle = {
 // Data analytics (v4)
 // Need to refactor Challenges filter
 // Need to refactor styling
-// Filter functionality for Cups
+// Filter functionality
 // Back button (done v2.1)
 // Decklist integration (v5)
+
+// For data analytics, might use:
+// https://plot.ly/nodejs/log-plot/
 
 // class Tournament {
 //     constructor(name, attendance, type, format, date) {
