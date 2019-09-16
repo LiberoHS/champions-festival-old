@@ -14,14 +14,10 @@ standings: [
 const tournaments = [
     /* { name: "Bendigo LC", date: "15/09/19", region: "VIC", attendance: "", type: "League Challenge", cycle: "September", format: "UPR-HIF",
     standings: [
-            { name: "", deck: "", placing: 1 },
+            { name: "Ben D. Hall", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
             { name: "", deck: "", placing: 2 },
-            { name: "", deck: "", placing: 3 },
+            { name: "Michael Zirnsak", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
             { name: "", deck: "", placing: 4 },
-            { name: "", deck: "", placing: 5 },
-            { name: "", deck: "", placing: 6 },
-            { name: "", deck: "", placing: 7 },
-            { name: "", deck: "", placing: 8 }
     ]}, */
     { name: "Bendigo Cup", date: "15/09/19", region: "VIC", attendance: 28, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
@@ -34,12 +30,16 @@ const tournaments = [
             { name: "Tyson Maggio", deck: "Blacephalon-GX / Naganadel", placing: 7 },
             { name: "Jacob Sparks", deck: "Blacephalon-GX / Naganadel", placing: 8 },
     ]},
-    { name: "West City Cup", date: "15/09/19", region: "NZ", attendance: 17, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    { name: "West City Cup", date: "15/09/19", region: "NZ", attendance: 25, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
             { name: "Louis Chi", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
             { name: "Yu Xiang", deck: "Ability Reshiram & Charizard-GX", placing: 2 },
-            { name: "Ifran Nabi", deck: "Blacephalon-GX / Naganadel", placing: 3 },
-            { name: "Layton Rumble", deck: "Mew & Mewtwo-GX Toolbox", placing: 4 }
+            { name: "Layton Rumble", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+            { name: "Eddie Teahu", deck: "Gardevoir & Sylveon-GX", placing: 4 },
+            { name: "Ifran Nabi", deck: "Blacephalon-GX / Naganadel", placing: 5 },
+            { name: "Ash Nassiri", deck: "Pikachu & Zekrom-GX", placing: 6 },
+            { name: "Matthew Chapman", deck: "Malamar / Giratina", placing: 7 },
+            { name: "Brad Rumble", deck: "Whimsicott-GX", placing: 8 }
     ]},
     { name: "Penang Cup", date: "14/09/19", region: "MY", attendance: 60, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [

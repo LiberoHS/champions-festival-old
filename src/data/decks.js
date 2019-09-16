@@ -1,5 +1,6 @@
 const decks = [
     // UPR-HIF
+    { archetype: "Whimsicott-GX", thumbnails: ["./assets/sprites/611.png"] },
     { archetype: "Spiritomb / Froslass", thumbnails: ["./assets/sprites/483.png","./assets/sprites/519.png"] },
     { archetype: "Beheeyem", thumbnails: ["./assets/sprites/680.png"] },
     { archetype: "Pidgeotto Control", thumbnails: ["./assets/sprites/1099.png","./assets/sprites/23.png"] },
@@ -25,6 +26,7 @@ const decks = [
     { archetype: "Zoroark-GX / Dewgong", thumbnails: ["./assets/sprites/637.png","./assets/sprites/93.png"] },
     { archetype: "Zoroark-GX / Persian", thumbnails: ["./assets/sprites/637.png","./assets/sprites/59.png"] },
     { archetype: "Zoroark-GX / Silvally-GX", thumbnails: ["./assets/sprites/637.png","./assets/sprites/1107.png"] },
+    { archetype: "Zygarde-GX", thumbnails: ["./assets/sprites/984.png"] },
     { archetype: "Zapdos / Ultra Beasts", thumbnails: ["./assets/sprites/150.png","./assets/sprites/1128.png","./assets/sprites/1127.png"] },
     { archetype: "Beast Box", thumbnails: ["./assets/sprites/1155.png","./assets/sprites/1128.png","./assets/sprites/1157.png"] }
 ];
