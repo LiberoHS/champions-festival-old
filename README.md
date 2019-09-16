@@ -12,15 +12,15 @@ using Node.js.
 
 ### Prerequisites
 
-Will need npm or yarn to start the application
+Will need npm or yarn to start the application on the local machine.
 
 ### Running client
 
 ```
 git clone https://github.com/hitokage13/champions-festival.git
-cd champions-festival/client
-yarn install
-yarn start
+cd champions-festival
+npm install
+npm start
 ```
 
 Go on ```http://localhost:3000/``` for the front-end
@@ -30,7 +30,7 @@ For any updates to the tournament or deck database, please run the scripts
 provided to generate new player data.
 
 ```
-cd client/src/scripts
+cd src/scripts
 node init_players.js
 ```
 
@@ -38,7 +38,7 @@ node init_players.js
 
 ```
 git clone https://github.com/hitokage13/champions-festival.git
-yarn install
+npm install
 node server.js
 ```
 
