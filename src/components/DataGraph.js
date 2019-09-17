@@ -4,13 +4,29 @@
 // calculates topDecks currCP with specified range
 // inputs onto table
 
+// Colour formatting
 // red: rgba(207,64,64,1)
 // green: rgba(71,204,71,1)
+// blue: rgba(76,116,237,1)
+// yellow: rgba(242,239,73,1)
+// pink: rgba(232,67,216,1)
+// purple: rgba(167,61,224,1)
+
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
-const data = {
-  labels: ['24-25 Aug','31 Aug-1 Sep', '7-8 Sep', '14-15 Sep'],
+const colorPalette = [
+    {name: 'red', filled: 'rgba(207,64,64,1)', light: 'rgba(207,64,64,0.4)'},
+    {name: 'green', filled: 'rgba(71,204,71,1)', light: 'rgba(71,204,71,0.4)'},
+    {name: 'blue', filled: 'rgba(76,116,237,1)', light: 'rgba(76,116,237,0.4)'},
+    {name: 'yellow', filled: 'rgba(242,239,73,1)', light: 'rgba(242,239,73,0.4)'},
+    {name: 'purple', filled: 'rgba(167,61,224,1)', light: 'rgba(167,61,224,0.4)'},
+];
+
+const memes = ['Me','Mem','Meme','Memes','Wow'];
+
+var data = {
+  labels: ['17-18 Aug','24-25 Aug','31 Aug-1 Sep', '7-8 Sep', '14-15 Sep'],
   datasets: [
     {
       label: 'My First dataset',
@@ -33,7 +49,7 @@ const data = {
       pointHitRadius: 10,
       width: 1000,
       height: 1000,
-      data: [300,284,200,165]
+      data: [300,284,200,165,101]
     },
     {
       label: 'My Second dataset',
@@ -56,7 +72,7 @@ const data = {
       pointHitRadius: 10,
       width: 1000,
       height: 1000,
-      data: [100,154,180,205]
+      data: [100,154,180,205,222]
     },
     {
       label: 'My Third dataset',
@@ -79,13 +95,23 @@ const data = {
       pointHitRadius: 10,
       width: 1000,
       height: 1000,
-      data: [120,184,200,111]
+      data: [120,184,200,111,167]
     },
   ]
 };
 
+for (let i = 0; i < 3; i++) {
+    data.datasets[i].label = memes[i];
+    data.datasets[i].backgroundColor = colorPalette[i].light;
+    data.datasets[i].borderColor = colorPalette[i].filled;
+    data.datasets[i].pointBorderColor = colorPalette[i].filled;
+    data.datasets[i].pointHoverBackgroundColor = colorPalette[i].filled;
+    data.datasets[i].pointHoverBorderColor = colorPalette[i].filled;
+}
+
 class DataGraph extends React.Component {
   displayName: 'DataGraph';
+  width: '10px';
 
   render() {
     return (

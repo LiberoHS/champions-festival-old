@@ -2,9 +2,9 @@
 // Currently on v2 deployed, v2.1 local, unreleased
 
 import React from 'react';
+import Moment from 'react-moment';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
-import { useMediaQuery } from 'react-responsive';
 import { DataGraph, HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
@@ -261,20 +261,22 @@ class App extends React.Component {
                     </Grid>
                 </Grid>
                 <Grid style={{marginLeft: '5%', marginRight: '5%'}}>
-                    {/* Search Bars */}
+                    {/* Search Bars width: '90%', height: '90%' */}
                     {show === 'tournamentList' && <SearchBar onFormSubmit={this.handleChange}/>}
                     {show === 'playerList' && <SearchBar onFormSubmit={this.handleChange}/>}
 
                     {/* SORT FUNCTIONALITY */}
                     {/* Home Menu */}
-                    {/* show === 'home' && <DataGraph /> */}
                     {show === 'home' && <HomeMenu
                     setCurrentTournament={this.setCurrentTournament}
                     tournaments={tournamentList}
                     decks={decks}
                     players={playerList}
                     topDecks={topDecks}/>}
-                    
+                    <Grid style={{marginLeft: '10%', marginRight: '10%'}}>
+                    {show === 'home' && <DataGraph />}
+                    </Grid>
+
                     {/* Tournament List */}
                     {show === 'tournamentList' && <FormControlLabel control={
                         <Switch checked={checkedChallenge} onChange={this.filterChallenges} value="checkedChallenge"/>

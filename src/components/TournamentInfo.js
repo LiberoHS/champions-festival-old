@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
 import { useMediaQuery } from 'react-responsive';
@@ -43,7 +44,7 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
         <Grid item xs={12}>
             <Grid style={{padding: '10px'}}>
                 <h3> {currentTournament.name} ({currentTournament.region}) </h3>
-                <p> <b>Date:</b> {currentTournament.date} </p>
+                <p> <b>Date:</b> <Moment format="DD/MM/YY">{currentTournament.date}</Moment> </p>
                 <p> <b>Number of players:</b> {currentTournament.attendance} </p>
                 <p> <b>Cycle:</b> {currentTournament.cycle}</p>
                 <p> <b>Type of event:</b> {currentTournament.type} </p>

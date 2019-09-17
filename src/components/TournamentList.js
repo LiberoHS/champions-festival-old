@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 import { useMediaQuery } from 'react-responsive';
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
@@ -44,7 +45,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
                     <TableBody>
                         {tournamentList.map((item, key) => (
                             <TableRow key={key}>
-                                <TableCell align="left" style={cellStyle}>{item.date}</TableCell>
+                                <TableCell align="left" style={cellStyle}><Moment format="DD/MM/YY">{item.date}</Moment></TableCell>
                                 <TableCell component="th" align="left" style={cellStyle}>
                                     <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(item)}>{item.name}</Link>
                                 </TableCell>

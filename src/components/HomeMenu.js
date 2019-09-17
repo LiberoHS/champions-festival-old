@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Link, Paper } from '@material-ui/core';
 import { Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
@@ -123,7 +124,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
 
                                     return(
                                     <TableRow key={key}>
-                                        <TableCell align="left" style={cellStyle}>{tournament.date}</TableCell>
+                                        <TableCell align="left" style={cellStyle}><Moment format="DD/MM/YY">{tournament.date}</Moment></TableCell>
                                         <TableCell component="th" align="left" style={cellStyle}>
                                             <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(tournament)}>{tournament.name}</Link>
                                         </TableCell>

@@ -3,7 +3,8 @@ var rl = require('readline-sync');
 var tournaments = require('../data/tournaments.js');
 
 function calcPointPayout(tournament, player) {
-    if (tournament.type === 'League Challenge') {
+    // By CP
+    /* if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
             return 15;
         } else if (player.placing === 2) {
@@ -41,6 +42,47 @@ function calcPointPayout(tournament, player) {
         } else if (player.placing <= 128) {
             return 40;
         }
+    } */
+
+    // By tournament weighting
+    if (tournament.type === 'League Challenge') {
+        if (player.placing === 1) {
+            return 4;
+        } else if (player.placing === 2) {
+            return 3;
+        } else if (player.placing <= 4) {
+            return 2;
+        } else if (player.placing <= 8) {
+            return 1;
+        }
+    } else if (tournament.type === 'League Cup') {
+        if (player.placing === 1) {
+            return 12;
+        } else if (player.placing === 2) {
+            return 8;
+        } else if (player.placing <= 4) {
+            return 4;
+        } else if (player.placing <= 8) {
+            return 3;
+        }
+    } else if (tournament.type === 'Regionals' || tournament.type === 'Special Event') {
+        if (player.placing === 1) {
+            return 60;
+        } else if (player.placing === 2) {
+            return 50;
+        } else if (player.placing <= 4) {
+            return 40;
+        } else if (player.placing <= 8) {
+            return 30;
+        } else if (player.placing <= 16) {
+            return 20;
+        } else if (player.placing <= 32) {
+            return 10;
+        } else if (player.placing <= 64) {
+            return 5;
+        } else if (player.placing <= 128) {
+            return 4;
+        }
     }
 
     return 0;
@@ -76,6 +118,7 @@ var DeckList = [];
 // enter input
 var startDate = rl.question("Enter start date: ");
 var endDate = rl.question("Enter end date: ");
+
 // initialises range array
 var indexRange = [{index: 0, track: 0}, {index: 0, track: 0}];
 
