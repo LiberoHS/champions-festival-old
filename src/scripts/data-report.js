@@ -4,7 +4,7 @@ var tournaments = require('../data/tournaments.js');
 
 function calcPointPayout(tournament, player) {
     // By CP
-    /* if (tournament.type === 'League Challenge') {
+    if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
             return 15;
         } else if (player.placing === 2) {
@@ -42,10 +42,10 @@ function calcPointPayout(tournament, player) {
         } else if (player.placing <= 128) {
             return 40;
         }
-    } */
+    }
 
     // By tournament weighting
-    if (tournament.type === 'League Challenge') {
+    /* if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
             return 4;
         } else if (player.placing === 2) {
@@ -83,7 +83,7 @@ function calcPointPayout(tournament, player) {
         } else if (player.placing <= 128) {
             return 4;
         }
-    }
+    } */
 
     return 0;
 };
@@ -112,68 +112,79 @@ class Deck {
 }
 
 // reverses for consistent indexing
-tournaments.reverse()
+// tournaments.reverse()
 
-var DeckList = [];
-// enter input
-var startDate = rl.question("Enter start date: ");
-var endDate = rl.question("Enter end date: ");
+// initialising ranges
+var DeckList = [[],[],[],[],[]];
+var lastSixWeeks = [
+    {week: 0, indexStart: 0, indexEnd: 0},
+    {week: 0, indexStart: 0, indexEnd: 0},
+    {week: 0, indexStart: 0, indexEnd: 0},
+    {week: 0, indexStart: 0, indexEnd: 0},
+    {week: 0, indexStart: 0, indexEnd: 0},
+    {week: 0, indexStart: 0, indexEnd: 0},
+];
 
-// initialises range array
-var indexRange = [{index: 0, track: 0}, {index: 0, track: 0}];
+// fills last 6 weeks with tournament data
+let count = tournaments[0].date.weeks();
+let k = 0;
+for (let i = 0; i < tournaments.length && k < 6; i++) {
+    lastSixWeeks[k].week = count;
+    if (tournaments[i].date.weeks() >= count) {
 
-// initialises ranges
-for (let i = 0; i < tournaments.length; i++) {
-    if (tournaments[i].date === startDate && indexRange[0].track === 0) {
-        indexRange[0].index = i;
-        indexRange[0].track = 1;
-    } else if (i > 0) {
-        if (tournaments[i-1].date === endDate && tournaments[i].date !== endDate) {
-            indexRange[1].index = i;
-            indexRange[1].track = 1;
+    } else {
+        lastSixWeeks[k].indexEnd = i;
+        k += 1;
+        count--;
+        if (k < 6) {
+            lastSixWeeks[k].indexStart = i;
+        } else {
             break;
-        } else if (i == tournaments.length - 1) {
-            indexRange[1].index = i;
-            indexRange[1].track = 1;
         }
     }
 }
 
 // debugging
-// console.log(startDate + " - " + endDate);
-// console.log(tournaments);
-console.log(indexRange[0].index + " - " + indexRange[1].index);
+console.log(lastSixWeeks)
+for (i = 0; i < 5; i++) {
+    console.log(i + ": " + lastSixWeeks[i].indexStart + " " + lastSixWeeks[i+1].indexEnd);
+    // console.log(tournaments.slice(lastSixWeeks[i].indexStart,lastSixWeeks[i+1].indexEnd));
+}
 
 // Iterates through each tournament and the standings
-for (let i = indexRange[0].index; i < indexRange[1].index; i++) {
-    tournaments[i].standings.map((player, key) => {
-        if (player.name === "") {
-            return;
-        }
-        if (player.deck === "") {
-            return;
-        }
+for (i = 0; i < 5; i++) {
+    for (j = lastSixWeeks[i].indexStart; j < lastSixWeeks[i+1].indexEnd; j++) {
+        tournaments[j].standings.map((player, key) => {
+            if (player.name === "") {
+                return;
+            }
+            if (player.deck === "") {
+                return;
+            }
 
-        var deckSearch = DeckList.some(entry => entry.deck === player.deck);
-        if (deckSearch) {
-        } else {
-            DeckList.push(new Deck(player.deck));
-        }
+            var deckSearch = DeckList[i].some(entry => entry.deck === player.deck);
+            if (deckSearch) {
+            } else {
+                DeckList[i].push(new Deck(player.deck));
+            }
 
-        DeckList[DeckList.findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[i], player));
-        // DeckList[DeckList.findIndex(x => x.deck === player.deck)].addTotalCP(calcPointPayout(tournaments[i], player));
+            DeckList[i][DeckList[i].findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[j], player));
+            // DeckList[DeckList.findIndex(x => x.deck === player.deck)].addTotalCP(calcPointPayout(tournaments[i], player));
+        });
+    }
+}
+
+// sorts the decks in order of currCP
+for (i = 0; i < 5; i++) {
+    DeckList[i].sort(function (a, b) {
+        return b.currCP - a.currCP;
     });
 }
 
-// console.log(tournaments.slice(indexRange[0].index, indexRange[1].index))
-
-// sorts the decks in order of currCP
-DeckList.sort(function (a, b) {
-    return b.currCP - a.currCP;
-});
-
-// console.log(DeckList);
-// prints top 10 currCP decks
-for (var j = 0; j < DeckList.length; j++) {
-    console.log(DeckList[j].deck + ": " + DeckList[j].currCP);
+// prints top 5 currCP decks (every 2 weeks range)
+for (j = 0; j < 5; j++) {
+    for (i = 0; i < 5; i++) {
+        console.log(DeckList[j][i].deck + ": " + DeckList[j][i].currCP);
+    }
+    console.log("")
 }

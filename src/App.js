@@ -1,5 +1,5 @@
 // Started by Jeremy Lim on 03/09/2019
-// Currently on v2 deployed, v2.1 local, unreleased
+// Currently on v3.2.1 deployed, v3.3 local, unreleased
 
 import React from 'react';
 import Moment from 'react-moment';
@@ -37,9 +37,7 @@ const buttonStyle = {
 // Calculates the dataset
 // Line chart
 // Decklist integration (v5)
-
-// For data analytics, might use:
-// https://plot.ly/nodejs/log-plot/
+// BUG: (data-report.js) changing indexEnd of i+1 to i creates an error
 
 // class Tournament {
 //     constructor(name, attendance, type, format, date) {
