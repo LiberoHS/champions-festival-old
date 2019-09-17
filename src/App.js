@@ -4,7 +4,8 @@
 import React from 'react';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
-import { HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
+import { useMediaQuery } from 'react-responsive';
+import { DataGraph, HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
 import playerList from './data/players.js';
@@ -16,15 +17,25 @@ const buttonStyle = {
     bottom: '10px'
 };
 
+// const isDesktop = useMediaQuery({ minWidth: 992 });
+// if (isDesktop) {
+//     grid = {
+//         marginLeft: '10%',
+//         marginRight: '10%'
+//     }
+// }
+
 // TO-DO LIST
-// Home page (done v2.2)
+// IMPORTANT - Fix margin styling for responsiveness
 // Table paginations
 // Sorting tournaments
-// Data analytics (v4)
 // Need to refactor Challenges filter
 // Need to refactor styling
 // Filter functionality
-// Back button (done v2.1)
+// Data analytics (v4)
+// Date-time integration
+// Calculates the dataset
+// Line chart
 // Decklist integration (v5)
 
 // For data analytics, might use:
@@ -207,7 +218,8 @@ class App extends React.Component {
             return b.currCP - a.currCP;
         });
 
-        this.setState({ playerList: playerList, topDecks: topDecks})
+        this.setState({ playerList: playerList, topDecks: topDecks});
+
         // Call our fetch function below once the component mounts
         this.callBackendAPI()
         .then(res => this.setState({ data: res.express }))
@@ -248,19 +260,22 @@ class App extends React.Component {
                         </nav>
                     </Grid>
                 </Grid>
-                <Grid>
-                    {/* WIP */}
+                <Grid style={{marginLeft: '5%', marginRight: '5%'}}>
+                    {/* Search Bars */}
+                    {show === 'tournamentList' && <SearchBar onFormSubmit={this.handleChange}/>}
+                    {show === 'playerList' && <SearchBar onFormSubmit={this.handleChange}/>}
+
+                    {/* SORT FUNCTIONALITY */}
+                    {/* Home Menu */}
+                    {/* show === 'home' && <DataGraph /> */}
                     {show === 'home' && <HomeMenu
                     setCurrentTournament={this.setCurrentTournament}
                     tournaments={tournamentList}
                     decks={decks}
                     players={playerList}
                     topDecks={topDecks}/>}
-                </Grid>
-                <Grid>
-                    {show === 'tournamentList' && <SearchBar onFormSubmit={this.handleChange}/>}
-                    {show === 'playerList' && <SearchBar onFormSubmit={this.handleChange}/>}
-                    {/* SORT FUNCTIONALITY */}
+                    
+                    {/* Tournament List */}
                     {show === 'tournamentList' && <FormControlLabel control={
                         <Switch checked={checkedChallenge} onChange={this.filterChallenges} value="checkedChallenge"/>
                     } label='No Challenges' />}
@@ -268,20 +283,21 @@ class App extends React.Component {
                     setCurrentTournament={this.setCurrentTournament}
                     tournamentList={tournamentList}/>}
 
+                    {/* Player List */}
                     {show === 'playerList' && <FormControlLabel control={
                         <Switch checked={checkedPoints} onChange={this.sortPoint} value="checkedPoints"/>
                     } label='Sort Points' />}
                     {show === 'playerList' && <PlayerList
                     setCurrentPlayer={this.setCurrentPlayer}
                     playerList={playerList}/>}
-                </Grid>
-                <Grid>
+
+                    {/* Tournament Info */}
                     {show === 'tournament' && <TournamentInfo
                     currentTournament={currentTournament}
                     setCurrentPlayer={this.setCurrentPlayer}
                     decks={decks} />}
-                </Grid>
-                <Grid>
+
+                    {/* Player Info */}
                     {show === 'player' && <PlayerInfo
                     currentPlayer={currentPlayer}
                     setCurrentPlayer={this.setCurrentPlayer}

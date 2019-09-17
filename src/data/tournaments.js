@@ -14,10 +14,10 @@ standings: [
 const tournaments = [
     /* { name: "Bendigo LC", date: "15/09/19", region: "VIC", attendance: "", type: "League Challenge", cycle: "September", format: "UPR-HIF",
     standings: [
-            { name: "Ben D. Hall", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
-            { name: "", deck: "", placing: 2 },
+            { name: "James Brown", deck: "Green's Reshiram & Charizard-GX", placing: 1 },
+            { name: "Ben D. Hall", deck: "Pikachu & Zekrom-GX", placing: 2 },
             { name: "Michael Zirnsak", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
-            { name: "", deck: "", placing: 4 },
+            { name: "Michael Kan", deck: "", placing: 4 },
     ]}, */
     { name: "Bendigo Cup", date: "15/09/19", region: "VIC", attendance: 28, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [

@@ -18,7 +18,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
     if (isNotMobile) {
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '20px'
+            fontSize: '20px',
         };
     } else {
         cellStyle = {

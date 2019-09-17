@@ -1,5 +1,5 @@
 // Use this script to generate a quick top 10 decks of the latest 10 tournaments.
-
+var rl = require('readline-sync');
 var tournaments = require('../data/tournaments.js');
 
 function calcPointPayout(tournament, player) {
@@ -69,10 +69,40 @@ class Deck {
     }
 }
 
+// reverses for consistent indexing
+tournaments.reverse()
+
 var DeckList = [];
+// enter input
+var startDate = rl.question("Enter start date: ");
+var endDate = rl.question("Enter end date: ");
+// initialises range array
+var indexRange = [{index: 0, track: 0}, {index: 0, track: 0}];
+
+// initialises ranges
+for (let i = 0; i < tournaments.length; i++) {
+    if (tournaments[i].date === startDate && indexRange[0].track === 0) {
+        indexRange[0].index = i;
+        indexRange[0].track = 1;
+    } else if (i > 0) {
+        if (tournaments[i-1].date === endDate && tournaments[i].date !== endDate) {
+            indexRange[1].index = i;
+            indexRange[1].track = 1;
+            break;
+        } else if (i == tournaments.length - 1) {
+            indexRange[1].index = i;
+            indexRange[1].track = 1;
+        }
+    }
+}
+
+// debugging
+// console.log(startDate + " - " + endDate);
+// console.log(tournaments);
+console.log(indexRange[0].index + " - " + indexRange[1].index);
 
 // Iterates through each tournament and the standings
-for (let i = 0; i < tournaments.length; i++) {
+for (let i = indexRange[0].index; i < indexRange[1].index; i++) {
     tournaments[i].standings.map((player, key) => {
         if (player.name === "") {
             return;
@@ -87,17 +117,20 @@ for (let i = 0; i < tournaments.length; i++) {
             DeckList.push(new Deck(player.deck));
         }
 
-        if (i < 10) {
-            DeckList[DeckList.findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[i], player));
-        }
-        DeckList[DeckList.findIndex(x => x.deck === player.deck)].addTotalCP(calcPointPayout(tournaments[i], player));
+        DeckList[DeckList.findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[i], player));
+        // DeckList[DeckList.findIndex(x => x.deck === player.deck)].addTotalCP(calcPointPayout(tournaments[i], player));
     });
 }
 
+// console.log(tournaments.slice(indexRange[0].index, indexRange[1].index))
+
+// sorts the decks in order of currCP
 DeckList.sort(function (a, b) {
     return b.currCP - a.currCP;
 });
 
-for (var j = 0; j < 10; j++) {
+// console.log(DeckList);
+// prints top 10 currCP decks
+for (var j = 0; j < DeckList.length; j++) {
     console.log(DeckList[j].deck + ": " + DeckList[j].currCP);
 }
