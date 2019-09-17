@@ -175,7 +175,7 @@ for (let i = 0; i < tournaments.length; i++) {
         }
 
         // Adds the achievement into the database
-        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addAchievement(tournaments[i].date, tournaments[i].name, tournaments[i].cycle, player.deck, player.placing);
+        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addAchievement(tournaments[i].date.format("DD/MM/YY"), tournaments[i].name, tournaments[i].cycle, player.deck, player.placing);
         PlayerList[PlayerList.findIndex(x => x.name === player.name)].addPoints(calcPointPayout(tournaments[i], player));
 
         if (player.deck === "") {
