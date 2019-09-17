@@ -4,7 +4,7 @@ var tournaments = require('../data/tournaments.js');
 
 function calcPointPayout(tournament, player) {
     // By CP
-    if (tournament.type === 'League Challenge') {
+    /* if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
             return 15;
         } else if (player.placing === 2) {
@@ -42,10 +42,10 @@ function calcPointPayout(tournament, player) {
         } else if (player.placing <= 128) {
             return 40;
         }
-    }
+    } */
 
     // By tournament weighting
-    /* if (tournament.type === 'League Challenge') {
+    if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
             return 4;
         } else if (player.placing === 2) {
@@ -83,7 +83,7 @@ function calcPointPayout(tournament, player) {
         } else if (player.placing <= 128) {
             return 4;
         }
-    } */
+    }
 
     return 0;
 };
@@ -174,6 +174,8 @@ for (i = 0; i < 5; i++) {
     }
 }
 
+DeckList.reverse();
+
 // sorts the decks in order of currCP
 for (i = 0; i < 5; i++) {
     DeckList[i].sort(function (a, b) {
@@ -188,3 +190,29 @@ for (j = 0; j < 5; j++) {
     }
     console.log("")
 }
+
+var data = "var lastSixWeeks = [\n";
+
+for (i = 0; i < 5; i++) {
+    data += "{week: " + lastSixWeeks[i].week + ", indexStart: " + lastSixWeeks[i].indexStart + ", indexEnd: " + lastSixWeeks[i].indexEnd + "},\n";
+}
+
+data += "];\n\n";
+data += "var DeckList = [\n";
+
+for (j = 0; j < 5; j++) {
+    data += "[\n"
+    for (i = 0; i < 5; i++) {
+        data += "{ deck: \"" + DeckList[j][i].deck + "\", currCP: " + DeckList[j][i].currCP + " },\n";
+    }
+    data += "],\n"
+}
+
+data += "];\n\n";
+
+data += "module.exports = {\n   lastSixWeeks: lastSixWeeks,\n   DeckList: DeckList\n};"
+
+var fs = require('fs');
+fs.writeFile('../data/report.js', data, function (err, file) {
+    if (err) throw err;
+});

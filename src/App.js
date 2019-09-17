@@ -17,14 +17,6 @@ const buttonStyle = {
     bottom: '10px'
 };
 
-// const isDesktop = useMediaQuery({ minWidth: 992 });
-// if (isDesktop) {
-//     grid = {
-//         marginLeft: '10%',
-//         marginRight: '10%'
-//     }
-// }
-
 // TO-DO LIST
 // IMPORTANT - Fix margin styling for responsiveness
 // Table paginations
@@ -35,7 +27,7 @@ const buttonStyle = {
 // Data analytics (v4)
 // Date-time integration
 // Calculates the dataset
-// Line chart
+// Line chart (mostly done)
 // Decklist integration (v5)
 // BUG: (data-report.js) changing indexEnd of i+1 to i creates an error
 
