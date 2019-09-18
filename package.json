@@ -40,7 +40,7 @@
   "bugs": {
     "url": "https://github.com/HitoKage13/champions-festival/issues"
   },
-  "homepage": "https://github.com/HitoKage13/champions-festival#readme",
+  "homepage": "https://champions-festival.firebaseapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",

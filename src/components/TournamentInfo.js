@@ -13,7 +13,7 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
     const headerStyle = {
         color: 'white',
         fontFamily: 'Muli',
-        fontSize: '16px'
+        fontSize: '10px'
     };
 
     let cellStyle = {};
@@ -21,12 +21,12 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
     if (isNotMobile) {
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '20px'
+            fontSize: '12px'
         };
     } else {
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '16px'
+            fontSize: '10px'
         };
     }
 

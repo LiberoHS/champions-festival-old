@@ -2,7 +2,6 @@
 // Currently on v3.2.1 deployed, v3.3 local, unreleased
 
 import React from 'react';
-import Moment from 'react-moment';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
 import { DataGraph, HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
@@ -91,6 +90,8 @@ class App extends React.Component {
             } else {
                 this.setState({ show: 'home', currentPlayer: null })
             }
+        } else if (this.state.show === 'data') {
+            this.setState({ show: 'home' })
         }
     }
 
@@ -125,6 +126,10 @@ class App extends React.Component {
 
     playerList = () => {
         this.setState({ show: 'playerList', currentPlayer: null, playerList: playerList });
+    }
+
+    dataAnalytics = () => {
+        this.setState({ show: 'data' });
     }
 
     // Filter for search bar (WIP for refactoring)
@@ -244,7 +249,7 @@ class App extends React.Component {
                                 <li><Link style={{cursor: 'pointer'}} onClick={this.homePage}>Home</Link></li>
                                 <li><Link style={{cursor: 'pointer'}} onClick={this.tournamentList}>Tournaments</Link></li>
                                 <li><Link style={{cursor: 'pointer'}} onClick={this.playerList}>Players</Link></li>
-                                {/* <li>Coming Soon in v4!</li> */}
+                                <li><Link style={{cursor: 'pointer'}} onClick={this.dataAnalytics}>Data Analytics</Link></li>
                                 </ul>
                             </div>
                         </nav>
@@ -263,9 +268,6 @@ class App extends React.Component {
                     decks={decks}
                     players={playerList}
                     topDecks={topDecks}/>}
-                    <Grid style={{marginLeft: '10%', marginRight: '10%'}}>
-                    {show === 'home' && <DataGraph />}
-                    </Grid>
 
                     {/* Tournament List */}
                     {show === 'tournamentList' && <FormControlLabel control={
@@ -296,6 +298,11 @@ class App extends React.Component {
                     setCurrentTournament={this.setCurrentTournament}
                     decks={decks}
                     tournamentList={tournamentList} />}
+
+                    {/* Data Analytics */}
+                    {/*<Grid style={{marginLeft: '10%', marginRight: '10%'}}>*/}
+                    {show === 'data' && <DataGraph />}
+                    {/*</Grid>*/}
                 </Grid>
             </Grid>
         )

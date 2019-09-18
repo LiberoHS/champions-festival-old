@@ -9,7 +9,7 @@ const PlayerList = ({ setCurrentPlayer, playerList }) => {
     const headerStyle = {
         color: 'white',
         fontFamily: 'Muli',
-        fontSize: '16px'
+        fontSize: '10px'
     };
 
     let cellStyle = {};
@@ -17,12 +17,12 @@ const PlayerList = ({ setCurrentPlayer, playerList }) => {
     if (isNotMobile) {
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '20px'
+            fontSize: '12px'
         };
     } else {
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '16px'
+            fontSize: '10px'
         };
     }
 

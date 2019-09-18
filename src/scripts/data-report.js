@@ -117,27 +117,29 @@ class Deck {
 // initialising ranges
 var DeckList = [[],[],[],[],[]];
 var lastSixWeeks = [
-    {week: 0, indexStart: 0, indexEnd: 0},
-    {week: 0, indexStart: 0, indexEnd: 0},
-    {week: 0, indexStart: 0, indexEnd: 0},
-    {week: 0, indexStart: 0, indexEnd: 0},
-    {week: 0, indexStart: 0, indexEnd: 0},
-    {week: 0, indexStart: 0, indexEnd: 0},
+    {dayStart: 0, dayEnd: 0, indexStart: 0, indexEnd: 0},
+    {dayStart: 0, dayEnd: 0, indexStart: 0, indexEnd: 0},
+    {dayStart: 0, dayEnd: 0, indexStart: 0, indexEnd: 0},
+    {dayStart: 0, dayEnd: 0, indexStart: 0, indexEnd: 0},
+    {dayStart: 0, dayEnd: 0, indexStart: 0, indexEnd: 0},
+    {dayStart: 0, dayEnd: 0, indexStart: 0, indexEnd: 0},
 ];
 
 // fills last 6 weeks with tournament data
 let count = tournaments[0].date.weeks();
 let k = 0;
+lastSixWeeks[k].dayStart = tournaments[0].date;
 for (let i = 0; i < tournaments.length && k < 6; i++) {
-    lastSixWeeks[k].week = count;
     if (tournaments[i].date.weeks() >= count) {
 
     } else {
         lastSixWeeks[k].indexEnd = i;
+        lastSixWeeks[k].dayEnd = tournaments[i-1].date;
         k += 1;
         count--;
         if (k < 6) {
             lastSixWeeks[k].indexStart = i;
+            lastSixWeeks[k].dayStart = tournaments[i].date;
         } else {
             break;
         }
@@ -193,8 +195,8 @@ for (j = 0; j < 5; j++) {
 
 var data = "var lastSixWeeks = [\n";
 
-for (i = 0; i < 5; i++) {
-    data += "{week: " + lastSixWeeks[i].week + ", indexStart: " + lastSixWeeks[i].indexStart + ", indexEnd: " + lastSixWeeks[i].indexEnd + "},\n";
+for (i = 0; i < 6; i++) {
+    data += "{ dayStart: \"" + lastSixWeeks[i].dayStart.format("DD/MM/YY") + "\", dayEnd: \"" + lastSixWeeks[i].dayEnd.format("DD/MM/YY") + "\", indexStart: " + lastSixWeeks[i].indexStart + ", indexEnd: " + lastSixWeeks[i].indexEnd + "},\n";
 }
 
 data += "];\n\n";

@@ -1,9 +1,10 @@
 var lastSixWeeks = [
-{week: 37, indexStart: 0, indexEnd: 6},
-{week: 36, indexStart: 6, indexEnd: 12},
-{week: 35, indexStart: 12, indexEnd: 13},
-{week: 34, indexStart: 13, indexEnd: 18},
-{week: 33, indexStart: 18, indexEnd: 20},
+{ dayStart: "15/09/19", dayEnd: "14/09/19", indexStart: 0, indexEnd: 6},
+{ dayStart: "08/09/19", dayEnd: "07/09/19", indexStart: 6, indexEnd: 12},
+{ dayStart: "31/08/19", dayEnd: "31/08/19", indexStart: 12, indexEnd: 13},
+{ dayStart: "25/08/19", dayEnd: "24/08/19", indexStart: 13, indexEnd: 18},
+{ dayStart: "17/08/19", dayEnd: "17/08/19", indexStart: 18, indexEnd: 20},
+{ dayStart: "11/08/19", dayEnd: "10/08/19", indexStart: 20, indexEnd: 23},
 ];
 
 var DeckList = [
