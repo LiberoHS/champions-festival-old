@@ -11,7 +11,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
     const headerStyle = {
         color: 'white',
         fontFamily: 'Muli',
-        fontSize: '10px'
+        fontSize: '16px'
     };
 
     let cellStyle = {};
@@ -19,12 +19,12 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
     if (isNotMobile) {
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '12px',
+            fontSize: '20px',
         };
     } else {
         cellStyle = {
             fontFamily: 'Muli',
-            fontSize: '10px'
+            fontSize: '16px'
         };
     }
 
