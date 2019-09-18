@@ -23,32 +23,12 @@ const buttonStyle = {
 // Need to refactor Challenges filter
 // Need to refactor styling
 // Filter functionality
-// Data analytics (v4)
-// Date-time integration
-// Calculates the dataset
-// Line chart (mostly done)
+// Data analytics (v4) (done)
+// Date-time integration (done)
+// Calculates the dataset (done)
+// Line chart (done)
 // Decklist integration (v5)
 // BUG: (data-report.js) changing indexEnd of i+1 to i creates an error
-
-// class Tournament {
-//     constructor(name, attendance, type, format, date) {
-//         this.name = name;
-//         this.attendance = attendance;
-//         this.type = type;
-//         this.format = format;
-//         this.date = date;
-//         this.standings = [];
-//     }
-//
-//     addPlayer(player, deck) {
-//         this.standings.push({name: player, deck: deck});
-//     }
-//
-//     deletePlayer(player, deck) {
-//
-//     }
-//
-// }
 
 class App extends React.Component {
     state = {
@@ -62,6 +42,7 @@ class App extends React.Component {
 
         show: 'home',
         data: null,
+        weekData: 4,
 
         checkedChallenge: false,
         checkedPoints: false,
@@ -106,6 +87,10 @@ class App extends React.Component {
         } else if (this.state.show === 'playerList') {
             this.setState({ tracker: 2 });
         }
+    }
+
+    setData = (value) => {
+        this.setState({ weekData: value });
     }
 
     homePage = () => {
@@ -234,7 +219,7 @@ class App extends React.Component {
 
     render () {
         const { tournamentList, currentTournament, playerList, currentPlayer,
-        decks, topDecks, show, checkedChallenge, checkedPoints } = this.state;
+        decks, topDecks, show, checkedChallenge, checkedPoints, weekData } = this.state;
 
         return (
             <Grid>
@@ -301,7 +286,9 @@ class App extends React.Component {
 
                     {/* Data Analytics */}
                     {/*<Grid style={{marginLeft: '10%', marginRight: '10%'}}>*/}
-                    {show === 'data' && <DataGraph />}
+                    {show === 'data' && <DataGraph
+                    weekData={weekData}
+                    setData={this.setData}/>}
                     {/*</Grid>*/}
                 </Grid>
             </Grid>

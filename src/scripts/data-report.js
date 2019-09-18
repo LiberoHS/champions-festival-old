@@ -4,7 +4,7 @@ var tournaments = require('../data/tournaments.js');
 
 function calcPointPayout(tournament, player) {
     // By CP
-    /* if (tournament.type === 'League Challenge') {
+    if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
             return 15;
         } else if (player.placing === 2) {
@@ -42,10 +42,10 @@ function calcPointPayout(tournament, player) {
         } else if (player.placing <= 128) {
             return 40;
         }
-    } */
+    }
 
     // By tournament weighting
-    if (tournament.type === 'League Challenge') {
+    /* if (tournament.type === 'League Challenge') {
         if (player.placing === 1) {
             return 4;
         } else if (player.placing === 2) {
@@ -83,7 +83,7 @@ function calcPointPayout(tournament, player) {
         } else if (player.placing <= 128) {
             return 4;
         }
-    }
+    } */
 
     return 0;
 };
