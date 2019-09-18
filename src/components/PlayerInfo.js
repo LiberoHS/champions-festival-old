@@ -41,7 +41,7 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
 
     function compareTournaments(name, date) {
         for (var i = 0; i < tournamentList.length; i++) {
-            if (tournamentList[i].name === name && tournamentList[i].date === date) {
+            if (tournamentList[i].name === name && tournamentList[i].date.format("DD/MM/YY") === date) {
                 return tournamentList[i];
             }
         }
