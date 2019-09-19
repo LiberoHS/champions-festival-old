@@ -223,21 +223,21 @@ const tournaments = [
     ]},
     { name: "DC Open Flight 2", date: moment("2019-08-17"), region: "US", attendance: 624, type: "Special Event", cycle: "N/A", format: "UPR-UNM",
     standings: [
-        { name: "Sameer Sangwan", deck: "", placing: 71 },
-        { name: "Ben Anderson", deck: "", placing: 81 },
-        { name: "Ben D. Hall", deck: "", placing: 107 },
-        { name: "Matthew Bray", deck: "", placing: 116 },
-        { name: "Matthew Burris", deck: "", placing: 126 }
+        { name: "Sameer Sangwan", deck: "Pikachu & Zekrom-GX", placing: 71 },
+        { name: "Ben Anderson", deck: "Ability Reshiram & Charizard-GX", placing: 81 },
+        { name: "Ben D. Hall", deck: "Ability Reshiram & Charizard-GX", placing: 107 },
+        { name: "Matthew Bray", deck: "Pikachu & Zekrom-GX", placing: 116 },
+        { name: "Matthew Burris", deck: "Pikachu & Zekrom-GX", placing: 126 }
     ]},
     { name: "DC Open Flight 1", date: moment("2019-08-17"), region: "US", attendance: 599, type: "Special Event", cycle: "N/A", format: "UPR-UNM",
     standings: [
-        { name: "Nicholas Moore", deck: "", placing: 54 },
-        { name: "James Williams", deck: "", placing: 78 },
-        { name: "David Patane", deck: "", placing: 84 },
-        { name: "Blake Davies", deck: "", placing: 85 },
-        { name: "Alex Crockford", deck: "", placing: 102 },
-        { name: "Aaron Cole", deck: "", placing: 120 },
-        { name: "Mitch Knuckey", deck: "", placing: 126 }
+        { name: "Nicholas Moore", deck: "Gardevoir & Sylveon-GX", placing: 54 },
+        { name: "James Williams", deck: "Mew & Mewtwo-GX Toolbox", placing: 78 },
+        { name: "David Patane", deck: "Malamar / Ultra Necrozma-GX", placing: 84 },
+        { name: "Blake Davies", deck: "Malamar / Giratina", placing: 85 },
+        { name: "Alex Crockford", deck: "Pikachu & Zekrom-GX", placing: 102 },
+        { name: "Aaron Cole", deck: "Baby Blacephalon", placing: 120 },
+        { name: "Mitch Knuckey", deck: "Malamar / Giratina", placing: 126 }
     ]},
     { name: "Penrith LC", date: moment("2019-08-11"), region: "NSW", attendance: 7, type: "League Challenge", cycle: "August", format: "SUM-UNB",
     standings: [

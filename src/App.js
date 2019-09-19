@@ -1,5 +1,5 @@
 // Started by Jeremy Lim on 03/09/2019
-// Currently on v3.2.1 deployed, v3.3 local, unreleased
+// Currently on v4.1 deployed, v4.1 local, released
 
 import React from 'react';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';

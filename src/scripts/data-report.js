@@ -179,7 +179,7 @@ for (i = 0; i < 5; i++) {
 DeckList.reverse();
 
 // sorts the decks in order of currCP
-for (i = 0; i < 5; i++) {
+for (i = 0; i < DeckList.length; i++) {
     DeckList[i].sort(function (a, b) {
         return b.currCP - a.currCP;
     });
@@ -204,7 +204,7 @@ data += "var DeckList = [\n";
 
 for (j = 0; j < 5; j++) {
     data += "[\n"
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < DeckList[j].length; i++) {
         data += "{ deck: \"" + DeckList[j][i].deck + "\", currCP: " + DeckList[j][i].currCP + " },\n";
     }
     data += "],\n"
