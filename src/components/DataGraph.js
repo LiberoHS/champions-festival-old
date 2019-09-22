@@ -384,7 +384,7 @@ const DataGraph = ({ weekData, setData }) => {
                                       </TableRow>
                                   </TableHead>
                                   <TableBody>
-                                  {DeckList[weekData].slice(0,5).map((deck, key) => {
+                                  {DeckList[weekData].map((deck, key) => {
                                       var search = compareDecks(deck);
                                       if (search.hasOwnProperty('thumbnails')) {
                                           var sprites = search.thumbnails.map((img, key) => {
