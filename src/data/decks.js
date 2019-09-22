@@ -1,5 +1,9 @@
 const decks = [
     // UPR-HIF
+    { archetype: "Keldeo-GX / White Kyurem", thumbnails: ["./assets/sprites/726.png","./assets/sprites/724.png"] },
+    { archetype: "Froslass / Lucario-GX", thumbnails: ["./assets/sprites/519.png","./assets/sprites/489.png"] },
+    { archetype: "Breloom", thumbnails: ["./assets/sprites/316.png"] },
+    { archetype: "Poipole Stall", thumbnails: ["./assets/sprites/1154.png"] },
     { archetype: "Whimsicott-GX", thumbnails: ["./assets/sprites/611.png"] },
     { archetype: "Spiritomb / Froslass", thumbnails: ["./assets/sprites/483.png","./assets/sprites/519.png"] },
     { archetype: "Beheeyem", thumbnails: ["./assets/sprites/680.png"] },

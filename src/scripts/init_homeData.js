@@ -202,9 +202,14 @@ for (let i = 0; i < tournaments.length; i++) {
 // console.log(DeckList.length);
 
 // For data reports
+PlayerList.sort(function (a, b) {
+    return a.name.localeCompare(b.name);
+});
+
 DeckList.sort(function (a, b) {
     return b.currCP - a.currCP;
 });
+
 for (var j = 0; j < 10; j++) {
     console.log(DeckList[j].deck + ": " + DeckList[j].currCP);
 }

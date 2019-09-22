@@ -191,9 +191,6 @@ class App extends React.Component {
 
     // EXPRESS BACKEND
     componentDidMount() {
-        playerList.sort(function (a, b) {
-            return a.name.localeCompare(b.name);
-        });
         topDecks.sort(function (a, b) {
             return b.currCP - a.currCP;
         });

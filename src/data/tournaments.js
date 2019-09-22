@@ -1,14 +1,14 @@
 // Template for tournament input
 /* { name: "", date: moment("YYYY-MM-DD"), region: "", attendance: "", type: "", cycle: "", format: "",
 standings: [
-        { name: "", deck: "", placing: 1 },
-        { name: "", deck: "", placing: 2 },
-        { name: "", deck: "", placing: 3 },
-        { name: "", deck: "", placing: 4 },
-        { name: "", deck: "", placing: 5 },
-        { name: "", deck: "", placing: 6 },
-        { name: "", deck: "", placing: 7 },
-        { name: "", deck: "", placing: 8 }
+    { name: "", deck: "", placing: 1 },
+    { name: "", deck: "", placing: 2 },
+    { name: "", deck: "", placing: 3 },
+    { name: "", deck: "", placing: 4 },
+    { name: "", deck: "", placing: 5 },
+    { name: "", deck: "", placing: 6 },
+    { name: "", deck: "", placing: 7 },
+    { name: "", deck: "", placing: 8 }
 ]}, */
 
 var moment = require('moment');
@@ -20,34 +20,99 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Cannington LC", date: moment("2019-09-22"), region: "WA", attendance: 13, type: "League Challenge", cycle: "September", format: "UPR-HIF",
+    standings: [
+        { name: "Matthew Bray", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Aaron Cole", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Andrew Tandianus", deck: "Keldeo-GX / White Kyurem", placing: 3 },
+        { name: "Marco Giovannini", deck: "Ability Reshiram & Charizard-GX", placing: 4 }
+    ]},
+    { name: "Table Top Cup", date: moment("2019-09-22"), region: "SA", attendance: 26, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [
+        { name: "Jordan Palmer", deck: "Malamar / Giratina", placing: 1 },
+        { name: "Wesley Sheng", deck: "Malamar / Garchomp & Giratina-GX", placing: 2 },
+        { name: "Ryan Bielak", deck: "Malamar / Giratina", placing: 3 },
+        { name: "Mitch Knuckey", deck: "Ability Reshiram & Charizard-GX", placing: 4 },
+        { name: "Stefan Cocks", deck: "Quagsire / Naganadel", placing: 5 },
+        { name: "Callum Walker", deck: "Malamar / Giratina", placing: 6 },
+        { name: "Blake Wightman", deck: "Blacephalon-GX / Naganadel", placing: 7 },
+        { name: "Louis Hutchinson", deck: "Quagsire / Naganadel", placing: 8 }
+    ]},
+    { name: "Gold Coast LC", date: moment("2019-09-22"), region: "QLD", attendance: 11, type: "League Challenge", cycle: "September", format: "UPR-HIF",
+    standings: [
+        { name: "Zachery Quince", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
+        { name: "Jack Millar", deck: "Malamar / Giratina", placing: 2 },
+        { name: "Kyle Beaumont", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
+        { name: "Matthew Burris", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Maitland LC", date: moment("2019-09-22"), region: "NSW", attendance: 14, type: "League Challenge", cycle: "September", format: "UPR-HIF",
+    standings: [
+        { name: "Brent Tonisson", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Ying Tou Hao", deck: "Ability Reshiram & Charizard-GX", placing: 2 },
+        { name: "Anders Balle", deck: "Quagsire / Naganadel", placing: 3 },
+        { name: "Jordan Williams", deck: "Quagsire / Naganadel", placing: 4 }
+    ]},
+    { name: "Top Ryde Cup", date: moment("2019-09-21"), region: "NSW", attendance: 29, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [
+        { name: "Shang Chua", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
+        { name: "Christian Hasbani", deck: "Malamar / Giratina", placing: 2 },
+        { name: "Shane Quinn", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+        { name: "Louis Pozzacchio", deck: "Mew & Mewtwo-GX Toolbox", placing: 4 },
+        { name: "Chengyong Luo", deck: "Ability Reshiram & Charizard-GX", placing: 5 },
+        { name: "Stan Lin", deck: "Gardevoir & Sylveon-GX", placing: 6 },
+        { name: "Jack Underwood", deck: "Poipole Stall", placing: 7 },
+        { name: "Blake Lobina", deck: "Pikachu & Zekrom-GX", placing: 8 }
+    ]},
+    { name: "Ormond Cup", date: moment("2019-09-21"), region: "VIC", attendance: 35, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [
+        { name: "Nicholas Apostolou", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Edward Mouanoutoua", deck: "Gardevoir & Sylveon-GX", placing: 2 },
+        { name: "Kaiwen Cabbabe", deck: "Pikachu & Zekrom-GX", placing: 3 },
+        { name: "Shanan Kan", deck: "Ability Reshiram & Charizard-GX", placing: 4 },
+        { name: "Angus Johnson", deck: "Gardevoir & Sylveon-GX", placing: 5 },
+        { name: "Luke Schmitt", deck: "Mew & Mewtwo-GX Toolbox", placing: 6 },
+        { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 7 },
+        { name: "Michael Kan", deck: "Pikachu & Zekrom-GX", placing: 8 }
+    ]},
+    { name: "Gold Coast Cup", date: moment("2019-09-21"), region: "QLD", attendance: 32, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [
+        { name: "Kyle Beaumont", deck: "Poipole Stall", placing: 1 },
+        { name: "Dominic Chow", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Corey Grimshaw", deck: "Breloom", placing: 3 },
+        { name: "Matthew Burris", deck: "Pikachu & Zekrom-GX", placing: 4 },
+        { name: "Nicholas Moore", deck: "Ability Reshiram & Charizard-GX", placing: 5 },
+        { name: "Jack Millar", deck: "Pikachu & Zekrom-GX", placing: 6 },
+        { name: "Harrison Hodges", deck: "Green's Reshiram & Charizard-GX", placing: 7 },
+        { name: "Blake Davies", deck: "Froslass / Lucario-GX", placing: 8 }
+    ]},
     /* { name: "Bendigo LC", date: moment("2019-09-15"), region: "VIC", attendance: "", type: "League Challenge", cycle: "September", format: "UPR-HIF",
     standings: [
-            { name: "James Brown", deck: "Green's Reshiram & Charizard-GX", placing: 1 },
-            { name: "Ben D. Hall", deck: "Pikachu & Zekrom-GX", placing: 2 },
-            { name: "Michael Zirnsak", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
-            { name: "Michael Kan", deck: "", placing: 4 },
+        { name: "James Brown", deck: "Green's Reshiram & Charizard-GX", placing: 1 },
+        { name: "Ben D. Hall", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Michael Zirnsak", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
+        { name: "Michael Kan", deck: "", placing: 4 }
     ]}, */
     { name: "Bendigo Cup", date: moment("2019-09-15"), region: "VIC", attendance: 28, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
-            { name: "Nicholas Apostolou", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
-            { name: "Henry Brand", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
-            { name: "Kaiwen Cabbabe", deck: "Pikachu & Zekrom-GX", placing: 3 },
-            { name: "Damian Filiposki", deck: "Pikachu & Zekrom-GX", placing: 4 },
-            { name: "Huy Nguyen", deck: "Pikachu & Zekrom-GX", placing: 5 },
-            { name: "Ben Anderson", deck: "Ability Reshiram & Charizard-GX", placing: 6 },
-            { name: "Tyson Maggio", deck: "Blacephalon-GX / Naganadel", placing: 7 },
-            { name: "Jacob Sparks", deck: "Blacephalon-GX / Naganadel", placing: 8 },
+        { name: "Nicholas Apostolou", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
+        { name: "Henry Brand", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
+        { name: "Kaiwen Cabbabe", deck: "Pikachu & Zekrom-GX", placing: 3 },
+        { name: "Damian Filiposki", deck: "Pikachu & Zekrom-GX", placing: 4 },
+        { name: "Huy Nguyen", deck: "Pikachu & Zekrom-GX", placing: 5 },
+        { name: "Ben Anderson", deck: "Ability Reshiram & Charizard-GX", placing: 6 },
+        { name: "Tyson Maggio", deck: "Blacephalon-GX / Naganadel", placing: 7 },
+        { name: "Jacob Sparks", deck: "Blacephalon-GX / Naganadel", placing: 8 }
     ]},
     { name: "West City Cup", date: moment("2019-09-15"), region: "NZ", attendance: 25, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
-            { name: "Louis Chi", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
-            { name: "Yu Xiang", deck: "Ability Reshiram & Charizard-GX", placing: 2 },
-            { name: "Layton Rumble", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
-            { name: "Eddie Teahu", deck: "Gardevoir & Sylveon-GX", placing: 4 },
-            { name: "Ifran Nabi", deck: "Blacephalon-GX / Naganadel", placing: 5 },
-            { name: "Ash Nassiri", deck: "Pikachu & Zekrom-GX", placing: 6 },
-            { name: "Matthew Chapman", deck: "Malamar / Giratina", placing: 7 },
-            { name: "Brad Rumble", deck: "Whimsicott-GX", placing: 8 }
+        { name: "Louis Chi", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
+        { name: "Yu Xiang", deck: "Ability Reshiram & Charizard-GX", placing: 2 },
+        { name: "Layton Rumble", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+        { name: "Eddie Teahu", deck: "Gardevoir & Sylveon-GX", placing: 4 },
+        { name: "Ifran Nabi", deck: "Blacephalon-GX / Naganadel", placing: 5 },
+        { name: "Ash Nassiri", deck: "Pikachu & Zekrom-GX", placing: 6 },
+        { name: "Matthew Chapman", deck: "Malamar / Giratina", placing: 7 },
+        { name: "Brad Rumble", deck: "Whimsicott-GX", placing: 8 }
     ]},
     { name: "Penang Cup", date: moment("2019-09-14"), region: "MY", attendance: 60, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [

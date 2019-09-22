@@ -32,6 +32,7 @@ const colorPalette = [
     {name: 'blue', filled: 'rgba(76,116,237,1)', light: 'rgba(76,116,237,0.4)'},
     {name: 'yellow', filled: 'rgba(242,239,73,1)', light: 'rgba(242,239,73,0.4)'},
     {name: 'purple', filled: 'rgba(167,61,224,1)', light: 'rgba(167,61,224,0.4)'},
+    {name: 'pink', filled: 'rgba(232,67,216,1)', light: 'rgba(232,67,216,0.4)'}
 ];
 
 const deck1 = DeckList[4][0].deck;
@@ -39,8 +40,9 @@ const deck2 = DeckList[4][1].deck;
 const deck3 = DeckList[4][2].deck;
 const deck4 = DeckList[4][3].deck;
 const deck5 = DeckList[4][4].deck;
+const deck6 = DeckList[4][5].deck;
 
-const memes = [deck1,deck2,deck3,deck4,deck5];
+const memes = [deck1,deck2,deck3,deck4,deck5,deck6];
 
 var data = {
     labels: [
@@ -185,6 +187,33 @@ var data = {
             DeckList[4].find(data => data.deck === deck5) ? DeckList[4].findIndex(data => data.deck === deck5) + 1: null,
         ]
     },
+    {
+        label: '',
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: '',
+        borderColor: '',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: '',
+        pointBackgroundColor: '#fff',
+        pointBorderWidth: 10,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: '',
+        pointHoverBorderColor: '',
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: [
+            DeckList[0].find(data => data.deck === deck6) ? DeckList[0].findIndex(data => data.deck === deck6) + 1: null,
+            DeckList[1].find(data => data.deck === deck6) ? DeckList[1].findIndex(data => data.deck === deck6) + 1: null,
+            DeckList[2].find(data => data.deck === deck6) ? DeckList[2].findIndex(data => data.deck === deck6) + 1: null,
+            DeckList[3].find(data => data.deck === deck6) ? DeckList[3].findIndex(data => data.deck === deck6) + 1: null,
+            DeckList[4].find(data => data.deck === deck6) ? DeckList[4].findIndex(data => data.deck === deck6) + 1: null,
+        ]
+    },
     ]
 };
 
@@ -221,7 +250,7 @@ var options = {
 }
 
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 6; i++) {
     data.datasets[i].label = memes[i];
     data.datasets[i].backgroundColor = colorPalette[i].light;
     data.datasets[i].borderColor = colorPalette[i].filled;
