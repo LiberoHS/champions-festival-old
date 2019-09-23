@@ -1,7 +1,7 @@
 const topDecks = [
 { deck: "Pikachu & Zekrom-GX", currCP: 402, totalCP: 1698 },
 { deck: "Mew & Mewtwo-GX Toolbox", currCP: 373, totalCP: 965 },
-{ deck: "Ability Reshiram & Charizard-GX", currCP: 286, totalCP: 1701 },
+{ deck: "Ability Reshiram & Charizard-GX", currCP: 261, totalCP: 1676 },
 { deck: "Malamar / Giratina", currCP: 184, totalCP: 528 },
 { deck: "Gardevoir & Sylveon-GX", currCP: 172, totalCP: 294 },
 { deck: "Quagsire / Naganadel", currCP: 120, totalCP: 292 },
@@ -10,12 +10,13 @@ const topDecks = [
 { deck: "Pidgeotto Control", currCP: 50, totalCP: 90 },
 { deck: "Malamar / Garchomp & Giratina-GX", currCP: 40, totalCP: 125 },
 { deck: "Breloom", currCP: 32, totalCP: 32 },
+{ deck: "Fire Toolbox", currCP: 25, totalCP: 25 },
 { deck: "Green's Reshiram & Charizard-GX", currCP: 25, totalCP: 473 },
 { deck: "Froslass / Lucario-GX", currCP: 25, totalCP: 25 },
 { deck: "Whimsicott-GX", currCP: 25, totalCP: 25 },
 { deck: "Keldeo-GX / White Kyurem", currCP: 10, totalCP: 10 },
-{ deck: "Weavile-GX Toolbox", currCP: 0, totalCP: 33 },
 { deck: "Zapdos / Ultra Beasts", currCP: 0, totalCP: 25 },
+{ deck: "Malamar / Ultra Necrozma-GX", currCP: 0, totalCP: 175 },
 { deck: "Spiritomb / Froslass", currCP: 0, totalCP: 32 },
 { deck: "Beheeyem", currCP: 0, totalCP: 50 },
 { deck: "Naganadel-GX Checkmate", currCP: 0, totalCP: 80 },
@@ -30,7 +31,7 @@ const topDecks = [
 { deck: "Zoroark-GX / Silvally-GX", currCP: 0, totalCP: 32 },
 { deck: "Zoroark-GX / Dewgong", currCP: 0, totalCP: 40 },
 { deck: "Beast Box", currCP: 0, totalCP: 15 },
-{ deck: "Malamar / Ultra Necrozma-GX", currCP: 0, totalCP: 175 },
+{ deck: "Weavile-GX Toolbox", currCP: 0, totalCP: 33 },
 ];
 
 module.exports = topDecks;

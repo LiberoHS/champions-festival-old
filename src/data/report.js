@@ -72,7 +72,7 @@ var DeckList = [
 [
 { deck: "Pikachu & Zekrom-GX", currCP: 420 },
 { deck: "Mew & Mewtwo-GX Toolbox", currCP: 406 },
-{ deck: "Ability Reshiram & Charizard-GX", currCP: 340 },
+{ deck: "Ability Reshiram & Charizard-GX", currCP: 315 },
 { deck: "Malamar / Giratina", currCP: 274 },
 { deck: "Gardevoir & Sylveon-GX", currCP: 172 },
 { deck: "Quagsire / Naganadel", currCP: 132 },
@@ -82,6 +82,7 @@ var DeckList = [
 { deck: "Pidgeotto Control", currCP: 50 },
 { deck: "Malamar / Garchomp & Giratina-GX", currCP: 40 },
 { deck: "Breloom", currCP: 32 },
+{ deck: "Fire Toolbox", currCP: 25 },
 { deck: "Froslass / Lucario-GX", currCP: 25 },
 { deck: "Whimsicott-GX", currCP: 25 },
 { deck: "Weavile-GX Toolbox", currCP: 23 },

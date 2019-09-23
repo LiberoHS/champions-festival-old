@@ -80,7 +80,7 @@ const tournaments = [
         { name: "Dominic Chow", deck: "Pikachu & Zekrom-GX", placing: 2 },
         { name: "Corey Grimshaw", deck: "Breloom", placing: 3 },
         { name: "Matthew Burris", deck: "Pikachu & Zekrom-GX", placing: 4 },
-        { name: "Nicholas Moore", deck: "Ability Reshiram & Charizard-GX", placing: 5 },
+        { name: "Nicholas Moore", deck: "Fire Toolbox", placing: 5 },
         { name: "Jack Millar", deck: "Pikachu & Zekrom-GX", placing: 6 },
         { name: "Harrison Hodges", deck: "Green's Reshiram & Charizard-GX", placing: 7 },
         { name: "Blake Davies", deck: "Froslass / Lucario-GX", placing: 8 }
