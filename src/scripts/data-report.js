@@ -23,6 +23,8 @@ function calcPointPayout(tournament, player) {
             return 32;
         } else if (player.placing <= 8) {
             return 25;
+        } else if (player.placing <= 16) {
+            return 20;
         }
     } else if (tournament.type === 'Regionals' || tournament.type === 'Special Event') {
         if (player.placing === 1) {
