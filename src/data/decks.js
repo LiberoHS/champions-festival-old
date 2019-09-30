@@ -27,6 +27,7 @@ const decks = [
     { archetype: "Quagsire / Naganadel", thumbnails: ["./assets/sprites/198.png","./assets/sprites/1155.png"] },
     { archetype: "Naganadel-GX Checkmate", thumbnails: ["./assets/sprites/1155.png"] },
     // SUM-UNB
+    { archetype: "Weezing Spread", thumbnails: ["./assets/sprites/116.png"] },
     { archetype: "Donphan / Florges", thumbnails: ["./assets/sprites/262.png","./assets/sprites/781.png"] },
     { archetype: "Zoroark-GX / Greninja & Zoroark-GX", thumbnails: ["./assets/sprites/637.png","./assets/sprites/742.png"] },
     { archetype: "Vileplume Stall", thumbnails: ["./assets/sprites/51.png"] },

@@ -369,6 +369,13 @@ const tournaments = [
         { name: "Joshua Stone", deck: "Pikachu & Zekrom-GX", placing: 3 },
         { name: "Nicole Manasan", deck: "Zoroark-GX / Greninja & Zoroark-GX", placing: 4 }
     ]},
+    { name: "Maitland LC", date: moment("2019-08-11"), region: "NSW", attendance: 7, type: "League Challenge", cycle: "August", format: "SUM-UNB",
+    standings: [
+        { name: "Paul Coletta", deck: "Weezing Spread", placing: 1 },
+        { name: "Jeremy Evans", deck: "Malamar / Ultra Necrozma-GX", placing: 2 },
+        { name: "Shane Quinn", deck: "Vileplume Stall", placing: 3 },
+        { name: "Mitchell Dowling", deck: "Baby Blacephalon", placing: 4 }
+    ]},
     { name: "Newcastle LC", date: moment("2019-08-10"), region: "NSW", attendance: 14, type: "League Challenge", cycle: "August", format: "SUM-UNB",
     standings: [
         { name: "Ying Hao Tou", deck: "Green's Reshiram & Charizard-GX", placing: 1 },
