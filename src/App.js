@@ -4,7 +4,7 @@
 import React from 'react';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
-import { DataGraph, HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
+import { DataGraph, Footer, HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
 import playerList from './data/players.js';
@@ -218,6 +218,8 @@ class App extends React.Component {
         const { tournamentList, currentTournament, playerList, currentPlayer,
         decks, topDecks, show, checkedChallenge, checkedPoints, weekData } = this.state;
 
+        const footerCopyright = "Created by Jeremy Lim © 2019";
+
         return (
             <Grid>
                 <Grid container>
@@ -287,6 +289,9 @@ class App extends React.Component {
                     weekData={weekData}
                     setData={this.setData}/>}
                     {/*</Grid>*/}
+                </Grid>
+                <Grid>
+                    <Footer children={footerCopyright} />
                 </Grid>
             </Grid>
         )

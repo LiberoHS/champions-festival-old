@@ -24,7 +24,7 @@ const tournaments = [
     standings: [
         { name: "Brent Tonisson", deck: "Pikachu & Zekrom-GX", placing: 1 },
         { name: "James Cox", deck: "Pikachu & Zekrom-GX", placing: 2 },
-        { name: "Chengyong Luo", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
+        { name: "Chengyong Luo", deck: "Welder Toolbox", placing: 3 },
         { name: "Christian Hasbani", deck: "Malamar / Giratina", placing: 4 },
         { name: "Shang Chua", deck: "Mew & Mewtwo-GX Toolbox", placing: 5 },
         { name: "Jake Cruwys", deck: "Pikachu & Zekrom-GX", placing: 6 },
@@ -48,7 +48,7 @@ const tournaments = [
     ]},
     { name: "Area 52 Cup", date: moment("2019-09-28"), region: "TAS", attendance: 9, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
-        { name: "Joshua Sparks", deck: "Fire Toolbox", placing: 1 },
+        { name: "Joshua Sparks", deck: "Welder Toolbox", placing: 1 },
         { name: "Ashley Kendall", deck: "Weavile-GX Toolbox", placing: 2 },
         { name: "Sean Gressie", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
         { name: "Christopher Mathers", deck: "Blacephalon-GX / Naganadel", placing: 4 }
@@ -138,7 +138,7 @@ const tournaments = [
         { name: "Dominic Chow", deck: "Pikachu & Zekrom-GX", placing: 2 },
         { name: "Corey Grimshaw", deck: "Breloom", placing: 3 },
         { name: "Matthew Burris", deck: "Pikachu & Zekrom-GX", placing: 4 },
-        { name: "Nicholas Moore", deck: "Fire Toolbox", placing: 5 },
+        { name: "Nicholas Moore", deck: "Welder Toolbox", placing: 5 },
         { name: "Jack Millar", deck: "Pikachu & Zekrom-GX", placing: 6 },
         { name: "Harrison Hodges", deck: "Green's Reshiram & Charizard-GX", placing: 7 },
         { name: "Blake Davies", deck: "Froslass / Lucario-GX", placing: 8 }
