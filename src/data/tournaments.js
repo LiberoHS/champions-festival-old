@@ -20,6 +20,24 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    /* { name: "Wellington LC", date: moment("2019-10-05"), region: "NZ", attendance: "", type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]}, */
+    { name: "Ballarat Cup", date: moment("2019-10-05"), region: "VIC", attendance: 32, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [
+        { name: "Luke Schmitt", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Angus Johnson", deck: "Pidgeotto Control", placing: 2 },
+        { name: "Kaiwen Cabbabe", deck: "Pikachu & Zekrom-GX", placing: 3 },
+        { name: "Damian Filiposki", deck: "Mew & Mewtwo-GX Toolbox", placing: 4 },
+        { name: "Ben D. Hall", deck: "Pikachu & Zekrom-GX", placing: 5 },
+        { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 6 },
+        { name: "Nicholas Apostolou", deck: "Pikachu & Zekrom-GX", placing: 7 },
+        { name: "Darcy Ryan", deck: "Blacephalon-GX / Naganadel", placing: 8 }
+    ]},
     { name: "Penrith Cup", date: moment("2019-09-29"), region: "NSW", attendance: 49, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
         { name: "Brent Tonisson", deck: "Pikachu & Zekrom-GX", placing: 1 },
