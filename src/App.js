@@ -22,11 +22,7 @@ const buttonStyle = {
 // Sorting tournaments
 // Need to refactor Challenges filter
 // Need to refactor styling
-// Filter functionality
-// Data analytics (v4) (done)
-// Date-time integration (done)
-// Calculates the dataset (done)
-// Line chart (done)
+// Filter functionality -> filter by region and format
 // Decklist integration (v5)
 // BUG: (data-report.js) changing indexEnd of i+1 to i creates an error
 

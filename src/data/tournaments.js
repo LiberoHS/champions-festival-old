@@ -20,6 +20,45 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Dandenong LC", date: moment("2019-10-13"), region: "VIC", attendance: 12, type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "Darcy Ryan", deck: "Green's Reshiram & Charizard-GX", placing: 1 },
+        { name: "Nicholas Apostolou", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Hudson Moore", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "Ben D. Hall", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Adelaide LC", date: moment("2019-10-13"), region: "SA", attendance: 16, type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "Jordan Palmer", deck: "Malamar / Giratina", placing: 1 },
+        { name: "James Goreing", deck: "Blacephalon-GX / Naganadel", placing: 2 },
+        { name: "Calvin Prosser", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+        { name: "Wesley Sheng", deck: "Quagsire / Naganadel", placing: 4 }
+    ]},
+    { name: "Project EXT Cup", date: moment("2019-10-12"), region: "SG", attendance: 48, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [
+        { name: "Clifton Goh", deck: "Ability Reshiram & Charizard-GX", placing: 1 },
+        { name: "Jit Min Lim", deck: "Pidgeotto Control", placing: 2 },
+        { name: "Kashvinder Singh Mann", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
+        { name: "Jeremy Leong", deck: "Malamar / Giratina", placing: 4 },
+        { name: "Wayne Ng", deck: "Gardevoir & Sylveon-GX", placing: 5 },
+        { name: "Edmund Khoo", deck: "Gardevoir & Sylveon-GX", placing: 6 },
+        { name: "Bryan Chan", deck: "Pikachu & Zekrom-GX", placing: 7 },
+        { name: "Benjamin Teh", deck: "Ability Reshiram & Charizard-GX", placing: 8 }
+    ]},
+    { name: "Wellington Cup", date: moment("2019-10-12"), region: "NZ", attendance: 15, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [
+        { name: "Eric Sanson", deck: "Blacephalon-GX / Naganadel", placing: 1 },
+        { name: "Finn McKeefry", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Sam Reynolds", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "Lawson Maric", deck: "Malamar / Garchomp & Giratina-GX", placing: 4 }
+    ]},
+    { name: "Newcastle LC", date: moment("2019-10-12"), region: "NSW", attendance: 13, type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "Brent Tonisson", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Jeremy Evans", deck: "Malamar / Ultra Necrozma-GX", placing: 2 },
+        { name: "Ying Hao Tou", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
+        { name: "Anders Balle", deck: "Malamar / Giratina", placing: 4 }
+    ]},
     /* { name: "Wellington LC", date: moment("2019-10-05"), region: "NZ", attendance: "", type: "League Challenge", cycle: "October", format: "UPR-HIF",
     standings: [
         { name: "", deck: "", placing: 1 },

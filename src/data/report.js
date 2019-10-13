@@ -1,31 +1,13 @@
 var lastSixWeeks = [
-{ dayStart: "05/10/19", dayEnd: "05/10/19", indexStart: 0, indexEnd: 1},
-{ dayStart: "29/09/19", dayEnd: "28/09/19", indexStart: 1, indexEnd: 7},
-{ dayStart: "22/09/19", dayEnd: "21/09/19", indexStart: 7, indexEnd: 14},
-{ dayStart: "15/09/19", dayEnd: "14/09/19", indexStart: 14, indexEnd: 20},
-{ dayStart: "08/09/19", dayEnd: "07/09/19", indexStart: 20, indexEnd: 26},
-{ dayStart: "31/08/19", dayEnd: "31/08/19", indexStart: 26, indexEnd: 27},
+{ dayStart: "13/10/19", dayEnd: "12/10/19", indexStart: 0, indexEnd: 5},
+{ dayStart: "05/10/19", dayEnd: "05/10/19", indexStart: 5, indexEnd: 6},
+{ dayStart: "29/09/19", dayEnd: "28/09/19", indexStart: 6, indexEnd: 12},
+{ dayStart: "22/09/19", dayEnd: "21/09/19", indexStart: 12, indexEnd: 19},
+{ dayStart: "15/09/19", dayEnd: "14/09/19", indexStart: 19, indexEnd: 25},
+{ dayStart: "08/09/19", dayEnd: "07/09/19", indexStart: 25, indexEnd: 31},
 ];
 
 var DeckList = [
-[
-{ deck: "Ability Reshiram & Charizard-GX", currCP: 1144 },
-{ deck: "Pikachu & Zekrom-GX", currCP: 929 },
-{ deck: "Mew & Mewtwo-GX Toolbox", currCP: 469 },
-{ deck: "Green's Reshiram & Charizard-GX", currCP: 265 },
-{ deck: "Blacephalon-GX / Naganadel", currCP: 192 },
-{ deck: "Malamar / Giratina", currCP: 174 },
-{ deck: "Quagsire / Naganadel", currCP: 160 },
-{ deck: "Malamar / Garchomp & Giratina-GX", currCP: 85 },
-{ deck: "Naganadel-GX Checkmate", currCP: 80 },
-{ deck: "Gardevoir & Sylveon-GX", currCP: 72 },
-{ deck: "Blastoise / Keldeo-GX", currCP: 60 },
-{ deck: "Baby Blacephalon", currCP: 60 },
-{ deck: "Beheeyem", currCP: 50 },
-{ deck: "Pidgeotto Control", currCP: 40 },
-{ deck: "Spiritomb / Froslass", currCP: 32 },
-{ deck: "Malamar / Ultra Necrozma-GX", currCP: 25 },
-],
 [
 { deck: "Mew & Mewtwo-GX Toolbox", currCP: 471 },
 { deck: "Pikachu & Zekrom-GX", currCP: 453 },
@@ -99,6 +81,19 @@ var DeckList = [
 { deck: "Mew & Mewtwo-GX / Shedinja", currCP: 10 },
 { deck: "Aegislash", currCP: 10 },
 { deck: "Whimsicott-GX", currCP: 10 },
+],
+[
+{ deck: "Pikachu & Zekrom-GX", currCP: 259 },
+{ deck: "Ability Reshiram & Charizard-GX", currCP: 117 },
+{ deck: "Gardevoir & Sylveon-GX", currCP: 92 },
+{ deck: "Blacephalon-GX / Naganadel", currCP: 87 },
+{ deck: "Pidgeotto Control", currCP: 80 },
+{ deck: "Malamar / Giratina", currCP: 57 },
+{ deck: "Mew & Mewtwo-GX Toolbox", currCP: 42 },
+{ deck: "Malamar / Garchomp & Giratina-GX", currCP: 32 },
+{ deck: "Green's Reshiram & Charizard-GX", currCP: 15 },
+{ deck: "Malamar / Ultra Necrozma-GX", currCP: 12 },
+{ deck: "Quagsire / Naganadel", currCP: 10 },
 ],
 ];
 

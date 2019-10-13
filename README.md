@@ -31,7 +31,8 @@ provided to generate new player data.
 
 ```
 cd src/scripts
-node init_players.js
+node data-report.js
+node init_homeData.js
 ```
 
 ### Running server
@@ -49,5 +50,9 @@ Go on ```http://localhost:5000/``` for the back-end
 * [React](https://reactjs.org/)
 * [create-react-app](https://facebook.github.io/create-react-app/)
 * [Node.js](https://nodejs.org/en/)
+* [FontAwesomeIcons](https://fontawesome.com)
+
+This project has no affiliations with TPCi, Nintendo, Creatures or Game Freak.
+All trademarked material used in this project are the property of TPCi.
 
 Thanks for all the support!

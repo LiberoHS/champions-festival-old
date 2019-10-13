@@ -52,6 +52,7 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
         <Grid item xs={12}>
             <Grid>
                 <h3> {currentPlayer.name} </h3>
+                <p> <b>Points:</b> {currentPlayer.points}</p>
             </Grid>
             <Grid className={classes.root}>
                 <Table className={classes.table}>

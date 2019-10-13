@@ -64,8 +64,9 @@ const Footer = ({ children }) => {
             <div style={phantomStyle} />
             <Grid style={footerStyle}>
                 <Grid>
-                    <a href="https://www.facebook.com/nlftcg/"><FontAwesomeIcon icon={['fab', 'facebook']} style={iconStyle} /></a>
-                    <a href="https://twitter.com/NLFtcg"><FontAwesomeIcon icon={['fab', 'twitter']} style={iconStyle} /></a>
+                    <a href="https://www.facebook.com/nlftcg/" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={['fab', 'facebook']} style={iconStyle} /></a>
+                    <a href="https://twitter.com/UlquiorraTCG" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter']} style={iconStyle} /></a>
+                    <a href="https://github.com/HitoKage13" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={['fab', 'github']} style={iconStyle} /></a>
                     {children}
                 </Grid>
             </Grid>
