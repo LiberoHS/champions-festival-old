@@ -59,13 +59,13 @@ const tournaments = [
         { name: "Ying Hao Tou", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
         { name: "Anders Balle", deck: "Malamar / Giratina", placing: 4 }
     ]},
-    /* { name: "Wellington LC", date: moment("2019-10-05"), region: "NZ", attendance: "", type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    { name: "Wellington LC", date: moment("2019-10-05"), region: "NZ", attendance: 9, type: "League Challenge", cycle: "October", format: "UPR-HIF",
     standings: [
-        { name: "", deck: "", placing: 1 },
-        { name: "", deck: "", placing: 2 },
-        { name: "", deck: "", placing: 3 },
-        { name: "", deck: "", placing: 4 }
-    ]}, */
+        { name: "Kenny Potter", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
+        { name: "Emile Fox", deck: "Turtonator / Naganadel", placing: 2 },
+        { name: "Amelia Hunter", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "Eric Sanson", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
     { name: "Ballarat Cup", date: moment("2019-10-05"), region: "VIC", attendance: 32, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
     standings: [
         { name: "Luke Schmitt", deck: "Pikachu & Zekrom-GX", placing: 1 },

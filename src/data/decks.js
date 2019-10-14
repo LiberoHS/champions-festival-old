@@ -1,8 +1,9 @@
 const decks = [
     // UPR-HIF
+    { archetype: "Turtonator / Naganadel", thumbnails: ["./assets/sprites/1110.png","./assets/sprites/1155.png"] },
     { archetype: "Mew & Mewtwo-GX / Shedinja", thumbnails: ["./assets/sprites/156.png","./assets/sprites/155.png","./assets/sprites/322.png"] },
     { archetype: "Aegislash", thumbnails: ["./assets/sprites/804.png"] },
-    { archetype: "Gengar & Mimikyu-GX / Omastar", thumbnails: ["./assets/sprites/100.png","./assets/sprites/144.png","./assets/sprites/1112.png"] },
+    { archetype: "Gengar & Mimikyu-GX / Omastar", thumbnails: ["./assets/sprites/100.png","./assets/sprites/1112.png","./assets/sprites/144.png"] },
     { archetype: "Welder Toolbox", thumbnails: ["./assets/sprites/1110.png","./assets/sprites/44.png","./assets/sprites/417.png"] },
     { archetype: "Keldeo-GX / White Kyurem", thumbnails: ["./assets/sprites/726.png","./assets/sprites/724.png"] },
     { archetype: "Froslass / Lucario-GX", thumbnails: ["./assets/sprites/519.png","./assets/sprites/489.png"] },
