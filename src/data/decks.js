@@ -1,5 +1,6 @@
 const decks = [
     // UPR-HIF
+    { archetype: "Green's Lucario & Melmetal-GX", thumbnails: ["./assets/sprites/489.png","./assets/sprites/1159.png"] },
     { archetype: "Turtonator / Naganadel", thumbnails: ["./assets/sprites/1110.png","./assets/sprites/1155.png"] },
     { archetype: "Mew & Mewtwo-GX / Shedinja", thumbnails: ["./assets/sprites/156.png","./assets/sprites/155.png","./assets/sprites/322.png"] },
     { archetype: "Aegislash", thumbnails: ["./assets/sprites/804.png"] },
