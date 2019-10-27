@@ -20,6 +20,45 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Bendigo LC", date: moment("2019-10-27"), region: "VIC", attendance: 9, type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "Hudson Moore", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Ben D. Hall", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
+        { name: "Jacob Sparks", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+        { name: "Damian Filiposki", deck: "Mew & Mewtwo-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Area 52 LC", date: moment("2019-10-27"), region: "TAS", attendance: 4, type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "Joshua Sparks", deck: "Welder Toolbox", placing: 1 },
+        { name: "Matthew Oliver", deck: "Gardevoir & Sylveon-GX", placing: 2 },
+        { name: "David Stevens", deck: "Ability Reshiram & Charizard-GX", placing: 3 },
+        { name: "Remmi O'Rourke", deck: "Gardevoir & Sylveon-GX", placing: 4 }
+    ]},
+    { name: "Mid Valley Cup", date: moment("2019-10-26"), region: "MY", attendance: 76, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
+    standings: [ // confirm attendance
+        { name: "Clifton Goh", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Aaron Lim", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
+        { name: "Lee Keng Fai", deck: "Pidgeotto Control", placing: 3 },
+        { name: "King Yang", deck: "Malamar / Giratina", placing: 4 },
+        { name: "Syahmi Razak", deck: "Marshadow & Machamp-GX / Mismagius", placing: 5 },
+        { name: "Ang Boon Shen", deck: "Pikachu & Zekrom-GX", placing: 6 },
+        { name: "Rinesh John", deck: "Baby Blacephalon / Pidgeotto", placing: 7 },
+        { name: "Lawrence Choong", deck: "Ability Reshiram & Charizard-GX", placing: 8 }
+    ]},
+    { name: "Neo Tokyo LC", date: moment("2019-10-26"), region: "QLD", attendance: 12, type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "Jack Millar", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Anthony Smith", deck: "Malamar / Giratina", placing: 2 },
+        { name: "Aaron Stringfellow", deck: "Pikachu & Zekrom-GX", placing: 3 },
+        { name: "Matthew Burris", deck: "Mew & Mewtwo-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Hobart LC", date: moment("2019-10-24"), region: "TAS", attendance: 7, type: "League Challenge", cycle: "October", format: "UPR-HIF",
+    standings: [
+        { name: "Jaime McDonald", deck: "Green's Reshiram & Charizard-GX", placing: 1 },
+        { name: "Joshua Sparks", deck: "Welder Toolbox", placing: 2 },
+        { name: "Morgan Febey", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "David Stevens", deck: "Ability Reshiram & Charizard-GX", placing: 4 }
+    ]},
     { name: "Geelong LC", date: moment("2019-10-20"), region: "VIC", attendance: 16, type: "League Challenge", cycle: "October", format: "UPR-HIF",
     standings: [
         { name: "Joshua Bradley", deck: "Green's Reshiram & Charizard-GX", placing: 1 },

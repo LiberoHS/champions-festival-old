@@ -1,5 +1,7 @@
 const decks = [
     // UPR-HIF
+    { archetype: "Marshadow & Machamp-GX / Mismagius", thumbnails: ["./assets/sprites/1136.png","./assets/sprites/74.png","./assets/sprites/471.png"] },
+    { archetype: "Baby Blacephalon / Pidgeotto", thumbnails: ["./assets/sprites/1156.png","./assets/sprites/23.png"] },
     { archetype: "Green's Lucario & Melmetal-GX", thumbnails: ["./assets/sprites/489.png","./assets/sprites/1159.png"] },
     { archetype: "Turtonator / Naganadel", thumbnails: ["./assets/sprites/1110.png","./assets/sprites/1155.png"] },
     { archetype: "Mew & Mewtwo-GX / Shedinja", thumbnails: ["./assets/sprites/156.png","./assets/sprites/155.png","./assets/sprites/322.png"] },
