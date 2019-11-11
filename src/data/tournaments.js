@@ -20,6 +20,41 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Table Top LC", date: moment("2019-11-10"), region: "SA", attendance: 12, type: "League Challenge", cycle: "November", format: "UPR-HIF",
+    standings: [
+        { name: "Jordan Palmer", deck: "Malamar / Giratina", placing: 1 },
+        { name: "Scott Langford", deck: "Baby Blacephalon", placing: 2 },
+        { name: "Michael Atkinson", deck: "Blacephalon-GX / Naganadel", placing: 3 },
+        { name: "Calvin Prosser", deck: "Mew & Mewtwo-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Greensborough LC", date: moment("2019-11-10"), region: "VIC", attendance: 20, type: "League Challenge", cycle: "November", format: "UPR-HIF",
+    standings: [
+        { name: "Meng Hon Chow", deck: "Baby Blacephalon / Pidgeotto", placing: 1 },
+        { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Hudson Moore", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "Alex Crockford", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Penrith LC", date: moment("2019-11-10"), region: "NSW", attendance: 15, type: "League Challenge", cycle: "November", format: "UPR-HIF",
+    standings: [
+        { name: "James Cox", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Joshua Stone", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Shang Chua", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+        { name: "Yiming Lin", deck: "Gardevoir & Sylveon-GX", placing: 4 }
+    ]},
+    { name: "Neo Tokyo LC", date: moment("2019-11-10"), region: "QLD", attendance: 8, type: "League Challenge", cycle: "November", format: "UPR-HIF",
+    standings: [
+        { name: "Matthew Burris", deck: "Pidgeotto Control", placing: 1 },
+        { name: "James Williams", deck: "Malamar / Giratina", placing: 2 },
+        { name: "Duy Le", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
+        { name: "Blake Troy", deck: "Malamar / Giratina", placing: 4 }
+    ]},
+    { name: "West City LC", date: moment("2019-11-10"), region: "NZ", attendance: 15, type: "League Challenge", cycle: "November", format: "UPR-HIF",
+    standings: [
+        { name: "Ash Nassiri", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Mike Nolan", deck: "Green's Ultra Beasts", placing: 2 },
+        { name: "Ifran Nabi", deck: "Blacephalon-GX / Naganadel", placing: 3 },
+        { name: "York Robson", deck: "Malamar / Giratina", placing: 4 }
+    ]},
     { name: "Gold Coast LC", date: moment("2019-11-03"), region: "QLD", attendance: 12, type: "League Challenge", cycle: "November", format: "UPR-HIF",
     standings: [
         { name: "Kyle Beaumont", deck: "Mew & Mewtwo-GX Toolbox", placing: 1 },
@@ -60,7 +95,7 @@ const tournaments = [
         { name: "Remmi O'Rourke", deck: "Gardevoir & Sylveon-GX", placing: 4 }
     ]},
     { name: "Mid Valley Cup", date: moment("2019-10-26"), region: "MY", attendance: 71, type: "League Cup", cycle: "Quarter 1", format: "UPR-HIF",
-    standings: [ // confirm attendance
+    standings: [
         { name: "Clifton Goh", deck: "Pikachu & Zekrom-GX", placing: 1 },
         { name: "Aaron Lim", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
         { name: "Lee Keng Fai", deck: "Pidgeotto Control", placing: 3 },
@@ -122,7 +157,7 @@ const tournaments = [
     ]},
     { name: "Top Ryde LC", date: moment("2019-10-20"), region: "NSW", attendance: 11, type: "League Challenge", cycle: "October", format: "UPR-HIF",
     standings: [
-        { name: "Stan Lin", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Yiming Lin", deck: "Gardevoir & Sylveon-GX", placing: 1 },
         { name: "Shane Quinn", deck: "Mew & Mewtwo-GX Toolbox", placing: 2 },
         { name: "James Cox", deck: "Pikachu & Zekrom-GX", placing: 3 },
         { name: "Christian Hasbani", deck: "Malamar / Giratina", placing: 4 }
@@ -242,7 +277,7 @@ const tournaments = [
         { name: "Shang Chua", deck: "Mew & Mewtwo-GX Toolbox", placing: 5 },
         { name: "Jake Cruwys", deck: "Pikachu & Zekrom-GX", placing: 6 },
         { name: "Corey Munro", deck: "Ability Reshiram & Charizard-GX", placing: 7 },
-        { name: "Stan Lin", deck: "Gardevoir & Sylveon-GX", placing: 8 },
+        { name: "Yiming Lin", deck: "Gardevoir & Sylveon-GX", placing: 8 },
         { name: "Long Xiang Xiong", deck: "Pikachu & Zekrom-GX", placing: 9 },
         { name: "Ying Hao Tou", deck: "Ability Reshiram & Charizard-GX", placing: 10 },
         { name: "Mitchell Dowling", deck: "Beheeyem", placing: 11 },
@@ -330,7 +365,7 @@ const tournaments = [
         { name: "Shane Quinn", deck: "Mew & Mewtwo-GX Toolbox", placing: 3 },
         { name: "Louis Pozzacchio", deck: "Mew & Mewtwo-GX Toolbox", placing: 4 },
         { name: "Chengyong Luo", deck: "Ability Reshiram & Charizard-GX", placing: 5 },
-        { name: "Stan Lin", deck: "Gardevoir & Sylveon-GX", placing: 6 },
+        { name: "Yiming Lin", deck: "Gardevoir & Sylveon-GX", placing: 6 },
         { name: "Jack Underwood", deck: "Poipole Stall", placing: 7 },
         { name: "Blake Lobina", deck: "Pikachu & Zekrom-GX", placing: 8 }
     ]},

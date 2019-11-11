@@ -1,10 +1,11 @@
 const decks = [
     // UPR-HIF
+    { archetype: "Green's Ultra Beasts", thumbnails: ["./assets/sprites/1158.png","./assets/sprites/1128.png","./assets/sprites/1157.png"] },
     { archetype: "Trevenant & Dusknoir-GX / Mismagius", thumbnails: ["./assets/sprites/833.png","./assets/sprites/518.png","./assets/sprites/471.png"] },
     { archetype: "Mew & Mewtwo-GX / Magnezone", thumbnails: ["./assets/sprites/156.png","./assets/sprites/155.png","./assets/sprites/503.png"] },
     { archetype: "Marshadow & Machamp-GX / Mismagius", thumbnails: ["./assets/sprites/1136.png","./assets/sprites/74.png","./assets/sprites/471.png"] },
     { archetype: "Baby Blacephalon / Pidgeotto", thumbnails: ["./assets/sprites/1156.png","./assets/sprites/23.png"] },
-    { archetype: "Green's Lucario & Melmetal-GX", thumbnails: ["./assets/sprites/489.png","./assets/sprites/1159.png"] },
+    { archetype: "Green's Lucario & Melmetal-GX", thumbnails: ["./assets/sprites/489.png","./assets/sprites/1161.png"] },
     { archetype: "Turtonator / Naganadel", thumbnails: ["./assets/sprites/1110.png","./assets/sprites/1155.png"] },
     { archetype: "Mew & Mewtwo-GX / Shedinja", thumbnails: ["./assets/sprites/156.png","./assets/sprites/155.png","./assets/sprites/322.png"] },
     { archetype: "Aegislash", thumbnails: ["./assets/sprites/804.png"] },
