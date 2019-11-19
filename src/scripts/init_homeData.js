@@ -6,90 +6,132 @@ tournament list to insert any new occurrence of players. */
 // var decks = require('../data/decks.js');
 var tournaments = require('../data/tournaments.js');
 
-function calcPointPayout(tournament, player) {
+function calcPointPayout(tournament, player, mode) {
     // By CP
-    if (tournament.type === 'League Challenge') {
-        if (player.placing === 1) {
-            return 15;
-        } else if (player.placing === 2) {
-            return 12;
-        } else if (player.placing <= 4) {
-            return 10;
-        } else if (player.placing <= 8) {
-            return 8;
-        }
-    } else if (tournament.type === 'League Cup') {
-        if (player.placing === 1) {
-            return 50;
-        } else if (player.placing === 2) {
-            return 40;
-        } else if (player.placing <= 4) {
-            return 32;
-        } else if (player.placing <= 8) {
-            return 25;
-        } else if (player.placing <= 16) {
-            return 20;
-        }
-    } else if (tournament.type === 'Regionals' || tournament.type === 'Special Event') {
-        if (player.placing === 1) {
-            return 200;
-        } else if (player.placing === 2) {
-            return 160;
-        } else if (player.placing <= 4) {
-            return 130;
-        } else if (player.placing <= 8) {
-            return 100;
-        } else if (player.placing <= 16) {
-            return 80;
-        } else if (player.placing <= 32) {
-            return 60;
-        } else if (player.placing <= 64) {
-            return 50;
-        } else if (player.placing <= 128) {
-            return 40;
+    if (mode === "CP") {
+        if (tournament.type === 'League Challenge') {
+            if (player.placing === 1) {
+                return 15;
+            } else if (player.placing === 2) {
+                return 12;
+            } else if (player.placing <= 4) {
+                return 10;
+            } else if (player.placing <= 8) {
+                return 8;
+            }
+        } else if (tournament.type === 'League Cup') {
+            if (player.placing === 1) {
+                return 50;
+            } else if (player.placing === 2) {
+                return 40;
+            } else if (player.placing <= 4) {
+                return 32;
+            } else if (player.placing <= 8) {
+                return 25;
+            } else if (player.placing <= 16) {
+                return 20;
+            }
+        } else if (tournament.type === 'Regionals' || tournament.type === 'Special Event') {
+            if (player.placing === 1) {
+                return 200;
+            } else if (player.placing === 2) {
+                return 160;
+            } else if (player.placing <= 4) {
+                return 130;
+            } else if (player.placing <= 8) {
+                return 100;
+            } else if (player.placing <= 16) {
+                return 80;
+            } else if (player.placing <= 32) {
+                return 60;
+            } else if (player.placing <= 64) {
+                return 50;
+            } else if (player.placing <= 128) {
+                return 40;
+            }
+        } else if (tournament.type === 'Internationals') {
+            if (player.placing === 1) {
+                return 500;
+            } else if (player.placing === 2) {
+                return 400;
+            } else if (player.placing <= 4) {
+                return 320;
+            } else if (player.placing <= 8) {
+                return 250;
+            } else if (player.placing <= 16) {
+                return 200;
+            } else if (player.placing <= 32) {
+                return 160;
+            } else if (player.placing <= 64) {
+                return 130;
+            } else if (player.placing <= 128) {
+                return 100;
+            }
         }
     }
 
     // By tournament weighting
-    /* if (tournament.type === 'League Challenge') {
-        if (player.placing === 1) {
-            return 4;
-        } else if (player.placing === 2) {
-            return 3;
-        } else if (player.placing <= 4) {
-            return 2;
-        } else if (player.placing <= 8) {
-            return 1;
+    else if (mode === "WEIGHT") {
+        if (tournament.type === 'League Challenge') {
+            if (player.placing === 1) {
+                return 4;
+            } else if (player.placing === 2) {
+                return 3;
+            } else if (player.placing <= 4) {
+                return 2;
+            } else if (player.placing <= 8) {
+                return 1;
+            }
+        } else if (tournament.type === 'League Cup') {
+            if (player.placing === 1) {
+                return 12;
+            } else if (player.placing === 2) {
+                return 8;
+            } else if (player.placing <= 4) {
+                return 4;
+            } else if (player.placing <= 8) {
+                return 3;
+            } else if (player.placing <= 16) {
+                return 1;
+            }
+        } else if (tournament.type === 'Regionals' || tournament.type === 'Special Event') {
+            if (player.placing === 1) {
+                return 60;
+            } else if (player.placing === 2) {
+                return 50;
+            } else if (player.placing <= 4) {
+                return 40;
+            } else if (player.placing <= 8) {
+                return 30;
+            } else if (player.placing <= 16) {
+                return 20;
+            } else if (player.placing <= 32) {
+                return 10;
+            } else if (player.placing <= 64) {
+                return 5;
+            } else if (player.placing <= 128) {
+                return 4;
+            }
+        } else if (tournament.type === 'Internationals') {
+            if (player.placing === 1) {
+                return 150;
+            } else if (player.placing === 2) {
+                return 120;
+            } else if (player.placing <= 4) {
+                return 90;
+            } else if (player.placing <= 8) {
+                return 60;
+            } else if (player.placing <= 16) {
+                return 45;
+            } else if (player.placing <= 32) {
+                return 30;
+            } else if (player.placing <= 64) {
+                return 20;
+            } else if (player.placing <= 128) {
+                return 10;
+            }
         }
-    } else if (tournament.type === 'League Cup') {
-        if (player.placing === 1) {
-            return 12;
-        } else if (player.placing === 2) {
-            return 8;
-        } else if (player.placing <= 4) {
-            return 4;
-        } else if (player.placing <= 8) {
-            return 3;
-        }
-    } else if (tournament.type === 'Regionals' || tournament.type === 'Special Event') {
-        if (player.placing === 1) {
-            return 60;
-        } else if (player.placing === 2) {
-            return 50;
-        } else if (player.placing <= 4) {
-            return 40;
-        } else if (player.placing <= 8) {
-            return 30;
-        } else if (player.placing <= 16) {
-            return 20;
-        } else if (player.placing <= 32) {
-            return 10;
-        } else if (player.placing <= 64) {
-            return 5;
-        } else if (player.placing <= 128) {
-            return 4;
-        }
-    } */
+    }
 
     return 0;
 };
@@ -178,7 +220,7 @@ for (let i = 0; i < tournaments.length; i++) {
 
         // Adds the achievement into the database
         PlayerList[PlayerList.findIndex(x => x.name === player.name)].addAchievement(tournaments[i].date.format("DD/MM/YY"), tournaments[i].name, tournaments[i].cycle, player.deck, player.placing);
-        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addPoints(calcPointPayout(tournaments[i], player));
+        PlayerList[PlayerList.findIndex(x => x.name === player.name)].addPoints(calcPointPayout(tournaments[i], player, "WEIGHT"));
 
         if (player.deck === "") {
             return;
@@ -190,9 +232,9 @@ for (let i = 0; i < tournaments.length; i++) {
         }
 
         if (i < 10) {
-            DeckList[DeckList.findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[i], player));
+            DeckList[DeckList.findIndex(x => x.deck === player.deck)].addCurrCP(calcPointPayout(tournaments[i], player, "CP"));
         }
-        DeckList[DeckList.findIndex(x => x.deck === player.deck)].addTotalCP(calcPointPayout(tournaments[i], player));
+        DeckList[DeckList.findIndex(x => x.deck === player.deck)].addTotalCP(calcPointPayout(tournaments[i], player, "CP"));
     });
 }
 
