@@ -2,7 +2,7 @@ const decks = [
     // UPR-CEC
     { archetype: "Quagsire / Silvally-GX", thumbnails: ["./assets/sprites/198.png","./assets/sprites/1107.png"] },
     { archetype: "Charizard & Braixen-GX / Omastar", thumbnails: ["./assets/sprites/14.png","./assets/sprites/738.png","./assets/sprites/144.png"] },
-    { archetype: "Charizard/Salazzle", thumbnails: ["./assets/sprites/14.png","./assets/sprites/1092.png"] },
+    { archetype: "Charizard / Salazzle", thumbnails: ["./assets/sprites/14.png","./assets/sprites/1092.png"] },
     { archetype: "Aerodactyl-GX", thumbnails: ["./assets/sprites/147.png"] },
     { archetype: "Malamar / Solgaleo & Lunala-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/1125.png","./assets/sprites/1126.png"] },
     { archetype: "Malamar / Trevenant & Dusknoir-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/833.png","./assets/sprites/518.png"] },
