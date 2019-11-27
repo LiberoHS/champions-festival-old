@@ -1,5 +1,6 @@
 const decks = [
     // UPR-CEC
+    { archetype: "Green's Charizard & Braixen-GX", thumbnails: ["./assets/sprites/14.png","./assets/sprites/738.png"] },
     { archetype: "Quagsire / Silvally-GX", thumbnails: ["./assets/sprites/198.png","./assets/sprites/1107.png"] },
     { archetype: "Charizard & Braixen-GX / Omastar", thumbnails: ["./assets/sprites/14.png","./assets/sprites/738.png","./assets/sprites/144.png"] },
     { archetype: "Charizard / Salazzle", thumbnails: ["./assets/sprites/14.png","./assets/sprites/1092.png"] },
@@ -9,9 +10,8 @@ const decks = [
     { archetype: "Doll Stall", thumbnails: ["./assets/sprites/1162.png","./assets/sprites/781.png"] },
     { archetype: "Naganadel & Guzzlord-GX / Mismagius", thumbnails: ["./assets/sprites/1155.png","./assets/sprites/1133.png","./assets/sprites/471.png"] },
     { archetype: "Green's Arceus & Dialga & Palkia-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png"] },
-    { archetype: "Arceus & Dialga & Palkia-GX / Hoopa", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png","./assets/sprites/851.png"] },
     { archetype: "Arceus & Dialga & Palkia-GX / Spiritomb", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png","./assets/sprites/483.png"] },
-    { archetype: "Arceus & Dialga & Palkia-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png"] },
+    { archetype: "Arceus & Dialga & Palkia-GX / Keldeo-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png","./assets/sprites/726.png"] },
     // UPR-HIF
     { archetype: "Dusk Mane Necrozma-GX / Magnezone", thumbnails: ["./assets/sprites/1158.png","./assets/sprites/503.png"] },
     { archetype: "Green's Ultra Beasts", thumbnails: ["./assets/sprites/1158.png","./assets/sprites/1128.png","./assets/sprites/1157.png"] },
