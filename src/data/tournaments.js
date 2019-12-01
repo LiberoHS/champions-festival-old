@@ -20,6 +20,53 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Adelaide Cup", date: moment("2019-12-01"), region: "SA", attendance: 20, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Callum Walker", deck: "Baby Blacephalon / Pidgeotto", placing: 1 },
+        { name: "Calvin Prosser", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Sam Clayfield", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Jordan Palmer", deck: "Malamar / Ultra Necrozma-GX", placing: 4 }
+    ]},
+    { name: "Bendigo Cup", date: moment("2019-12-01"), region: "VIC", attendance: 18, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Luke Schmitt", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Steven Filiposki", deck: "Baby Blacephalon / Pidgeotto", placing: 2 },
+        { name: "Michael Kan", deck: "Quagsire / Naganadel", placing: 3 },
+        { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Maitland Cup", date: moment("2019-12-01"), region: "NSW", attendance: 30, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Jack Millar", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Lucas Hamilton-Foster", deck: "Green's Charizard & Braixen-GX", placing: 2 },
+        { name: "Christian Hasbani", deck: "Reshiram & Charizard-GX Toolbox", placing: 3 },
+        { name: "James Cox", deck: "Malamar / Giratina", placing: 4 },
+        { name: "Brent Tonisson", deck: "Malamar / Giratina", placing: 5 },
+        { name: "Favio Perez", deck: "Mewtwo & Mew-GX Toolbox", placing: 6 },
+        { name: "Cherakee Brennan", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 7 },
+        { name: "Shang Chua", deck: "Mewtwo & Mew-GX Toolbox", placing: 8 }
+    ]},
+    { name: "Newcastle Cup", date: moment("2019-11-30"), region: "NSW", attendance: 32, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Christian Hasbani", deck: "Reshiram & Charizard-GX Toolbox", placing: 1 },
+        { name: "Louis Pozzacchio", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Brendan Schofield", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "Lucas Hamilton-Foster", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 4 },
+        { name: "Ruben Cortez", deck: "Blacephalon-GX / Naganadel", placing: 5 },
+        { name: "Ying Hao Tou", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 6 },
+        { name: "Jack Millar", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 7 },
+        { name: "Jeremy Evans", deck: "Mewtwo & Mew-GX Toolbox", placing: 8 }
+    ]},
+    { name: "Hong Kong Cup", date: moment("2019-11-30"), region: "HK", attendance: 42, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Wo Pan Wong", deck: "Baby Blacephalon / Pidgeotto", placing: 1 },
+        { name: "Ka Ho Chau", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Vincent Yuen", deck: "Baby Blacephalon / Pidgeotto", placing: 3 },
+        { name: "Peter Lo", deck: "Blacephalon-GX / Naganadel", placing: 4 },
+        { name: "Mung King Chan", deck: "Mewtwo & Mew-GX Toolbox", placing: 5 },
+        { name: "Fung Ching Lam", deck: "Baby Blacephalon / Pidgeotto", placing: 6 },
+        { name: "Ngai Hei Easy Chan", deck: "Blacephalon-GX / Naganadel", placing: 7 },
+        { name: "Siu Chun Lee", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 8 }
+    ]},
     { name: "Spellbound LC", date: moment("2019-11-24"), region: "NZ", attendance: 18, type: "League Challenge", cycle: "November", format: "UPR-CEC",
     standings: [
         { name: "Yu Xiang", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
