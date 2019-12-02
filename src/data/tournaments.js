@@ -31,7 +31,7 @@ const tournaments = [
     standings: [
         { name: "Luke Schmitt", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
         { name: "Steven Filiposki", deck: "Baby Blacephalon / Pidgeotto", placing: 2 },
-        { name: "Michael Kan", deck: "Quagsire / Naganadel", placing: 3 },
+        { name: "Michael Kan", deck: "Reshiram & Charizard-GX Toolbox", placing: 3 },
         { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 4 }
     ]},
     { name: "Maitland Cup", date: moment("2019-12-01"), region: "NSW", attendance: 30, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",

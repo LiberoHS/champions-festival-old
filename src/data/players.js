@@ -846,7 +846,7 @@ achievements: [{ date: "10/11/19", tournament: "Table Top LC", cycle: "November"
 achievements: [{ date: "19/10/19", tournament: "Ormond LC", cycle: "October", deck: "Malamar / Garchomp & Giratina-GX", placing: 4 },
 ], points: 2 },
 { name: "Michael Kan",
-achievements: [{ date: "01/12/19", tournament: "Bendigo Cup", cycle: "Quarter 2", deck: "Quagsire / Naganadel", placing: 3 },
+achievements: [{ date: "01/12/19", tournament: "Bendigo Cup", cycle: "Quarter 2", deck: "Reshiram & Charizard-GX Toolbox", placing: 3 },
 { date: "21/09/19", tournament: "Ormond Cup", cycle: "Quarter 1", deck: "Pikachu & Zekrom-GX", placing: 8 },
 { date: "31/08/19", tournament: "Melbourne SPE", cycle: "N/A", deck: "Pikachu & Zekrom-GX", placing: 16 },
 { date: "20/07/19", tournament: "Ormond LC", cycle: "July", deck: "Zoroark-GX / Dewgong", placing: 4 },
