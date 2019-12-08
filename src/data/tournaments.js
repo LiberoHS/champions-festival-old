@@ -35,7 +35,7 @@ const tournaments = [
     standings: [
         { name: "Law Ping Ki", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
         { name: "Ethan Lee", deck: "Gardevoir & Sylveon-GX", placing: 2 },
-        { name: "Kashvinder Singh Mann", deck: "Charizard", placing: 3 },
+        { name: "Kashvinder Singh Mann", deck: "Charizard TEU / Ninetales", placing: 3 },
         { name: "Wong Lai Shan", deck: "Malamar / Giratina", placing: 4 }
     ]},
     { name: "Singapore Cup", date: moment("2019-12-08"), region: "SG", attendance: 53, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
@@ -339,7 +339,7 @@ const tournaments = [
         { name: "Mauricio Ricardo Reyes Rodriguez", deck: "Reshiram & Charizard-GX Toolbox", placing: 70 },
         { name: "Luigi Profeti", deck: "Gardevoir & Sylveon-GX", placing: 71 },
         { name: "Pedro Provenzi", deck: "Doll Stall", placing: 72 },
-        { name: "Andre Pimenta", deck: "Charizard / Salazzle", placing: 73 },
+        { name: "Andre Pimenta", deck: "Charizard TEU / Salazzle", placing: 73 },
         { name: "Stian Nilsso", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 74 },
         { name: "Diego Falcao", deck: "Reshiram & Charizard-GX Toolbox", placing: 75 },
         { name: "Gabriel Chighini", deck: "Baby Blacephalon", placing: 76 },

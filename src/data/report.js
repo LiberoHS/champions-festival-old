@@ -42,7 +42,7 @@ var DeckList = [
 { deck: "Charizard & Braixen-GX / Omastar", currCP: 160 },
 { deck: "Quagsire / Silvally-GX", currCP: 160 },
 { deck: "Malamar / Giratina", currCP: 147 },
-{ deck: "Charizard / Salazzle", currCP: 100 },
+{ deck: "Charizard TEU / Salazzle", currCP: 100 },
 { deck: "Malamar / Solgaleo & Lunala-GX", currCP: 100 },
 { deck: "Welder Toolbox", currCP: 30 },
 { deck: "Dusk Mane Necrozma-GX / Magnezone", currCP: 20 },
@@ -71,7 +71,7 @@ var DeckList = [
 { deck: "Green's Reshiram & Charizard-GX", currCP: 200 },
 { deck: "Charizard & Braixen-GX / Omastar", currCP: 160 },
 { deck: "Quagsire / Silvally-GX", currCP: 160 },
-{ deck: "Charizard / Salazzle", currCP: 100 },
+{ deck: "Charizard TEU / Salazzle", currCP: 100 },
 { deck: "Malamar / Giratina", currCP: 100 },
 { deck: "Malamar / Solgaleo & Lunala-GX", currCP: 100 },
 { deck: "Welder Toolbox", currCP: 30 },
@@ -117,7 +117,7 @@ var DeckList = [
 { deck: "Green's Charizard & Braixen-GX", currCP: 40 },
 { deck: "Pikachu & Zekrom-GX", currCP: 32 },
 { deck: "Arceus & Dialga & Palkia-GX / Spiritomb", currCP: 25 },
-{ deck: "Charizard", currCP: 10 },
+{ deck: "Charizard TEU / Ninetales", currCP: 10 },
 ],
 ];
 
