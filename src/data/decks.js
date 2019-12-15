@@ -1,5 +1,7 @@
 const decks = [
     // UPR-CEC
+    { archetype: "Granbull", thumbnails: ["./assets/sprites/240.png"] },
+    { archetype: "Nuzzle Toolbox", thumbnails: ["./assets/sprites/32.png","./assets/sprites/456.png","./assets/sprites/659.png"] },
     { archetype: "Garchomp & Giratina-GX / Mismagius", thumbnails: ["./assets/sprites/486.png","./assets/sprites/534.png","./assets/sprites/471.png"] },
     { archetype: "Green's Charizard & Braixen-GX", thumbnails: ["./assets/sprites/14.png","./assets/sprites/738.png"] },
     { archetype: "Quagsire / Silvally-GX", thumbnails: ["./assets/sprites/198.png","./assets/sprites/1107.png"] },
@@ -61,7 +63,11 @@ const decks = [
     { archetype: "Zoroark-GX / Silvally-GX", thumbnails: ["./assets/sprites/637.png","./assets/sprites/1107.png"] },
     { archetype: "Zygarde-GX", thumbnails: ["./assets/sprites/984.png"] },
     { archetype: "Zapdos / Ultra Beasts", thumbnails: ["./assets/sprites/150.png","./assets/sprites/1128.png","./assets/sprites/1127.png"] },
-    { archetype: "Beast Box", thumbnails: ["./assets/sprites/1155.png","./assets/sprites/1128.png","./assets/sprites/1157.png"] }
+    { archetype: "Beast Box", thumbnails: ["./assets/sprites/1155.png","./assets/sprites/1128.png","./assets/sprites/1157.png"] },
+    // BW-CEC
+    { archetype: "Malamar / Gourgeist", thumbnails: ["./assets/sprites/811.png","./assets/sprites/838.png"] },
+    { archetype: "Rowlet & Alolan Exeggutor-GX Toolbox", thumbnails: ["./assets/sprites/1053.png","./assets/sprites/1051.png"] },
+
 ];
 
 // export default decks;
