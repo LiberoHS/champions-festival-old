@@ -1,10 +1,10 @@
 var lastSixWeeks = [
-{ dayStart: "15/12/19", dayEnd: "14/12/19", indexStart: 0, indexEnd: 14},
-{ dayStart: "08/12/19", dayEnd: "07/12/19", indexStart: 14, indexEnd: 18},
-{ dayStart: "01/12/19", dayEnd: "30/11/19", indexStart: 18, indexEnd: 23},
-{ dayStart: "24/11/19", dayEnd: "23/11/19", indexStart: 23, indexEnd: 29},
-{ dayStart: "17/11/19", dayEnd: "15/11/19", indexStart: 29, indexEnd: 36},
-{ dayStart: "10/11/19", dayEnd: "10/11/19", indexStart: 36, indexEnd: 41},
+{ dayStart: "15/12/19", dayEnd: "14/12/19", indexStart: 0, indexEnd: 12},
+{ dayStart: "08/12/19", dayEnd: "07/12/19", indexStart: 12, indexEnd: 16},
+{ dayStart: "01/12/19", dayEnd: "30/11/19", indexStart: 16, indexEnd: 21},
+{ dayStart: "24/11/19", dayEnd: "23/11/19", indexStart: 21, indexEnd: 27},
+{ dayStart: "17/11/19", dayEnd: "15/11/19", indexStart: 27, indexEnd: 34},
+{ dayStart: "10/11/19", dayEnd: "10/11/19", indexStart: 34, indexEnd: 39},
 ];
 
 var DeckList = [
@@ -116,7 +116,7 @@ var DeckList = [
 { deck: "Garchomp & Giratina-GX / Mismagius", currCP: 225 },
 { deck: "Malamar / Ultra Necrozma-GX", currCP: 197 },
 { deck: "Doll Stall", currCP: 124 },
-{ deck: "Pikachu & Zekrom-GX", currCP: 92 },
+{ deck: "Pikachu & Zekrom-GX", currCP: 114 },
 { deck: "Blacephalon-GX / Naganadel", currCP: 92 },
 { deck: "Poipole Stall", currCP: 50 },
 { deck: "Nuzzle Toolbox", currCP: 50 },
@@ -124,7 +124,6 @@ var DeckList = [
 { deck: "Granbull", currCP: 32 },
 { deck: "Welder Toolbox", currCP: 32 },
 { deck: "Arceus & Dialga & Palkia-GX / Spiritomb", currCP: 25 },
-{ deck: "Pikachu & Zekrom Toolbox", currCP: 22 },
 { deck: "Malamar / Gourgeist", currCP: 15 },
 { deck: "Pidgeotto Control", currCP: 10 },
 { deck: "Rowlet & Alolan Exeggutor-GX Toolbox", currCP: 10 },
