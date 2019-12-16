@@ -122,8 +122,8 @@ const tournaments = [
     { name: "Neo Tokyo LC", date: moment("2019-12-14"), region: "QLD", attendance: 5, type: "League Challenge", cycle: "December", format: "BW-CEC",
     standings: [
         { name: "Liam Mulheron", deck: "Malamar / Gourgeist", placing: 1 },
-        { name: "Jack Millar", deck: "Pikachu & Zekrom Toolbox", placing: 2 },
-        { name: "Matthew Burris", deck: "Pikachu & Zekrom Toolbox", placing: 3 },
+        { name: "Jack Millar", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Matthew Burris", deck: "Pikachu & Zekrom-GX", placing: 3 },
         { name: "Aaron Stringfellow", deck: "Rowlet & Alolan Exeggutor-GX Toolbox", placing: 4 }
     ]},
     { name: "Hobart Cup", date: moment("2019-12-14"), region: "TAS", attendance: 5, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
