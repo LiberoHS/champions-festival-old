@@ -1,5 +1,11 @@
 const decks = [
     // UPR-CEC
+    { archetype: "Tangrowth / Absol", thumbnails: ["./assets/sprites/506.png","./assets/sprites/389.png"] },
+    { archetype: "ADP / Pheromosa & Buzzwole-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/1129.png","./assets/sprites/1128.png"] },
+    { archetype: "Reshiram & Zekrom-GX", thumbnails: ["./assets/sprites/719.png","./assets/sprites/720.png"] },
+    { archetype: "Green's Blastoise & Piplup-GX", thumbnails: ["./assets/sprites/16.png","./assets/sprites/428.png"] },
+    { archetype: "Green's Beast Box", thumbnails: ["./assets/sprites/1155.png","./assets/sprites/1128.png","./assets/sprites/1157.png"] },
+    { archetype: "ADP / Bird Trio", thumbnails: ["./assets/sprites/541.png","./assets/sprites/151.png","./assets/sprites/150.png","./assets/sprites/149.png"] },
     { archetype: "Granbull", thumbnails: ["./assets/sprites/240.png"] },
     { archetype: "Nuzzle Toolbox", thumbnails: ["./assets/sprites/32.png","./assets/sprites/456.png","./assets/sprites/659.png"] },
     { archetype: "Garchomp & Giratina-GX / Mismagius", thumbnails: ["./assets/sprites/486.png","./assets/sprites/534.png","./assets/sprites/471.png"] },

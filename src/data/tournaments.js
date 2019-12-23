@@ -20,6 +20,80 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Malaysia Cup", date: moment("2019-12-22"), region: "MY", attendance: 91, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Man Kin Ho", deck: "Garchomp & Giratina-GX / Mismagius", placing: 1 },
+        { name: "Matthew Burris", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Samuel Chok Mun Chiun", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Mung King Chan", deck: "Malamar / Giratina", placing: 4 },
+        { name: "Chen Jinn Chung", deck: "Reshiram & Charizard-GX Toolbox", placing: 5 },
+        { name: "Clifton Goh", deck: "Mewtwo & Mew-GX Toolbox", placing: 6 },
+        { name: "Chi Shing Lai", deck: "Garchomp & Giratina-GX / Mismagius", placing: 7 },
+        { name: "Nicholas Yong Soon Hong", deck: "Mewtwo & Mew-GX Toolbox", placing: 8 }
+    ]},
+    { name: "Baydragon LC", date: moment("2019-12-22"), region: "NZ", attendance: 7, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Matt Chapman", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Brad Rumble", deck: "Green's Blastoise & Piplup-GX", placing: 2 },
+        { name: "Vincent Ma", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 3 },
+        { name: "Mikaere Newey", deck: "Green's Beast Box", placing: 4 }
+    ]},
+    { name: "Cannington LC", date: moment("2019-12-22"), region: "WA", attendance: 8, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Stephen Kurt", deck: "Malamar / Trevenant & Dusknoir-GX", placing: 1 },
+        { name: "Terrence Wong", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Dave Timlin", deck: "Aerodactyl-GX", placing: 3 },
+        { name: "Aaron Cole", deck: "Tangrowth / Absol", placing: 4 }
+    ]},
+    { name: "Maitland LC", date: moment("2019-12-22"), region: "NSW", attendance: 7, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Jeremy Evans", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Cherakee Brennan", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 2 },
+        { name: "Drew Duffey", deck: "Reshiram & Zekrom-GX", placing: 3 },
+        { name: "Nathan Canty-Seghers", deck: "Nuzzle Toolbox", placing: 4 }
+    ]},
+    { name: "Newcastle LC", date: moment("2019-12-21"), region: "NSW", attendance: 14, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Shang Chua", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Brett Newton", deck: "Malamar / Giratina", placing: 2 },
+        { name: "Corey Munro", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "James Cox", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Malaysia Regionals", date: moment("2019-12-21"), region: "MY", attendance: 282, type: "Regionals", cycle: "N/A", format: "UPR-CEC",
+    standings: [
+        { name: "Brent Tonisson", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Syahmi Razak", deck: "ADP / Bird Trio", placing: 2 },
+        { name: "Tan Jun Hao", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "Jack Millar", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 },
+        { name: "Lee Keng Fai", deck: "Garchomp & Giratina-GX / Mismagius", placing: 5 },
+        { name: "Yee Wei Chun", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 6 },
+        { name: "Cameron Shenoy", deck: "Naganadel-GX Checkmate", placing: 7 },
+        { name: "Wo Pan Wong", deck: "Garchomp & Giratina-GX / Mismagius", placing: 8 },
+        { name: "Levin Fo", deck: "Mewtwo & Mew-GX Toolbox", placing: 9 },
+        { name: "Malik Hisyam", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 10 },
+        { name: "Afiq Samsudin", deck: "Green's Charizard & Braixen-GX", placing: 11 },
+        { name: "Lai Chi Shing", deck: "Garchomp & Giratina-GX / Mismagius", placing: 12 },
+        { name: "Peter Lo", deck: "Garchomp & Giratina-GX / Mismagius", placing: 13 },
+        { name: "Farhan Aziz", deck: "ADP / Bird Trio", placing: 14 },
+        { name: "Chen Hong Yu", deck: "Arceus & Dialga & Palkia-GX / Spiritomb", placing: 15 },
+        { name: "Adrian Velasco", deck: "Green's Lucario & Melmetal-GX", placing: 16 },
+        { name: "Lin Wei Yu", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 17 },
+        { name: "Muhammad Shafiq", deck: "Gardevoir & Sylveon-GX", placing: 18 },
+        { name: "Joey Ho", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 19 },
+        { name: "Shaun Soh", deck: "Mewtwo & Mew-GX Toolbox", placing: 20 },
+        { name: "Ng Zi Zheng", deck: "Mewtwo & Mew-GX Toolbox", placing: 21 },
+        { name: "Melvyn Lee", deck: "Mewtwo & Mew-GX Toolbox", placing: 22 },
+        { name: "Colin Tang", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 23 },
+        { name: "Chew Jin Jian", deck: "Reshiram & Charizard-GX Toolbox", placing: 24 },
+        { name: "Klive Aw", deck: "Arceus & Dialga & Palkia-GX / Spiritomb", placing: 25 },
+        { name: "Jeffery Tee", deck: "Pikachu & Zekrom-GX", placing: 26 },
+        { name: "Law Ping Ki", deck: "Mewtwo & Mew-GX Toolbox", placing: 27 },
+        { name: "Fung Tsz Ping", deck: "Mewtwo & Mew-GX Toolbox", placing: 28 },
+        { name: "Kaiwen Cabbabe", deck: "Malamar / Giratina", placing: 29 },
+        { name: "Rinesh John", deck: "Reshiram & Charizard-GX Toolbox", placing: 30 },
+        { name: "Phang Xun Yi", deck: "Baby Blacephalon", placing: 31 },
+        { name: "Hairul Haify", deck: "ADP / Pheromosa & Buzzwole-GX", placing: 32 }
+    ]},
     { name: "Penrith Cup", date: moment("2019-12-15"), region: "NSW", attendance: 14, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
     standings: [
         { name: "Alec El-Hindi", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
@@ -177,7 +251,7 @@ const tournaments = [
         { name: "Clifton Goh", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 },
         { name: "Edwin Kan Jia Ju", deck: "Malamar / Giratina", placing: 5 },
         { name: "Ho Man Kin", deck: "Garchomp & Giratina-GX / Mismagius", placing: 6 },
-        { name: "Tan Yong Siang", deck: "Green's Arceus & Dialga & Palkia-GX", placing: 7 },
+        { name: "Tan Yong Siang", deck: "ADP / Pheromosa & Buzzwole-GX", placing: 7 },
         { name: "Edmund Khoo", deck: "Gardevoir & Sylveon-GX", placing: 8 },
         { name: "Nicholas Yong Soon Hong", deck: "Mewtwo & Mew-GX Toolbox", placing: 9 },
         { name: "Klive Aw", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 10 },

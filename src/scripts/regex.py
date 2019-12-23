@@ -17,10 +17,10 @@ while line:
     matchObj = re.split(r'\W+', line)
     # prints into a file
     if (matchObj):
-        name = matchObj[1] + " " + matchObj[2]
+        name = matchObj[0] + " " + matchObj[1]
         print(name)
         # print("NAME: " + name)
-        # deck = matchObj[2]
+        deck = matchObj[2]
     # else:
         # matchObj = re.match( r'(.*) \([\d]-[\d]-[\d]\)', line, re.M|re.I)
         # name = matchObj.group(1)
