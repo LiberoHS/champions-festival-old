@@ -172,6 +172,9 @@ let count = tournaments[0].date.weeks();
 let k = 0;
 lastSixWeeks[k].dayStart = tournaments[0].date;
 for (let i = 0; i < tournaments.length && k < 6; i++) {
+    if (count == 1 && tournaments[i].date.weeks() == 52) {
+        count = 52;
+    }
     if (tournaments[i].date.weeks() >= count) {
 
     } else {

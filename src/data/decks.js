@@ -1,5 +1,6 @@
 const decks = [
     // UPR-CEC
+    { archetype: "Green's Garchomp & Giratina-GX", thumbnails: ["./assets/sprites/486.png","./assets/sprites/534.png"] },
     { archetype: "Tangrowth / Absol", thumbnails: ["./assets/sprites/506.png","./assets/sprites/389.png"] },
     { archetype: "ADP / Pheromosa & Buzzwole-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/1129.png","./assets/sprites/1128.png"] },
     { archetype: "Reshiram & Zekrom-GX", thumbnails: ["./assets/sprites/719.png","./assets/sprites/720.png"] },

@@ -20,6 +20,41 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Bendigo LC", date: moment("2019-12-29"), region: "VIC", attendance: 7, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Damian Filiposki", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Jacob Sparks", deck: "Blacephalon-GX / Naganadel", placing: 2 },
+        { name: "Steven Filiposki", deck: "Naganadel & Guzzlord-GX / Mismagius", placing: 3 },
+        { name: "Ben Young", deck: "Malamar / Giratina", placing: 4 }
+    ]},
+    { name: "Area 52 LC", date: moment("2019-12-29"), region: "TAS", attendance: 4, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Matthew Oliver", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Sean Gressie", deck: "Green's Garchomp & Giratina-GX", placing: 2 },
+        { name: "David Stevens", deck: "Malamar / Garchomp & Giratina-GX", placing: 3 },
+        { name: "Christopher Mathers", deck: "Malamar / Giratina", placing: 4 }
+    ]},
+    { name: "Area 52 Cup", date: moment("2019-12-28"), region: "TAS", attendance: 9, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "David Stevens", deck: "Malamar / Garchomp & Giratina-GX", placing: 1 },
+        { name: "Ashley Kendall", deck: "Blacephalon-GX / Naganadel", placing: 2 },
+        { name: "Liam Palmer", deck: "Blacephalon-GX / Naganadel", placing: 3 },
+        { name: "Christopher Mathers", deck: "Malamar / Giratina", placing: 4 }
+    ]},
+    { name: "Ormond LC", date: moment("2019-12-28"), region: "VIC", attendance: 18, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Ben Anderson", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Henry Brand", deck: "Garchomp & Giratina-GX / Mismagius", placing: 2 },
+        { name: "Kaiwen Cabbabe", deck: "Malamar / Garchomp & Giratina-GX", placing: 3 },
+        { name: "Damian Filiposki", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Top Ryde LC", date: moment("2019-12-28"), region: "NSW", attendance: 18, type: "League Challenge", cycle: "December", format: "UPR-CEC",
+    standings: [
+        { name: "Brent Tonisson", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Favio Perez", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Joshua Stone", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 3 },
+        { name: "Anton Piccio", deck: "Malamar / Garchomp & Giratina-GX", placing: 4 }
+    ]},
     { name: "Malaysia Cup", date: moment("2019-12-22"), region: "MY", attendance: 91, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
     standings: [
         { name: "Man Kin Ho", deck: "Garchomp & Giratina-GX / Mismagius", placing: 1 },
