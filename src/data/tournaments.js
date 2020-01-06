@@ -27,7 +27,7 @@ const tournaments = [
         { name: "Brad Rumble", deck: "Green's Blastoise & Piplup-GX", placing: 3 },
         { name: "Jiawei Sun", deck: "Garchomp & Giratina-GX / Mismagius", placing: 4 }
     ]},
-    { name: "Penang Cup", date: moment("2020-01-04"), region: "MY", attendance: 22, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    { name: "Penang Cup", date: moment("2020-01-04"), region: "MY", attendance: 37, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
     standings: [
         { name: "Malik Hisyam", deck: "ADP / Bird Trio", placing: 1 },
         { name: "Aaron Kang", deck: "Gardevoir & Sylveon-GX", placing: 2 },
