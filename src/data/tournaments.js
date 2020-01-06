@@ -20,6 +20,35 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Spellbound LC", date: moment("2020-01-05"), region: "NZ", attendance: 9, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [ // need to double check attendance
+        { name: "Matthew Chapman", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Vincent Ma", deck: "Naganadel Checkmate", placing: 2 },
+        { name: "Brad Rumble", deck: "Green's Blastoise & Piplup-GX", placing: 3 },
+        { name: "Jiawei Sun", deck: "Garchomp & Giratina-GX / Mismagius", placing: 4 }
+    ]},
+    { name: "Penang Cup", date: moment("2020-01-04"), region: "MY", attendance: 22, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Malik Hisyam", deck: "ADP / Bird Trio", placing: 1 },
+        { name: "Aaron Kang", deck: "Gardevoir & Sylveon-GX", placing: 2 },
+        { name: "Izmir Armani", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Luther Wong", deck: "ADP Control", placing: 4 },
+        { name: "Ethan Lee", deck: "Gardevoir & Sylveon-GX", placing: 5 },
+        { name: "Jacob Qian", deck: "Quagsire / Naganadel", placing: 6 },
+        { name: "Yu Shaun Soh", deck: "Mewtwo & Mew-GX Toolbox", placing: 7 },
+        { name: "Keng Khai Saw", deck: "ADP / Bird Trio", placing: 8 }
+    ]},
+    { name: "Ormond Cup", date: moment("2020-01-04"), region: "VIC", attendance: 28, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Michael Kan", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Christopher Kan", deck: "Gardevoir & Sylveon-GX", placing: 2 },
+        { name: "James Brown", deck: "Malamar / Naganadel & Guzzlord-GX", placing: 3 },
+        { name: "Angus Johnson", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 },
+        { name: "Ashton Bradley", deck: "Gardevoir & Sylveon-GX", placing: 5 },
+        { name: "Hudson Moore", deck: "Gardevoir & Sylveon-GX", placing: 6 },
+        { name: "Damian Filiposki", deck: "Mewtwo & Mew-GX Toolbox", placing: 7 },
+        { name: "Kaiwen Cabbabe", deck: "Malamar / Garchomp & Giratina-GX", placing: 8 }
+    ]},
     { name: "Bendigo LC", date: moment("2019-12-29"), region: "VIC", attendance: 7, type: "League Challenge", cycle: "December", format: "UPR-CEC",
     standings: [
         { name: "Damian Filiposki", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
@@ -68,7 +97,7 @@ const tournaments = [
     ]},
     { name: "Baydragon LC", date: moment("2019-12-22"), region: "NZ", attendance: 7, type: "League Challenge", cycle: "December", format: "UPR-CEC",
     standings: [
-        { name: "Matt Chapman", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Matthew Chapman", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
         { name: "Brad Rumble", deck: "Green's Blastoise & Piplup-GX", placing: 2 },
         { name: "Vincent Ma", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 3 },
         { name: "Mikaere Newey", deck: "Green's Beast Box", placing: 4 }

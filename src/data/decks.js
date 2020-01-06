@@ -1,5 +1,7 @@
 const decks = [
     // UPR-CEC
+    { archetype: "ADP Control", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png"] },
+    { archetype: "Malamar / Naganadel & Guzzlord-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/1155.png","./assets/sprites/1133.png"] },
     { archetype: "Green's Garchomp & Giratina-GX", thumbnails: ["./assets/sprites/486.png","./assets/sprites/534.png"] },
     { archetype: "Tangrowth / Absol", thumbnails: ["./assets/sprites/506.png","./assets/sprites/389.png"] },
     { archetype: "ADP / Pheromosa & Buzzwole-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/1129.png","./assets/sprites/1128.png"] },
