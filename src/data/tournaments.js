@@ -20,8 +20,78 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "West City LC", date: moment("2020-01-12"), region: "NZ", attendance: 11, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Ivan Deng", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Johnny Jiang", deck: "Weavile-GX Toolbox", placing: 2 },
+        { name: "York Robson", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 3 },
+        { name: "Brad Rumble", deck: "Rowlet & Alolan Exeggutor-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Table Top LC", date: moment("2020-01-12"), region: "SA", attendance: 5, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Aaron van der Kolk", deck: "Garchomp & Giratina-GX / Mismagius", placing: 1 },
+        { name: "Adrian Hammer", deck: "Baby Blacephalon / Pidgeotto", placing: 2 },
+        { name: "Carol Poyner", deck: "Reshiram & Charizard-GX Toolbox", placing: 3 }
+    ]},
+    { name: "Adelaide LC", date: moment("2020-01-12"), region: "SA", attendance: 15, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Matthew Taverna", deck: "Pidgeotto Control", placing: 1 },
+        { name: "Jordan Palmer", deck: "Malamar / Giratina", placing: 2 },
+        { name: "James Goreing", deck: "ADP / Bird Trio", placing: 3 },
+        { name: "Scott Langford", deck: "Malamar / Giratina", placing: 4 }
+    ]},
+    { name: "Greensborough LC", date: moment("2020-01-12"), region: "VIC", attendance: 10, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Kaiwen Cabbabe", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Hudson Moore", deck: "Gardevoir & Sylveon-GX", placing: 2 },
+        { name: "Marco Giovannini", deck: "Pidgeotto Control", placing: 3 },
+        { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Project EXT Cup", date: moment("2020-01-12"), region: "SG", attendance: 24, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Clifton Goh", deck: "Malamar / Giratina", placing: 1 },
+        { name: "Jeremy Leong", deck: "Malamar / Giratina", placing: 2 },
+        { name: "Benjamin Teh", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Edmund Khoo", deck: "Fossil Box", placing: 4 },
+        { name: "Yuan Jun Ting", deck: "Mewtwo & Mew-GX Toolbox", placing: 5 },
+        { name: "Kashvinder Singh", deck: "Malamar / Ultra Necrozma-GX", placing: 6 },
+        { name: "Anselm Sim", deck: "Mewtwo & Mew-GX Toolbox", placing: 7 },
+        { name: "Nicholas Yong", deck: "Mewtwo & Mew-GX Toolbox", placing: 8 }
+    ]},
+    { name: "Hong Kong Cup", date: moment("2020-01-11"), region: "HK", attendance: "", type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Wing Yiu Cheung", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Cheuk Ho Cheung", deck: "Blacephalon-GX / Naganadel", placing: 2 },
+        { name: "Pui Lam Lee", deck: "Trevenant & Dusknoir-GX / Mismagius", placing: 3 },
+        { name: "Wo Pan Wong", deck: "ADP / Bird Trio", placing: 4 },
+        { name: "Catherine Wong", deck: "Malamar / Giratina", placing: 5 },
+        { name: "Man Kin Ho", deck: "Garchomp & Giratina-GX / Mismagius", placing: 6 },
+        { name: "Cheuk Nam Pang", deck: "Blacephalon-GX / Naganadel", placing: 7 },
+        { name: "Gary Keung", deck: "ADP / Bird Trio", placing: 8 }
+    ]},
+    { name: "Cerberus Cup", date: moment("2020-01-11"), region: "NZ", attendance: 10, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Duncan Inkster", deck: "ADP / Bird Trio", placing: 1 },
+        { name: "Finn McKeefry", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Kenny Potter", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 3 },
+        { name: "Eric Sanson", deck: "Malamar / Garchomp & Giratina-GX", placing: 4 }
+    ]},
+    { name: "Seaford Cup", date: moment("2020-01-11"), region: "SA", attendance: 16, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Aaron van der Kolk", deck: "Garchomp & Giratina-GX / Mismagius", placing: 1 },
+        { name: "Jordan Palmer", deck: "Malamar / Giratina", placing: 2 },
+        { name: "Matthew Taverna", deck: "Gardevoir & Sylveon-GX", placing: 3 },
+        { name: "Calvin Prosser", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Ormond LC", date: moment("2020-01-10"), region: "VIC", attendance: 14, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Vu Tung Ngo", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Kaiwen Cabbabe", deck: "Garchomp & Giratina-GX / Mismagius", placing: 2 },
+        { name: "Jay Tyrrell", deck: "Quagsire / Naganadel", placing: 3 },
+        { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
     { name: "Spellbound LC", date: moment("2020-01-05"), region: "NZ", attendance: 9, type: "League Challenge", cycle: "January", format: "UPR-CEC",
-    standings: [ // need to double check attendance
+    standings: [
         { name: "Matthew Chapman", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
         { name: "Vincent Ma", deck: "Naganadel Checkmate", placing: 2 },
         { name: "Brad Rumble", deck: "Green's Blastoise & Piplup-GX", placing: 3 },

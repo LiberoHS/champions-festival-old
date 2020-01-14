@@ -1,5 +1,6 @@
 const decks = [
     // UPR-CEC
+    { archetype: "Fossil Box", thumbnails: ["./assets/sprites/444.png","./assets/sprites/631.png","./assets/sprites/147.png"] },
     { archetype: "ADP Control", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png"] },
     { archetype: "Malamar / Naganadel & Guzzlord-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/1155.png","./assets/sprites/1133.png"] },
     { archetype: "Green's Garchomp & Giratina-GX", thumbnails: ["./assets/sprites/486.png","./assets/sprites/534.png"] },
