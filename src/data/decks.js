@@ -1,5 +1,8 @@
 const decks = [
     // UPR-CEC
+    { archetype: "Gengar & Mimikyu-GX", thumbnails: ["./assets/sprites/100.png","./assets/sprites/1112.png"] },
+    { archetype: "Malamar / Mewtwo & Mew-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/155.png","./assets/sprites/156.png"] },
+    { archetype: "Volcarona / Silvally-GX", thumbnails: ["./assets/sprites/711.png","./assets/sprites/1107.png"] },
     { archetype: "ADP / Raichu & Alolan Raichu-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/32.png","./assets/sprites/1037.png"] },
     { archetype: "Persian-GX Checkmate", thumbnails: ["./assets/sprites/59.png"] },
     { archetype: "Fossil Box", thumbnails: ["./assets/sprites/444.png","./assets/sprites/631.png","./assets/sprites/147.png"] },

@@ -18,8 +18,89 @@ moment.updateLocale('en', {
         doy : 7
      }
 });
-
+``
 const tournaments = [
+    { name: "Canberra Cup", date: moment("2020-01-27"), region: "ACT", attendance: "", type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Brent Tonisson", deck: "Garchomp & Giratina-GX / Mismagius", placing: 1 },
+        { name: "Anders Balle", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Nathan Canty-Seghers", deck: "Pidgeotto Control", placing: 3 },
+        { name: "Joshua Stone", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 4 },
+        { name: "Anton Piccio", deck: "Malamar / Garchomp & Giratina-GX", placing: 5 },
+        { name: "Alec Elhindi", deck: "Mewtwo & Mew-GX Toolbox", placing: 6 },
+        { name: "Dylan Williams", deck: "Fossil Box", placing: 7 },
+        { name: "James Cox", deck: "Mewtwo & Mew-GX Toolbox", placing: 8 }
+    ]},
+    { name: "Geelong LC", date: moment("2020-01-26"), region: "VIC", attendance: "", type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Darcy Ryan", deck: "Garchomp & Giratina-GX / Mismagius", placing: 1 },
+        { name: "Angus Johnson", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Edward Mouanoutoua", deck: "Baby Blacephalon / Pidgeotto", placing: 3 },
+        { name: "Marco Giovannini", deck: "Pidgeotto Control", placing: 4 }
+    ]},
+    { name: "Bendigo LC", date: moment("2020-01-26"), region: "VIC", attendance: 8, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Benjamin Hall", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Hudson Moore", deck: "Gardevoir & Sylveon-GX", placing: 2 },
+        { name: "Jacob Sparks", deck: "Blacephalon-GX / Naganadel", placing: 3 },
+        { name: "Angus Levett", deck: "Gengar & Mimikyu-GX", placing: 4 }
+    ]},
+    /* { name: "Area 52 LC", date: moment("2020-01-26"), region: "TAS", attendance: "", type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]}, */
+    { name: "Cannington LC", date: moment("2020-01-26"), region: "WA", attendance: 9, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Ramon Salkow", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Rhys Christian", deck: "Baby Blacephalon", placing: 2 },
+        { name: "Steven Kirk", deck: "Malamar / Mewtwo & Mew-GX", placing: 3 },
+        { name: "Aaron Cole", deck: "Baby Blacephalon", placing: 4 }
+    ]},
+    { name: "Maitland LC", date: moment("2020-01-26"), region: "NSW", attendance: 23, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Shang Chua", deck: "Baby Blacephalon", placing: 1 },
+        { name: "Jeremy Evans", deck: "Malamar / Ultra Necrozma-GX", placing: 2 },
+        { name: "Christian Hasbani", deck: "Malamar / Garchomp & Giratina-GX", placing: 3 },
+        { name: "Lucas Hamilton-Foster", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Newcastle LC", date: moment("2020-01-25"), region: "NSW", attendance: 22, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Rob Spiller", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Brent Tonisson", deck: "Garchomp & Giratina-GX / Mismagius", placing: 2 },
+        { name: "James Cox", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Jamie Harris", deck: "Baby Blacephalon", placing: 4 }
+    ]},
+    { name: "Gold Coast LC", date: moment("2020-01-25"), region: "QLD", attendance: 14, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Jack Millar", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Duy Le", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Zachery Quince", deck: "Baby Blacephalon", placing: 3 },
+        { name: "Jacques Rosseau", deck: "Malamar / Garchomp & Giratina-GX", placing: 4 }
+    ]},
+    { name: "Cerberus LC", date: moment("2020-01-25"), region: "NZ", attendance: 7, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Jack Newman", deck: "Volcarona / Silvally-GX", placing: 1 },
+        { name: "Duncan Inkster", deck: "ADP / Bird Trio", placing: 2 },
+        { name: "Sarah Louise", deck: "Garchomp & Giratina-GX / Mismagius", placing: 3 },
+        { name: "Amelia Hunter", deck: "Gardevoir & Sylveon-GX", placing: 4 }
+    ]},
+    { name: "Table Top Cup", date: moment("2020-01-25"), region: "SA", attendance: 17, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Aaron van der Kolk", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Carol Poyner", deck: "Reshiram & Charizard-GX Toolbox", placing: 2 },
+        { name: "Stefan Cocks", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "James Goreing", deck: "ADP / Bird Trio", placing: 4 }
+    ]},
+    { name: "West City LC", date: moment("2020-01-24"), region: "NZ", attendance: 4, type: "League Challenge", cycle: "January", format: "UPR-CEC",
+    standings: [
+        { name: "Matthew Chapman", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Joseph Lee Ming Lau", deck: "Trevenant & Dusknoir-GX / Mismagius", placing: 2 },
+        { name: "Ifran Nabi", deck: "Malamar / Ultra Necrozma-GX", placing: 3 },
+        { name: "Ash Nassiri", deck: "Baby Blacephalon", placing: 4 }
+    ]},
     { name: "Baydragon LC", date: moment("2020-01-19"), region: "NZ", attendance: 7, type: "League Challenge", cycle: "January", format: "UPR-CEC",
     standings: [
         { name: "Ranger Yap", deck: "Malamar / Ultra Necrozma-GX", placing: 1 },
@@ -85,7 +166,8 @@ const tournaments = [
     standings: [
         { name: "Aaron van der Kolk", deck: "Garchomp & Giratina-GX / Mismagius", placing: 1 },
         { name: "Adrian Hammer", deck: "Baby Blacephalon / Pidgeotto", placing: 2 },
-        { name: "Carol Poyner", deck: "Reshiram & Charizard-GX Toolbox", placing: 3 }
+        { name: "Carol Poyner", deck: "Reshiram & Charizard-GX Toolbox", placing: 3 },
+        { name: "Mitchell Pengilly", deck: "Pikachu & Zekrom-GX", placing: 4 },
     ]},
     { name: "Adelaide LC", date: moment("2020-01-12"), region: "SA", attendance: 15, type: "League Challenge", cycle: "January", format: "UPR-CEC",
     standings: [
@@ -284,7 +366,7 @@ const tournaments = [
     ]},
     { name: "Penrith Cup", date: moment("2019-12-15"), region: "NSW", attendance: 14, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
     standings: [
-        { name: "Alec El-Hindi", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Alec Elhindi", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
         { name: "Joshua Stone", deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", placing: 2 },
         { name: "Brent Tonisson", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
         { name: "Christian Hasbani", deck: "Malamar / Ultra Necrozma-GX", placing: 4 }
