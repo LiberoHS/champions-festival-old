@@ -18,7 +18,7 @@ moment.updateLocale('en', {
         doy : 7
      }
 });
-``
+
 const tournaments = [
     { name: "Canberra Cup", date: moment("2020-01-27"), region: "ACT", attendance: "", type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
     standings: [
