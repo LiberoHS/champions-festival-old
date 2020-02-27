@@ -1,5 +1,15 @@
 const decks = [
+    // UPR-SWS
+    { archetype: "Zacian V", thumbnails: ["./assets/sprites/zacian-crowned.png"] },
+    { archetype: "Magcargo Mill", thumbnails: ["./assets/sprites/249.png","./assets/sprites/1099.png","./assets/sprites/brycen-man.png"] },
+    { archetype: "Obstagoon", thumbnails: ["./assets/sprites/obstagoon.png"] },
+    { archetype: "Cinccino Mill", thumbnails: ["./assets/sprites/639.png","./assets/sprites/1099.png","./assets/sprites/brycen-man.png"] },
+    { archetype: "Magcargo-GX", thumbnails: ["./assets/sprites/249.png"] },
+    { archetype: "Lucario & Melmetal-GX / Zacian V", thumbnails: ["./assets/sprites/489.png","./assets/sprites/1161.png","./assets/sprites/zacian-crowned.png"] },
+    { archetype: "ADP / Zacian V", thumbnails: ["./assets/sprites/541.png","./assets/sprites/zacian-crowned.png"] },
     // UPR-CEC
+    { archetype: "Mewtwo & Mew-GX / ADP", thumbnails: ["./assets/sprites/155.png","./assets/sprites/156.png", "./assets/sprites/541.png"] },
+    { archetype: "Green's Blacephalon-GX", thumbnails: ["./assets/sprites/1156.png"] },
     { archetype: "Gengar & Mimikyu-GX", thumbnails: ["./assets/sprites/100.png","./assets/sprites/1112.png"] },
     { archetype: "Malamar / Mewtwo & Mew-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/155.png","./assets/sprites/156.png"] },
     { archetype: "Volcarona / Silvally-GX", thumbnails: ["./assets/sprites/711.png","./assets/sprites/1107.png"] },
@@ -26,7 +36,7 @@ const decks = [
     { archetype: "Aerodactyl-GX", thumbnails: ["./assets/sprites/147.png"] },
     { archetype: "Malamar / Solgaleo & Lunala-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/1125.png","./assets/sprites/1126.png"] },
     { archetype: "Malamar / Trevenant & Dusknoir-GX", thumbnails: ["./assets/sprites/811.png","./assets/sprites/833.png","./assets/sprites/518.png"] },
-    { archetype: "Doll Stall", thumbnails: ["./assets/sprites/1162.png","./assets/sprites/781.png"] },
+    { archetype: "Doll Stall", thumbnails: ["./assets/sprites/pokedoll.png","./assets/sprites/781.png"] },
     { archetype: "Naganadel & Guzzlord-GX / Mismagius", thumbnails: ["./assets/sprites/1155.png","./assets/sprites/1133.png","./assets/sprites/471.png"] },
     { archetype: "Green's Arceus & Dialga & Palkia-GX", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png"] },
     { archetype: "Arceus & Dialga & Palkia-GX / Spiritomb", thumbnails: ["./assets/sprites/541.png","./assets/sprites/529.png","./assets/sprites/530.png","./assets/sprites/483.png"] },
@@ -52,7 +62,7 @@ const decks = [
     { archetype: "Whimsicott-GX", thumbnails: ["./assets/sprites/611.png"] },
     { archetype: "Spiritomb / Froslass", thumbnails: ["./assets/sprites/483.png","./assets/sprites/519.png"] },
     { archetype: "Beheeyem", thumbnails: ["./assets/sprites/680.png"] },
-    { archetype: "Pidgeotto Control", thumbnails: ["./assets/sprites/1099.png","./assets/sprites/23.png"] },
+    { archetype: "Pidgeotto Control", thumbnails: ["./assets/sprites/23.png","./assets/sprites/1099.png"] },
     { archetype: "Gardevoir & Sylveon-GX", thumbnails: ["./assets/sprites/312.png","./assets/sprites/824.png"] },
     { archetype: "Weavile-GX Toolbox", thumbnails: ["./assets/sprites/502.png"] },
     { archetype: "Blastoise / Keldeo-GX", thumbnails: ["./assets/sprites/16.png","./assets/sprites/726.png"] },

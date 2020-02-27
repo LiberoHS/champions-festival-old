@@ -20,6 +20,169 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    /* { name: "Baydragon LC", date: moment("2020-02-29"), region: "NZ", attendance: "", type: "League Challenge", cycle: "February", format: "UPR-SWS",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]},
+    { name: "Neo Tokyo LC", date: moment("2020-02-29"), region: "QLD", attendance: "", type: "League Challenge", cycle: "February", format: "UPR-SWS",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]},
+    { name: "Area 52 LC", date: moment("2020-02-28"), region: "TAS", attendance: "", type: "League Challenge", cycle: "February", format: "UPR-SWS",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]}, */
+    { name: "OCIC LC", date: moment("2020-02-23"), region: "VIC", attendance: 32, type: "League Challenge", cycle: "February", format: "UPR-SWS",
+    standings: [
+        { name: "Te-Awhi Te Angina", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Isaiah Bradner", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Yoshiyuki Yamaguchi", deck: "Zacian V", placing: 3 },
+        { name: "Rowan Farren", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 },
+        { name: "Brady Guy", deck: "", placing: 5 },
+        { name: "Francesco Caterino", deck: "ADP / Zacian V", placing: 6 },
+        { name: "Owyn Kamerman", deck: "Pikachu & Zekrom-GX", placing: 7 },
+        { name: "Pedro Eugenio Torres", deck: "ADP / Zacian V", placing: 8 }
+    ]},
+    { name: "OCIC Cup", date: moment("2020-02-22"), region: "VIC", attendance: 123, type: "League Cup", cycle: "Quarter 2", format: "UPR-SWS",
+    standings: [
+        { name: "Josh Lemmon", deck: "Magcargo-GX", placing: 1 },
+        { name: "Eric Sanson", deck: "ADP / Zacian V", placing: 2 },
+        { name: "Matthew Bray", deck: "Pikachu & Zekrom-GX", placing: 3 },
+        { name: "Matthew Burris", deck: "ADP / Zacian V", placing: 4 },
+        { name: "Brent Tonisson", deck: "Reshiram & Charizard-GX Toolbox", placing: 5 },
+        { name: "Man Kin Ho", deck: "Malamar / Mewtwo & Mew-GX", placing: 6 },
+        { name: "Mads Jensen", deck: "Reshiram & Charizard-GX Toolbox", placing: 7 },
+        { name: "Jesper Eriksen", deck: "ADP / Zacian V", placing: 8 }
+    ]},
+    { name: "Oceania International", date: moment("2020-02-21"), region: "VIC", attendance: 405, type: "Internationals", cycle: "N/A", format: "UPR-SWS",
+    standings: [
+        { name: "Nico Alabas", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Zach Lesage", deck: "Reshiram & Charizard-GX Toolbox", placing: 2 },
+        { name: "Tim Bartels", deck: "Obstagoon", placing: 3 },
+        { name: "James Williams", deck: "Cinccino Mill", placing: 4 },
+        { name: "Bert Wolters", deck: "ADP / Zacian V", placing: 5 },
+        { name: "Ian Robb", deck: "ADP / Zacian V", placing: 6 },
+        { name: "Tord Reklev", deck: "Mewtwo & Mew-GX Toolbox", placing: 7 },
+        { name: "Jack Millar", deck: "ADP / Zacian V", placing: 8 },
+        { name: "Clifton Goh", deck: "ADP / Zacian V", placing: 9 },
+        { name: "Soma Arai", deck: "Magcargo Mill", placing: 10 },
+        { name: "Tan Yong Siang", deck: "Baby Blacephalon", placing: 11 },
+        { name: "Andrew Tandianus", deck: "ADP / Zacian V", placing: 12 },
+        { name: "Takuya Shomura", deck: "ADP / Zacian V", placing: 13 },
+        { name: "Daniel Altavilla", deck: "Malamar / Giratina", placing: 14 },
+        { name: "Jon Eng", deck: "Pikachu & Zekrom-GX", placing: 15 },
+        { name: "Man Tsung Wong", deck: "ADP / Zacian V", placing: 16 },
+        { name: "Chienwei Yu", deck: "ADP / Zacian V", placing: 17 },
+        { name: "Pedro Pertusi", deck: "Malamar / Mewtwo & Mew-GX", placing: 18 },
+        { name: "Yohei Takeda", deck: "Magcargo-GX", placing: 19 },
+        { name: "Grant Manley", deck: "Malamar / Giratina", placing: 20 },
+        { name: "Andre Chiasson", deck: "Pikachu & Zekrom-GX", placing: 21 },
+        { name: "Yuki Ishii", deck: "ADP / Zacian V", placing: 22 },
+        { name: "Peter Lo", deck: "ADP / Zacian V", placing: 23 },
+        { name: "Colin Tang", deck: "Malamar / Mewtwo & Mew-GX", placing: 24 },
+        { name: "Logan Madden", deck: "Pikachu & Zekrom-GX", placing: 25 },
+        { name: "Fung Tsz Ping", deck: "Baby Blacephalon", placing: 26 },
+        { name: "Christian Hasbani", deck: "ADP / Zacian V", placing: 27 },
+        { name: "Benjamin Behrens", deck: "ADP / Zacian V", placing: 28 },
+        { name: "Kenneth Chan", deck: "Pikachu & Zekrom-GX", placing: 29 },
+        { name: "Tadashi Maeda", deck: "ADP / Zacian V", placing: 30 },
+        { name: "Otavio Gouveia", deck: "ADP / Zacian V", placing: 31 },
+        { name: "Robin Schulz", deck: "ADP / Zacian V", placing: 32 },
+        { name: "Robert Spiller", deck: "ADP / Zacian V", placing: 33 },
+        { name: "Raz Wolpe", deck: "ADP / Zacian V", placing: 34 },
+        { name: "Corey Munro", deck: "ADP / Zacian V", placing: 35 },
+        { name: "Louis Pozzacchio", deck: "Pikachu & Zekrom-GX", placing: 36 },
+        { name: "Wo Pan Wong", deck: "Malamar / Mewtwo & Mew-GX", placing: 37 },
+        { name: "Ricki Madsen", deck: "Lucario & Melmetal-GX / Zacian V", placing: 38 },
+        { name: "Will Jenkins", deck: "ADP / Zacian V", placing: 39 },
+        { name: "Koyo Taniguchi", deck: "ADP / Zacian V", placing: 40 },
+        { name: "Mehdi Hafi", deck: "Mewtwo & Mew-GX Toolbox", placing: 41 },
+        { name: "Sean Takemoto", deck: "Magcargo-GX", placing: 42 },
+        { name: "Louis Chi", deck: "ADP / Zacian V", placing: 43 },
+        { name: "Akira Soto", deck: "Malamar / Mewtwo & Mew-GX", placing: 44 },
+        { name: "Brennan Kamerman", deck: "Baby Blacephalon", placing: 45 },
+        { name: "Matty Masefield", deck: "ADP / Zacian V", placing: 46 },
+        { name: "Miloslav Posledni", deck: "ADP / Zacian V", placing: 47 },
+        { name: "Aaron Stringfellow", deck: "Cinccino Mill", placing: 48 }
+    ]},
+    { name: "West City Cup", date: moment("2020-02-16"), region: "NZ", attendance: 19, type: "League Cup", cycle: "Quarter 2", format: "UPR-CEC",
+    standings: [
+        { name: "Yu Xiang", deck: "Doll Stall", placing: 1 },
+        { name: "Ivan Deng", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Jiawei Sun", deck: "Garchomp & Giratina-GX / Mismagius", placing: 3 },
+        { name: "Vincent Ma", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Cannington LC", date: moment("2020-02-16"), region: "WA", attendance: 3, type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "Aaron Cole", deck: "Baby Blacephalon", placing: 1 },
+        { name: "Ramon Salkow", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Andrew Tandianus", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 }
+    ]},
+    /* { name: "Adelaide LC", date: moment("2020-02-16"), region: "SA", attendance: "", type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]}, */
+    { name: "Maitland LC", date: moment("2020-02-16"), region: "NSW", attendance: 18, type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "James Cox", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Jeremy Evans", deck: "Malamar / Ultra Necrozma-GX", placing: 2 },
+        { name: "Ying Hao Tou", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Corey Munro", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 }
+    ]},
+    { name: "Newcastle LC", date: moment("2020-02-15"), region: "NSW", attendance: 6, type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "Brent Tonisson", deck: "Malamar / Giratina", placing: 1 },
+        { name: "Nick Bell", deck: "Baby Blacephalon", placing: 2 },
+        { name: "Ying Hao Tou", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Jamie Harris", deck: "Green's Blacephalon-GX", placing: 4 }
+    ]},
+    { name: "Penrith LC", date: moment("2020-02-15"), region: "NSW", attendance: 13, type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "James Cox", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Shang Chua", deck: "Garchomp & Giratina-GX / Mismagius", placing: 2 },
+        { name: "Lucas Hamilton-Foster", deck: "Mewtwo & Mew-GX / ADP", placing: 3 },
+        { name: "Corey Munro", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 }
+    ]},
+    /* { name: "Seaford LC", date: moment("2020-02-15"), region: "SA", attendance: 15, type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]}, */
+    { name: "Gold Coast LC", date: moment("2020-02-15"), region: "QLD", attendance: "", type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "Jack Millar", deck: "Malamar / Garchomp & Giratina-GX", placing: 1 },
+        { name: "Matthew Burris", deck: "Garchomp & Giratina-GX / Mismagius", placing: 2 },
+        { name: "Zachery Quince", deck: "Whimsicott-GX", placing: 3 },
+        { name: "", deck: "Pikachu & Zekrom-GX", placing: 4 }
+    ]},
+    { name: "Ormond LC", date: moment("2020-02-15"), region: "VIC", attendance: 17, type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "Kaiwen Cabbabe", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Tord Reklev", deck: "Mewtwo & Mew-GX Toolbox", placing: 2 },
+        { name: "Damian Filiposki", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
+        { name: "Corey Matthews", deck: "ADP / Bird Trio", placing: 4 }
+    ]},
+    { name: "West City LC", date: moment("2020-02-14"), region: "NZ", attendance: 9, type: "League Challenge", cycle: "February", format: "UPR-CEC",
+    standings: [
+        { name: "Vincent Ma", deck: "Pikachu & Zekrom-GX", placing: 1 },
+        { name: "Ivan Deng", deck: "Pikachu & Zekrom-GX", placing: 2 },
+        { name: "Jiawei Sun", deck: "Garchomp & Giratina-GX / Mismagius", placing: 3 },
+        { name: "Ifran Nabi", deck: "Malamar / Garchomp & Giratina-GX", placing: 4 }
+    ]},
     /* { name: "Greensborough LC", date: moment("2020-02-09"), region: "VIC", attendance: 9, type: "League Challenge", cycle: "February", format: "UPR-CEC",
     standings: [
         { name: "", deck: "", placing: 1 },
@@ -107,7 +270,7 @@ const tournaments = [
     ]},
     { name: "Newcastle LC", date: moment("2020-01-25"), region: "NSW", attendance: 22, type: "League Challenge", cycle: "January", format: "UPR-CEC",
     standings: [
-        { name: "Rob Spiller", deck: "Gardevoir & Sylveon-GX", placing: 1 },
+        { name: "Robert Spiller", deck: "Gardevoir & Sylveon-GX", placing: 1 },
         { name: "Brent Tonisson", deck: "Garchomp & Giratina-GX / Mismagius", placing: 2 },
         { name: "James Cox", deck: "Mewtwo & Mew-GX Toolbox", placing: 3 },
         { name: "Jamie Harris", deck: "Baby Blacephalon", placing: 4 }
