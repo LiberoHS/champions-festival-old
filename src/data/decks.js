@@ -1,5 +1,9 @@
 const decks = [
     // UPR-SWS
+    { archetype: "Ultimate Mewtwo & Mew-GX", thumbnails: ["./assets/sprites/155.png","./assets/sprites/156.png","./assets/sprites/1125.png"] },
+    { archetype: "Unown Hand / Salazzle", thumbnails: ["./assets/sprites/211.png","./assets/sprites/1092.png"] },
+    { archetype: "Turbo Lapras V", thumbnails: ["./assets/sprites/137.png"] },
+    { archetype: "Morpeko Dolls", thumbnails: ["./assets/sprites/morpeko.png","./assets/sprites/pokedoll.png"] },
     { archetype: "Zacian V", thumbnails: ["./assets/sprites/zacian-crowned.png"] },
     { archetype: "Magcargo Mill", thumbnails: ["./assets/sprites/249.png","./assets/sprites/1099.png","./assets/sprites/brycen-man.png"] },
     { archetype: "Obstagoon", thumbnails: ["./assets/sprites/obstagoon.png"] },
