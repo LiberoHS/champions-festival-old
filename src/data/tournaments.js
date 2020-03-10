@@ -39,7 +39,7 @@ const tournaments = [
         { name: "Robert Spiller", deck: "ADP / Zacian V", placing: 1 },
         { name: "Jack Millar", deck: "Malamar / Giratina", placing: 2 },
         { name: "Anton Piccio", deck: "Baby Blacephalon", placing: 3 },
-        { name: "Lucas Hamilton-Foste", deck: "ADP / Zacian V", placing: 4 },
+        { name: "Lucas Hamilton-Foster", deck: "ADP / Zacian V", placing: 4 },
         { name: "Nathan Canty-Seghers", deck: "Unown Hand / Salazzle", placing: 5 },
         { name: "Louis Pozzacchio", deck: "Mewtwo & Mew-GX Toolbox", placing: 6 },
         { name: "Cherakee Brennan", deck: "Pikachu & Zekrom-GX", placing: 7 },
