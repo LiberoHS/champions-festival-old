@@ -47,10 +47,10 @@ const tournaments = [
     ]},
     { name: "Cerberus LC", date: moment("2020-03-07"), region: "NZ", attendance: 8, type: "League Challenge", cycle: "March", format: "UPR-SWS",
     standings: [
-        { name: "Ivan Deng", deck: "Pikachu & Zekrom-GX", placing: 1 },
-        { name: "Johnny Jiang", deck: "Cinccino Mill", placing: 2 },
-        { name: "Guysen Lang", deck: "ADP / Zacian V", placing: 3 },
-        { name: "Mikaere Newey", deck: "Turbo Lapras V", placing: 4 }
+        { name: "Kenny Potter", deck: "ADP / Zacian V", placing: 1 },
+        { name: "Eric Sanson", deck: "ADP / Zacian V", placing: 2 },
+        { name: "Finn McKeefry", deck: "Obstagoon", placing: 3 },
+        { name: "Duncan Inkster", deck: "Mewtwo & Mew-GX Toolbox", placing: 4 }
     ]},
     { name: "Baydragon LC", date: moment("2020-02-29"), region: "NZ", attendance: 11, type: "League Challenge", cycle: "February", format: "UPR-SWS",
     standings: [
