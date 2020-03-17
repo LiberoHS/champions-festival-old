@@ -1,30 +1,13 @@
 var lastSixWeeks = [
-{ dayStart: "08/03/20", dayEnd: "07/03/20", indexStart: 0, indexEnd: 4},
-{ dayStart: "29/02/20", dayEnd: "29/02/20", indexStart: 4, indexEnd: 5},
-{ dayStart: "23/02/20", dayEnd: "21/02/20", indexStart: 5, indexEnd: 8},
-{ dayStart: "16/02/20", dayEnd: "14/02/20", indexStart: 8, indexEnd: 16},
-{ dayStart: "09/02/20", dayEnd: "08/02/20", indexStart: 16, indexEnd: 20},
-{ dayStart: "27/01/20", dayEnd: "27/01/20", indexStart: 20, indexEnd: 21},
+{ dayStart: "15/03/20", dayEnd: "14/03/19", indexStart: 0, indexEnd: 5},
+{ dayStart: "08/03/20", dayEnd: "07/03/20", indexStart: 5, indexEnd: 9},
+{ dayStart: "29/02/20", dayEnd: "29/02/20", indexStart: 9, indexEnd: 10},
+{ dayStart: "23/02/20", dayEnd: "21/02/20", indexStart: 10, indexEnd: 13},
+{ dayStart: "16/02/20", dayEnd: "14/02/20", indexStart: 13, indexEnd: 21},
+{ dayStart: "09/02/20", dayEnd: "08/02/20", indexStart: 21, indexEnd: 25},
 ];
 
 var DeckList = [
-[
-{ deck: "Mewtwo & Mew-GX Toolbox", currCP: 100 },
-{ deck: "Garchomp & Giratina-GX / Mismagius", currCP: 97 },
-{ deck: "Pikachu & Zekrom-GX", currCP: 92 },
-{ deck: "Gardevoir & Sylveon-GX", currCP: 75 },
-{ deck: "Pidgeotto Control", currCP: 64 },
-{ deck: "Baby Blacephalon / Pidgeotto", currCP: 50 },
-{ deck: "Reshiram & Charizard-GX Toolbox", currCP: 35 },
-{ deck: "Arceus & Dialga & Palkia-GX / Keldeo-GX", currCP: 32 },
-{ deck: "Malamar / Garchomp & Giratina-GX", currCP: 25 },
-{ deck: "Fossil Box", currCP: 25 },
-{ deck: "Weavile-GX Toolbox", currCP: 12 },
-{ deck: "Baby Blacephalon", currCP: 12 },
-{ deck: "Malamar / Giratina", currCP: 10 },
-{ deck: "Malamar / Ultra Necrozma-GX", currCP: 10 },
-{ deck: "Nuzzle Toolbox", currCP: 10 },
-],
 [
 { deck: "Pikachu & Zekrom-GX", currCP: 178 },
 { deck: "Mewtwo & Mew-GX Toolbox", currCP: 152 },
@@ -97,6 +80,21 @@ var DeckList = [
 { deck: "Turbo Lapras V", currCP: 20 },
 { deck: "Obstagoon", currCP: 10 },
 { deck: "Morpeko Dolls", currCP: 10 },
+],
+[
+{ deck: "ADP / Zacian V", currCP: 980 },
+{ deck: "Ultimate Mewtwo & Mew-GX", currCP: 237 },
+{ deck: "Baby Blacephalon", currCP: 227 },
+{ deck: "Cinccino Mill", currCP: 87 },
+{ deck: "Mewtwo & Mew-GX Toolbox", currCP: 75 },
+{ deck: "Pikachu & Zekrom-GX", currCP: 40 },
+{ deck: "Malamar / Giratina", currCP: 40 },
+{ deck: "Obstagoon", currCP: 35 },
+{ deck: "Rowlet & Alolan Exeggutor-GX Toolbox", currCP: 32 },
+{ deck: "Unown Hand / Salazzle", currCP: 25 },
+{ deck: "Malamar / Mewtwo & Mew-GX", currCP: 12 },
+{ deck: "Lucario & Melmetal-GX / Zacian V", currCP: 10 },
+{ deck: "Turbo Lapras V", currCP: 10 },
 ],
 ];
 

@@ -20,6 +20,56 @@ moment.updateLocale('en', {
 });
 
 const tournaments = [
+    { name: "Baydragon Cup", date: moment("2020-03-15"), region: "NZ", attendance: 21, type: "League Cup", cycle: "Quarter 3", format: "UPR-SWS",
+    standings: [
+        { name: "Johnny Jiang", deck: "Cinccino Mill", placing: 1 },
+        { name: "Matthew Chapman", deck: "Baby Blacephalon", placing: 2 },
+        { name: "Sam McAnuity", deck: "ADP / Zacian V", placing: 3 },
+        { name: "Ryan Littler", deck: "Rowlet & Alolan Exeggutor-GX Toolbox", placing: 4 },
+        { name: "Guysen Lang", deck: "ADP / Zacian V", placing: 5 },
+        { name: "Vincent Ma", deck: "ADP / Zacian V", placing: 6 },
+        { name: "Louis Chi", deck: "Cinccino Mill", placing: 7 },
+        { name: "Ifran Nabi", deck: "Obstagoon", placing: 8 }
+    ]},
+    { name: "Perth LC", date: moment("2020-03-15"), region: "WA", attendance: 14, type: "League Challenge", cycle: "March", format: "UPR-SWS",
+    standings: [
+        { name: "Aaron van der Kolk", deck: "Baby Blacephalon", placing: 1 },
+        { name: "Benjamin Kouzas", deck: "Malamar / Mewtwo & Mew-GX", placing: 2 },
+        { name: "Angus Johnson", deck: "ADP / Zacian V", placing: 3 },
+        { name: "Matthew Burris", deck: "Ultimate Mewtwo & Mew-GX", placing: 4 }
+    ]},
+    { name: "Maitland LC", date: moment("2020-03-15"), region: "NSW", attendance: 13, type: "League Challenge", cycle: "March", format: "UPR-SWS",
+    standings: [
+        { name: "Alec Elhindi", deck: "Mewtwo & Mew-GX Toolbox", placing: 1 },
+        { name: "Jeremy Evans", deck: "ADP / Zacian V", placing: 2 },
+        { name: "David Patane", deck: "ADP / Zacian V", placing: 3 },
+        { name: "Jordan Williams", deck: "Lucario & Melmetal-GX / Zacian V", placing: 4 }
+    ]},
+    { name: "Newcastle LC", date: moment("2020-03-14"), region: "NSW", attendance: 8, type: "League Challenge", cycle: "March", format: "UPR-SWS",
+    standings: [
+        { name: "Jeremy Evans", deck: "ADP / Zacian V", placing: 1 },
+        { name: "Shane Quinn", deck: "ADP / Zacian V", placing: 2 },
+        { name: "David Patane", deck: "ADP / Zacian V", placing: 3 },
+        { name: "Joshua Stone", deck: "ADP / Zacian V", placing: 4 }
+    ]},
+    /* { name: "Seaford LC", date: moment("2020-03-14"), region: "SA", attendance: "", type: "League Challenge", cycle: "March", format: "UPR-SWS",
+    standings: [
+        { name: "", deck: "", placing: 1 },
+        { name: "", deck: "", placing: 2 },
+        { name: "", deck: "", placing: 3 },
+        { name: "", deck: "", placing: 4 }
+    ]}, */
+    { name: "Perth Regionals", date: moment("2019-03-14"), region: "WA", attendance: 59, type: "Regionals", cycle: "N/A", format: "UPR-SWS",
+    standings: [
+        { name: "Henry Brand", deck: "Ultimate Mewtwo & Mew-GX", placing: 1 },
+        { name: "Christian Hasbani", deck: "ADP / Zacian V", placing: 2 },
+        { name: "Jordan Palmer", deck: "ADP / Zacian V", placing: 3 },
+        { name: "Meng Hon Chow", deck: "Baby Blacephalon", placing: 4 },
+        { name: "Corey Munro", deck: "ADP / Zacian V", placing: 5 },
+        { name: "Clifton Goh", deck: "ADP / Zacian V", placing: 6 },
+        { name: "Aaron Cole", deck: "ADP / Zacian V", placing: 7 },
+        { name: "Ying Hao Tou", deck: "ADP / Zacian V", placing: 8 }
+    ]},
     { name: "Spellbound LC", date: moment("2020-03-08"), region: "NZ", attendance: 13, type: "League Challenge", cycle: "March", format: "UPR-SWS",
     standings: [
         { name: "Ivan Deng", deck: "Pikachu & Zekrom-GX", placing: 1 },
