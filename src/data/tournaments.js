@@ -52,13 +52,13 @@ const tournaments = [
         { name: "David Patane", deck: "ADP / Zacian V", placing: 3 },
         { name: "Joshua Stone", deck: "ADP / Zacian V", placing: 4 }
     ]},
-    /* { name: "Seaford LC", date: moment("2020-03-14"), region: "SA", attendance: "", type: "League Challenge", cycle: "March", format: "UPR-SWS",
+    { name: "Seaford LC", date: moment("2020-03-14"), region: "SA", attendance: 5, type: "League Challenge", cycle: "March", format: "UPR-SWS",
     standings: [
-        { name: "", deck: "", placing: 1 },
-        { name: "", deck: "", placing: 2 },
-        { name: "", deck: "", placing: 3 },
-        { name: "", deck: "", placing: 4 }
-    ]}, */
+        { name: "Adrian Hammer", deck: "Baby Blacephalon", placing: 1 },
+        { name: "Scott Langford", deck: "Ultimate Mewtwo & Mew-GX", placing: 2 },
+        { name: "Stefan Cocks", deck: "ADP / Zacian V", placing: 3 },
+        { name: "Mitch Knuckey", deck: "ADP / Zacian V", placing: 4 }
+    ]},
     { name: "Perth Regionals", date: moment("2019-03-14"), region: "WA", attendance: 59, type: "Regionals", cycle: "N/A", format: "UPR-SWS",
     standings: [
         { name: "Henry Brand", deck: "Ultimate Mewtwo & Mew-GX", placing: 1 },

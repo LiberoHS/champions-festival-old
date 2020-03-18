@@ -1,10 +1,10 @@
 var lastSixWeeks = [
-{ dayStart: "15/03/20", dayEnd: "14/03/19", indexStart: 0, indexEnd: 5},
-{ dayStart: "08/03/20", dayEnd: "07/03/20", indexStart: 5, indexEnd: 9},
-{ dayStart: "29/02/20", dayEnd: "29/02/20", indexStart: 9, indexEnd: 10},
-{ dayStart: "23/02/20", dayEnd: "21/02/20", indexStart: 10, indexEnd: 13},
-{ dayStart: "16/02/20", dayEnd: "14/02/20", indexStart: 13, indexEnd: 21},
-{ dayStart: "09/02/20", dayEnd: "08/02/20", indexStart: 21, indexEnd: 25},
+{ dayStart: "15/03/20", dayEnd: "14/03/19", indexStart: 0, indexEnd: 6},
+{ dayStart: "08/03/20", dayEnd: "07/03/20", indexStart: 6, indexEnd: 10},
+{ dayStart: "29/02/20", dayEnd: "29/02/20", indexStart: 10, indexEnd: 11},
+{ dayStart: "23/02/20", dayEnd: "21/02/20", indexStart: 11, indexEnd: 14},
+{ dayStart: "16/02/20", dayEnd: "14/02/20", indexStart: 14, indexEnd: 22},
+{ dayStart: "09/02/20", dayEnd: "08/02/20", indexStart: 22, indexEnd: 26},
 ];
 
 var DeckList = [
@@ -82,9 +82,9 @@ var DeckList = [
 { deck: "Morpeko Dolls", currCP: 10 },
 ],
 [
-{ deck: "ADP / Zacian V", currCP: 980 },
-{ deck: "Ultimate Mewtwo & Mew-GX", currCP: 237 },
-{ deck: "Baby Blacephalon", currCP: 227 },
+{ deck: "ADP / Zacian V", currCP: 1000 },
+{ deck: "Ultimate Mewtwo & Mew-GX", currCP: 249 },
+{ deck: "Baby Blacephalon", currCP: 242 },
 { deck: "Cinccino Mill", currCP: 87 },
 { deck: "Mewtwo & Mew-GX Toolbox", currCP: 75 },
 { deck: "Pikachu & Zekrom-GX", currCP: 40 },
