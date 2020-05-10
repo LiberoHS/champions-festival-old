@@ -11,7 +11,7 @@ const PlayerList = ({ setCurrentPlayer, playerList }) => {
     return (
         <Grid>
             <Grid className="grid=container">
-                <Table className={classes.table}>
+                <Table>
                     <TableHead>
                         <TableRow style={{backgroundColor: '#424242'}}>
                             <TableCell align="center" className="table-header">Name</TableCell>
