@@ -1,34 +1,15 @@
 import React from 'react';
 import Moment from 'react-moment';
+import useWindowDimensions from './windowDimensions.js'
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
-import { useMediaQuery } from 'react-responsive';
+import './TableGrid.css'
 
 // Tournament templating
 
 const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
     const classes = useStyles();
-    const isDesktop = useMediaQuery({ minWidth: 992 });
-    const isNotMobile = useMediaQuery({ minWidth: 768 });
-    const headerStyle = {
-        color: 'white',
-        fontFamily: 'Muli',
-        fontSize: '16px'
-    };
-
-    let cellStyle = {};
-
-    if (isNotMobile) {
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '20px'
-        };
-    } else {
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '16px'
-        };
-    }
+    const { height, width } = useWindowDimensions();
 
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
@@ -50,13 +31,13 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
                 <p> <b>Type of event:</b> {currentTournament.type} </p>
                 <p> <b>Format:</b> {currentTournament.format} </p>
             </Grid>
-            <Grid className={classes.root}>
+            <Grid className="grid-container">
                 <Table className={classes.table}>
                     <TableHead>
                         <TableRow style={{backgroundColor: '#424242'}}>
-                            <TableCell align="left" style={headerStyle}>Placing</TableCell>
-                            <TableCell align="left" style={headerStyle}>Name</TableCell>
-                            <TableCell align="left" style={headerStyle}>Deck</TableCell>
+                            <TableCell align="left" className="table-header">Placing</TableCell>
+                            <TableCell align="left" className="table-header">Name</TableCell>
+                            <TableCell align="left" className="table-header">Deck</TableCell>
                             <TableCell align="left"></TableCell>
                         </TableRow>
                     </TableHead>
@@ -65,7 +46,7 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
                             var search = compareDecks(player);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
-                                    if (isDesktop) {
+                                    if (width > 961) {
                                         return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
                                     } else {
                                         return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
@@ -74,11 +55,11 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
 
                             return(
                             <TableRow key={key}>
-                                <TableCell align="left" style={cellStyle}>{player.placing}</TableCell>
-                                <TableCell component="th" align="left" style={cellStyle}>
+                                <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{player.placing}</TableCell>
+                                <TableCell component="th" align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
                                     <Link style={{cursor: 'pointer'}} onClick={() => setCurrentPlayer(player)}>{player.name}</Link>
                                 </TableCell>
-                                <TableCell align="left" style={cellStyle}>{player.deck}</TableCell>
+                                <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{player.deck}</TableCell>
                                 <TableCell align="left">
                                 <p>{sprites}</p>
                                 </TableCell>

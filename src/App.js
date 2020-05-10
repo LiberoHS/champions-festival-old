@@ -4,7 +4,7 @@
 import React from 'react';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
-import { DataGraph, Footer, HomeMenu, PlayerInfo, PlayerList, SearchBar, TournamentInfo, TournamentList } from './components';
+import { DataGraph, Footer, HomeMenu, PlayerInfo, PlayerList, SearchBar, TableGrid, TournamentInfo, TournamentList } from './components';
 import decks from './data/decks.js';
 import tournamentList from './data/tournaments.js';
 import playerList from './data/players.js';
@@ -25,6 +25,7 @@ const buttonStyle = {
 // Filter functionality -> filter by region and format
 // Decklist integration (v5)
 // BUG: (data-report.js) changing indexEnd of i+1 to i creates an error
+// BUG: Search bar cannot handle empty inputs
 
 class App extends React.Component {
     state = {
@@ -45,7 +46,7 @@ class App extends React.Component {
         tracker: 0
     }
 
-    // Changed states
+    // Changed states for back button
     backButton = () => {
         var filteredTournaments = tournamentList.filter((tournament, key) => {
             return (tournament.type !== 'League Challenge');
@@ -89,8 +90,17 @@ class App extends React.Component {
         this.setState({ weekData: value });
     }
 
-    homePage = () => {
-        this.setState({ show: 'home', currentTournament: null });
+    // changes the current tab on the page
+    setCurrentTab = (tab) => {
+        if (tab === 'home') {
+            this.setState({ show: 'home', currentTournament: null });
+        } else if (tab === 'tournaments') {
+            this.tournamentList();
+        } else if (tab === 'players') {
+            this.setState({ show: 'playerList', currentPlayer: null, playerList: playerList });
+        } else if (tab === 'data') {
+            this.setState({ show: 'data' });
+        }
     }
 
     tournamentList = () => {
@@ -103,14 +113,6 @@ class App extends React.Component {
         } else {
             this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: tournamentList });
         }
-    }
-
-    playerList = () => {
-        this.setState({ show: 'playerList', currentPlayer: null, playerList: playerList });
-    }
-
-    dataAnalytics = () => {
-        this.setState({ show: 'data' });
     }
 
     // Filter for search bar (WIP for refactoring)
@@ -214,7 +216,15 @@ class App extends React.Component {
         const { tournamentList, currentTournament, playerList, currentPlayer,
         decks, topDecks, show, checkedChallenge, checkedPoints, weekData } = this.state;
 
-        const footerCopyright = "Created by Jeremy Lim © 2019";
+        const tournamentCols = [
+            { name: 'date', title: 'Date' },
+            { name: 'name', title: 'Name' },
+            { name: 'region', title: 'Region' },
+            { name: 'type', title: 'Type' },
+            { name: 'cycle', title: 'Cycle' },
+            { name: 'attendance', title: 'Attendance' },
+        ]
+        const footerCopyright = "Created by Jeremy Lim © 2020";
 
         return (
             <Grid>
@@ -226,10 +236,10 @@ class App extends React.Component {
                             </IconButton>}
                             <div className="nav-bar-items">
                                 <ul>
-                                <li><Link style={{cursor: 'pointer'}} onClick={this.homePage}>Home</Link></li>
+                                <li><Link style={{cursor: 'pointer'}} onClick={() => this.setCurrentTab('home')}>Home</Link></li>
                                 <li><Link style={{cursor: 'pointer'}} onClick={this.tournamentList}>Tournaments</Link></li>
-                                <li><Link style={{cursor: 'pointer'}} onClick={this.playerList}>Players</Link></li>
-                                <li><Link style={{cursor: 'pointer'}} onClick={this.dataAnalytics}>Data Analytics</Link></li>
+                                <li><Link style={{cursor: 'pointer'}} onClick={() => this.setCurrentTab('players')}>Players</Link></li>
+                                <li><Link style={{cursor: 'pointer'}} onClick={() => this.setCurrentTab('data')}>Data Analytics</Link></li>
                                 </ul>
                             </div>
                         </nav>
@@ -248,6 +258,11 @@ class App extends React.Component {
                     decks={decks}
                     players={playerList}
                     topDecks={topDecks}/>}
+                    {/* TESTING */}
+                    {show === 'test' && <TableGrid
+                    rows={tournamentList}
+                    columns={tournamentCols}
+                    setCurrentTournament={this.setCurrentTournament}></TableGrid>}
 
                     {/* Tournament List */}
                     {show === 'tournamentList' && <FormControlLabel control={

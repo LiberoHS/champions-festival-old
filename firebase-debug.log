@@ -1,0 +1,63 @@
+[debug] [2020-05-10T14:54:11.646Z] ----------------------------------------------------------------------
+[debug] [2020-05-10T14:54:11.648Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only functions --host 0.0.0.0
+[debug] [2020-05-10T14:54:11.649Z] CLI Version:   8.2.0
+[debug] [2020-05-10T14:54:11.649Z] Platform:      darwin
+[debug] [2020-05-10T14:54:11.649Z] Node Version:  v12.13.0
+[debug] [2020-05-10T14:54:11.651Z] Time:          Mon May 11 2020 00:54:11 GMT+1000 (Australian Eastern Standard Time)
+[debug] [2020-05-10T14:54:11.651Z] ----------------------------------------------------------------------
+[debug] [2020-05-10T14:54:11.651Z] 
+[debug] [2020-05-10T14:54:11.663Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-10T14:54:11.664Z] > authorizing via signed-in user
+[debug] [2020-05-10T14:54:11.664Z] [iam] checking project champions-festival for permissions ["firebase.projects.get"]
+[debug] [2020-05-10T14:54:11.667Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/champions-festival:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-05-10T14:54:13.172Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 May 2020 14:54:15 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=197","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-10T14:54:13.175Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/champions-festival  
+ 
+[debug] [2020-05-10T14:54:16.154Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 May 2020 14:54:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-10T14:54:16.729Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at validateString (internal/validators.js:112:11)
+    at Object.join (path.js:1040:7)
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:21:39)
+    at Generator.next (<anonymous>)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:4:12)
+    at Object.start (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:19:16)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:23:40
+    at arrayMap (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:639:23)
+    at Function.map (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:9554:14)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:22:29
+    at Generator.next (<anonymous>)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:4:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-05-10T14:54:22.835Z] ----------------------------------------------------------------------
+[debug] [2020-05-10T14:54:22.837Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-05-10T14:54:22.837Z] CLI Version:   8.2.0
+[debug] [2020-05-10T14:54:22.838Z] Platform:      darwin
+[debug] [2020-05-10T14:54:22.839Z] Node Version:  v12.13.0
+[debug] [2020-05-10T14:54:22.841Z] Time:          Mon May 11 2020 00:54:22 GMT+1000 (Australian Eastern Standard Time)
+[debug] [2020-05-10T14:54:22.841Z] ----------------------------------------------------------------------
+[debug] [2020-05-10T14:54:22.841Z] 
+[debug] [2020-05-10T14:54:22.855Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-10T14:54:22.855Z] > authorizing via signed-in user
+[debug] [2020-05-10T14:54:22.855Z] [iam] checking project champions-festival for permissions ["firebase.projects.get"]
+[debug] [2020-05-10T14:54:22.858Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/champions-festival:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-05-10T14:54:30.106Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 May 2020 14:54:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1168","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-10T14:54:30.108Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/champions-festival  
+ 
+[debug] [2020-05-10T14:54:34.973Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 May 2020 14:54:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Serving from '/Users/jeremy_lim/repos/champions-festival'...
+[info] 
+[debug] [2020-05-10T14:54:34.975Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/champions-festival/webApps/-/config  
+ 
+[debug] [2020-05-10T14:54:36.197Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 10 May 2020 14:54:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5010

@@ -1,0 +1,15 @@
+.grid-container .table-header {
+    color: white;
+    font-family: 'Muli';
+    font-size: 16px;
+}
+
+.grid-container .desktop-cell {
+    font-family: 'Muli';
+    font-size: 20px;
+}
+
+.grid-container .mobile-cell {
+    font-family: 'Muli';
+    font-size: 16px;
+}

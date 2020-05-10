@@ -1,33 +1,15 @@
 import React from 'react';
+import useWindowDimensions from './windowDimensions.js'
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
-import { useMediaQuery } from 'react-responsive';
+import './TableGrid.css'
 
 // Player templating
 
 const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList }) => {
     const classes = useStyles();
-    const isDesktop = useMediaQuery({ minWidth: 992 });
-    const isNotMobile = useMediaQuery({ minWidth: 768 });
-    const headerStyle = {
-        color: 'white',
-        fontFamily: 'Muli',
-        fontSize: '16px'
-    };
-
-    let cellStyle = {};
-
-    if (isNotMobile) {
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '20px'
-        };
-    } else {
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '16px'
-        };
-    }
+    const { height, width } = useWindowDimensions();
+    
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
             if (decks[i].archetype === target.deck) {
@@ -54,15 +36,15 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
                 <h3> {currentPlayer.name} </h3>
                 <p> <b>Points:</b> {currentPlayer.points}</p>
             </Grid>
-            <Grid className={classes.root}>
-                <Table className={classes.table}>
+            <Grid className="grid-container">
+                <Table>
                     <TableHead>
                         <TableRow style={{backgroundColor: '#424242'}}>
-                            <TableCell align="left" style={headerStyle}>Date</TableCell>
-                            <TableCell align="left" style={headerStyle}>Tournament</TableCell>
-                            <TableCell align="left" style={headerStyle}>Deck</TableCell>
+                            <TableCell align="left" className="table-header">Date</TableCell>
+                            <TableCell align="left" className="table-header">Tournament</TableCell>
+                            <TableCell align="left" className="table-header">Deck</TableCell>
                             <TableCell align="left"></TableCell>
-                            <TableCell align="left" style={headerStyle}>Placing</TableCell>
+                            <TableCell align="left" className="table-header">Placing</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -70,7 +52,7 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
                             var search = compareDecks(achievement);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
-                                    if (isDesktop) {
+                                    if (width > 961) {
                                         return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
                                     } else {
                                         return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
@@ -79,15 +61,15 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
 
                             return(
                             <TableRow key={key}>
-                                <TableCell align="left" style={cellStyle}>{achievement.date}</TableCell>
-                                <TableCell component="th" align="left" style={cellStyle}>
+                                <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{achievement.date}</TableCell>
+                                <TableCell component="th" align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
                                     <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(compareTournaments(achievement.tournament, achievement.date))}>{achievement.tournament}</Link>
                                 </TableCell>
-                                <TableCell align="left" style={cellStyle}>{achievement.deck}</TableCell>
+                                <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{achievement.deck}</TableCell>
                                 <TableCell align="left">
                                 <p>{sprites}</p>
                                 </TableCell>
-                                <TableCell align="left" style={cellStyle}>
+                                <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
                                     {achievement.placing}
                                 </TableCell>
                             </TableRow>
