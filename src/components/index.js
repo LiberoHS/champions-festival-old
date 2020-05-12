@@ -1,6 +1,8 @@
+export { default as Content } from './Content';
 export { default as DataGraph } from './DataGraph';
 export { default as Footer } from './Footer';
 export { default as HomeMenu } from './HomeMenu';
+export { default as NavBar } from './NavBar';
 export { default as PlayerInfo } from './PlayerInfo';
 export { default as PlayerList } from './PlayerList';
 export { default as SearchBar } from './SearchBar';

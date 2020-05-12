@@ -1,33 +1,36 @@
 import React from 'react';
 import Moment from 'react-moment';
+import useWindowDimensions from './windowDimensions.js'
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Link, Paper } from '@material-ui/core';
 import { Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
-import { useMediaQuery } from 'react-responsive';
+import decks from '../data/decks.js';
+import tournaments from '../data/tournaments.js';
+import players from '../data/players.js';
+import topDecks from '../data/topDecks.js';
 
 const text = {
     margin: '15px',
     padding: '10px'
 }
 
-const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players }) => {
-    players.sort(function (a, b) {
+export default function HomeMenu(props) {
+    const { height, width } = useWindowDimensions();
+    let playerList = players;
+    playerList.sort(function (a, b) {
         return b.points - a.points;
     });
 
-    players = players.filter((player, key) => {
+    playerList = playerList.filter((player, key) => {
         return (key < 10);
     });
 
-    const isDesktop = useMediaQuery({ minWidth: 992 });
-    const isNotMobile = useMediaQuery({ minWidth: 768 });
-    const isNotTablet = useMediaQuery({ minWidth: 992 });
     let headerStyle = {};
     let cellStyle = {};
     let tableGrid = {};
     let flexContainer = {};
 
-    if (isNotTablet) {
+    if (width > 992) {
         headerStyle = {
             color: 'white',
             fontFamily: 'Muli',
@@ -106,8 +109,8 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
                                         <TableCell align="left" style={headerStyle}>Date</TableCell>
                                         <TableCell align="left" style={headerStyle}>Tournament</TableCell>
                                         <TableCell align="left" style={headerStyle}>Name</TableCell>
-                                        {isNotMobile && <TableCell align="left" style={headerStyle}>Deck</TableCell>}
-                                        {isNotMobile && <TableCell align="left"></TableCell>}
+                                        {width > 768 && <TableCell align="left" style={headerStyle}>Deck</TableCell>}
+                                        {width > 768 && <TableCell align="left"></TableCell>}
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -115,7 +118,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
                                     var search = compareDecks(tournament.standings[0]);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
-                                            if (isDesktop) {
+                                            if (width > 992) {
                                                 return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
                                             } else {
                                                 return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
@@ -126,11 +129,11 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
                                     <TableRow key={key}>
                                         <TableCell align="left" style={cellStyle}><Moment format="DD/MM/YY">{tournament.date}</Moment></TableCell>
                                         <TableCell component="th" align="left" style={cellStyle}>
-                                            <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(tournament)}>{tournament.name}</Link>
+                                            <Link style={{cursor: 'pointer'}} onClick={() => props.setCurrentTournament(tournament)}>{tournament.name}</Link>
                                         </TableCell>
                                         <TableCell align="left" style={cellStyle}>{tournament.standings[0].name}</TableCell>
-                                        {isNotMobile && <TableCell align="left" style={cellStyle}>{tournament.standings[0].deck}</TableCell>}
-                                        {isNotMobile && <TableCell align="left">
+                                        {width > 768 && <TableCell align="left" style={cellStyle}>{tournament.standings[0].deck}</TableCell>}
+                                        {width > 768 && <TableCell align="left">
                                         <p>{sprites}</p>
                                         </TableCell>}
                                     </TableRow>
@@ -185,7 +188,7 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
                                     var search = compareDecks(deck);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
-                                            if (isDesktop) {
+                                            if (width > 992) {
                                                 return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
                                             } else {
                                                 return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
@@ -231,5 +234,3 @@ const HomeMenu = ({ setCurrentTournament, tournaments, decks, topDecks, players 
         </Grid>
     )
 }
-
-export default HomeMenu;

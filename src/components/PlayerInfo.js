@@ -2,13 +2,16 @@ import React from 'react';
 import useWindowDimensions from './windowDimensions.js'
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
+import tournamentList from '../data/tournaments.js';
+import decks from '../data/decks.js';
 import './TableGrid.css'
 
 // Player templating
 
-const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList }) => {
+export default function PlayerInfo(props) {
     const classes = useStyles();
     const { height, width } = useWindowDimensions();
+    const player = props.player;
     
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
@@ -33,8 +36,8 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
     return(
         <Grid item xs={12}>
             <Grid>
-                <h3> {currentPlayer.name} </h3>
-                <p> <b>Points:</b> {currentPlayer.points}</p>
+                <h3> {player.name} </h3>
+                <p> <b>Points:</b> {player.points}</p>
             </Grid>
             <Grid className="grid-container">
                 <Table>
@@ -48,7 +51,7 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {currentPlayer.achievements.map((achievement, key) => {
+                        {player.achievements.map((achievement, key) => {
                             var search = compareDecks(achievement);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
@@ -63,7 +66,7 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
                             <TableRow key={key}>
                                 <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{achievement.date}</TableCell>
                                 <TableCell component="th" align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
-                                    <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(compareTournaments(achievement.tournament, achievement.date))}>{achievement.tournament}</Link>
+                                    <Link style={{cursor: 'pointer'}} onClick={() => props.setCurrentTournament(compareTournaments(achievement.tournament, achievement.date))}>{achievement.tournament}</Link>
                                 </TableCell>
                                 <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{achievement.deck}</TableCell>
                                 <TableCell align="left">
@@ -80,5 +83,3 @@ const PlayerInfo = ({ setCurrentTournament, currentPlayer, decks, tournamentList
         </Grid>
     )
 }
-
-export default PlayerInfo;

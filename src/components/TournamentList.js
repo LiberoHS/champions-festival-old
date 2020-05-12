@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Moment from 'react-moment';
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
 import useWindowDimensions from './windowDimensions.js'
+import tournamentList from '../data/tournaments.js';
 import './TableGrid.css'
 
-const TournamentList = ({ setCurrentTournament, tournamentList }) => {
+export default function TournamentList(props) {
     const classes = useStyles();
     const { height, width } = useWindowDimensions();
+    const [tournament, setTournament] = useState(null);
 
     return (
         <Grid>
@@ -28,7 +30,7 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
                             <TableRow key={key}>
                                 <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}><Moment format="DD/MM/YY">{item.date}</Moment></TableCell>
                                 <TableCell component="th" align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
-                                    <Link style={{cursor: 'pointer'}} onClick={() => setCurrentTournament(item)}>{item.name}</Link>
+                                    <Link style={{ cursor: 'pointer' }} onClick={() => { setTournament(item); props.setCurrentTournament(item)}}>{item.name}</Link>
                                 </TableCell>
                                 <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{item.region}</TableCell>
                                 {width > 768 && <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{item.type}</TableCell>}
@@ -42,5 +44,3 @@ const TournamentList = ({ setCurrentTournament, tournamentList }) => {
         </Grid>
     )
 }
-
-export default TournamentList;

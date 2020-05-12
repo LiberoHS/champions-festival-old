@@ -1,8 +1,20 @@
 // Started by Jeremy Lim on 03/09/2019
 // Currently on v4.1 deployed, v4.1 local, released
 
-import React, { useState, useEffect } from 'react';
-import { Content } from './components';
+import React from 'react';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { Grid, Link, Switch, FormControlLabel, IconButton } from '@material-ui/core';
+import { DataGraph, Footer, HomeMenu, NavBar, PlayerInfo, PlayerList, SearchBar, TableGrid, TournamentInfo, TournamentList } from './components';
+import decks from './data/decks.js';
+import tournamentList from './data/tournaments.js';
+import playerList from './data/players.js';
+import topDecks from './data/topDecks.js';
+
+const buttonStyle = {
+    height: '25px',
+    width: '40px',
+    bottom: '10px'
+};
 
 // TO-DO LIST
 // IMPORTANT - Fix margin styling for responsiveness
@@ -17,8 +29,7 @@ import { Content } from './components';
 
 // class App extends React.Component {
 function App() {
-    
-    /* state = {
+    state = {
         tournamentList: tournamentList,
         decks: decks,
         playerList: playerList,
@@ -34,10 +45,10 @@ function App() {
         checkedChallenge: false,
         checkedPoints: false,
         tracker: 0
-    } */
+    }
 
     // Changed states for back button
-    /* backButton = () => {
+    backButton = () => {
         var filteredTournaments = tournamentList.filter((tournament, key) => {
             return (tournament.type !== 'League Challenge');
         });
@@ -61,9 +72,9 @@ function App() {
         } else if (this.state.show === 'data') {
             this.setState({ show: 'home' })
         }
-    } */
+    }
 
-    /* setCurrentTournament = (tournament) => {
+    setCurrentTournament = (tournament) => {
         this.setState({ currentTournament: tournament, show: 'tournament' });
     }
 
@@ -78,9 +89,23 @@ function App() {
 
     setData = (value) => {
         this.setState({ weekData: value });
-    } */
+    }
 
-   /*  tournamentList = () => {
+    // changes the current tab on the page
+    setCurrentTab = (tab) => {
+        if (tab === 'home') {
+            this.setState({ show: 'home', currentTournament: null });
+        } else if (tab === 'tournaments') {
+            this.setState({ show: 'tournamentList' })
+            this.tournamentList();
+        } else if (tab === 'players') {
+            this.setState({ show: 'playerList', currentPlayer: null, playerList: playerList });
+        } else if (tab === 'data') {
+            this.setState({ show: 'data' });
+        }
+    }
+
+    tournamentList = () => {
         var filteredTournaments = tournamentList.filter((tournament, key) => {
             return (tournament.type !== 'League Challenge');
         });
@@ -146,9 +171,9 @@ function App() {
         } else {
             this.setState({ show: 'tournamentList', currentTournament: null, tournamentList: filteredTournaments, checkedChallenge: true });
         }
-    } */
+    }
 
-    /* sortPoint = () => {
+    sortPoint = () => {
         if (this.state.checkedPoints === true) {
             playerList.sort(function (a, b) {
                 return a.name.localeCompare(b.name);
@@ -189,18 +214,89 @@ function App() {
         return body;
     };
 
-    const tournamentCols = [
-        { name: 'date', title: 'Date' },
-        { name: 'name', title: 'Name' },
-        { name: 'region', title: 'Region' },
-        { name: 'type', title: 'Type' },
-        { name: 'cycle', title: 'Cycle' },
-        { name: 'attendance', title: 'Attendance' },
-    ] */
+    render () {
+        const { tournamentList, currentTournament, playerList, currentPlayer,
+        decks, topDecks, show, checkedChallenge, checkedPoints, weekData } = this.state;
 
-    return(
-        <Content></Content>
-    )
+        const tournamentCols = [
+            { name: 'date', title: 'Date' },
+            { name: 'name', title: 'Name' },
+            { name: 'region', title: 'Region' },
+            { name: 'type', title: 'Type' },
+            { name: 'cycle', title: 'Cycle' },
+            { name: 'attendance', title: 'Attendance' },
+        ]
+        const footerCopyright = "Created by Jeremy Lim © 2020";
+
+        return (
+            <Grid>
+                <Grid container>
+                    <Grid item xs={10}>
+                        <nav className="nav-bar">
+                            {show !== 'home' && <IconButton style={buttonStyle} onClick={this.backButton} aria-label="back">
+                                <ArrowBackIosIcon />
+                            </IconButton>}
+                            <NavBar setCurrentTab={this.setCurrentTab} ></NavBar>
+                        </nav>
+                    </Grid>
+                </Grid>
+                <Grid style={{marginLeft: '5%', marginRight: '5%'}}>
+                    {/* Search Bars width: '90%', height: '90%' */}
+                    {show === 'tournamentList' && <SearchBar onFormSubmit={this.handleChange}/>}
+                    {show === 'playerList' && <SearchBar onFormSubmit={this.handleChange}/>}
+
+                    {/* SORT FUNCTIONALITY */}
+                    {/* Home Menu */}
+                    {show === 'home' && <HomeMenu
+                    setCurrentTournament={this.setCurrentTournament}
+                    tournaments={tournamentList}
+                    decks={decks}
+                    players={playerList}
+                    topDecks={topDecks}/>}
+                    {/* TESTING */}
+                    {show === 'test' && <TableGrid tournamentList={[]}></TableGrid>}
+
+                    {/* Tournament List */}
+                    {show === 'tournamentList' && <FormControlLabel control={
+                        <Switch checked={checkedChallenge} onChange={this.filterChallenges} value="checkedChallenge"/>
+                    } label='No Challenges' />}
+                    {show === 'tournamentList' && <TournamentList
+                    setCurrentTournament={this.setCurrentTournament}/>}
+
+                    {/* Player List */}
+                    {show === 'playerList' && <FormControlLabel control={
+                        <Switch checked={checkedPoints} onChange={this.sortPoint} value="checkedPoints"/>
+                    } label='Sort Points' />}
+                    {show === 'playerList' && <PlayerList
+                    setCurrentPlayer={this.setCurrentPlayer}/>}
+
+                    {/* Tournament Info */}
+                    {show === 'tournament' && <TournamentInfo
+                    currentTournament={currentTournament}
+                    setCurrentPlayer={this.setCurrentPlayer}
+                    decks={decks} />}
+
+                    {/* Player Info */}
+                    {show === 'player' && <PlayerInfo
+                    currentPlayer={currentPlayer}
+                    setCurrentPlayer={this.setCurrentPlayer}
+                    setCurrentTournament={this.setCurrentTournament}
+                    decks={decks}
+                    tournamentList={tournamentList} />}
+
+                    {/* Data Analytics */}
+                    {/*<Grid style={{marginLeft: '10%', marginRight: '10%'}}>*/}
+                    {show === 'data' && <DataGraph
+                    weekData={weekData}
+                    setData={this.setData}/>}
+                    {/*</Grid>*/}
+                </Grid>
+                <Grid>
+                    <Footer children={footerCopyright} />
+                </Grid>
+            </Grid>
+        )
+    }
 }
 
 export default App;

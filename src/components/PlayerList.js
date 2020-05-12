@@ -1,12 +1,14 @@
-import React from 'react';
-import useWindowDimensions from './windowDimensions.js'
+import React, { useState, useEffect } from 'react';
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
+import useWindowDimensions from './windowDimensions.js'
+import playerList from '../data/players.js';
 import './TableGrid.css'
 
-const PlayerList = ({ setCurrentPlayer, playerList }) => {
+export default function PlayerList(props) {
     const classes = useStyles();
     const { height, width } = useWindowDimensions();
+    const [player, setPlayer] = useState(null);
 
     return (
         <Grid>
@@ -22,7 +24,7 @@ const PlayerList = ({ setCurrentPlayer, playerList }) => {
                         {playerList.map((player, key) => (
                             <TableRow key={key}>
                                 <TableCell component="th" align="center" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
-                                    <Link style={{cursor: 'pointer'}} onClick={() => setCurrentPlayer(player)}>{player.name}</Link>
+                                    <Link style={{cursor: 'pointer'}} onClick={() => props.setCurrentPlayer(player)}>{player.name}</Link>
                                 </TableCell>
                                 <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{player.points}</TableCell>
                             </TableRow>
@@ -33,5 +35,3 @@ const PlayerList = ({ setCurrentPlayer, playerList }) => {
         </Grid>
     )
 }
-
-export default PlayerList;

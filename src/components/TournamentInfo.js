@@ -3,13 +3,16 @@ import Moment from 'react-moment';
 import useWindowDimensions from './windowDimensions.js'
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { useStyles } from './useStyles';
+import decks from '../data/decks.js';
+import playerList from '../data/players.js';
 import './TableGrid.css'
 
 // Tournament templating
 
-const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
+export default function TournamentInfo(props) {
     const classes = useStyles();
     const { height, width } = useWindowDimensions();
+    const tournament = props.tournament;
 
     function compareDecks(target) {
         for (var i = 0; i < decks.length; i++) {
@@ -21,15 +24,25 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
         return target
     }
 
+    function comparePlayers(name) {
+        for (var i = 0; i < playerList.length; i++) {
+            if (playerList[i].name === name) {
+                return playerList[i];
+            }
+        }
+
+        return name
+    }
+
     return(
         <Grid item xs={12}>
             <Grid style={{padding: '10px'}}>
-                <h3> {currentTournament.name} ({currentTournament.region}) </h3>
-                <p> <b>Date:</b> <Moment format="DD/MM/YY">{currentTournament.date}</Moment> </p>
-                <p> <b>Number of players:</b> {currentTournament.attendance} </p>
-                <p> <b>Cycle:</b> {currentTournament.cycle}</p>
-                <p> <b>Type of event:</b> {currentTournament.type} </p>
-                <p> <b>Format:</b> {currentTournament.format} </p>
+                <h3> {tournament.name} ({tournament.region}) </h3>
+                <p> <b>Date:</b> <Moment format="DD/MM/YY">{tournament.date}</Moment> </p>
+                <p> <b>Number of players:</b> {tournament.attendance} </p>
+                <p> <b>Cycle:</b> {tournament.cycle}</p>
+                <p> <b>Type of event:</b> {tournament.type} </p>
+                <p> <b>Format:</b> {tournament.format} </p>
             </Grid>
             <Grid className="grid-container">
                 <Table className={classes.table}>
@@ -42,7 +55,7 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {currentTournament.standings.map((player, key) => {
+                        {tournament.standings.map((player, key) => {
                             var search = compareDecks(player);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
@@ -57,7 +70,7 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
                             <TableRow key={key}>
                                 <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{player.placing}</TableCell>
                                 <TableCell component="th" align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
-                                    <Link style={{cursor: 'pointer'}} onClick={() => setCurrentPlayer(player)}>{player.name}</Link>
+                                        <Link style={{ cursor: 'pointer' }} onClick={() => props.setCurrentPlayer(comparePlayers(player.name))}>{player.name}</Link>
                                 </TableCell>
                                 <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{player.deck}</TableCell>
                                 <TableCell align="left">
@@ -71,5 +84,3 @@ const TournamentInfo = ({ setCurrentPlayer, currentTournament, decks }) => {
         </Grid>
     )
 }
-
-export default TournamentInfo;

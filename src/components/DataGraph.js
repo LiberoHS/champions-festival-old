@@ -12,8 +12,8 @@
 // pink: rgba(232,67,216,1)
 // purple: rgba(167,61,224,1)
 
-import React from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React, { useState, useEffect } from 'react';
+import useWindowDimensions from './windowDimensions.js'
 import { Line } from 'react-chartjs-2';
 import { Button, Grid, Paper } from '@material-ui/core';
 import { Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
@@ -259,16 +259,21 @@ for (let i = 0; i < 6; i++) {
     data.datasets[i].pointHoverBorderColor = colorPalette[i].filled;
 }
 
-const DataGraph = ({ weekData, setData }) => {
-    const isMobile = useMediaQuery({ maxWidth: 767 });
-    const isDesktop = useMediaQuery({ minWidth: 992 });
-    const isNotTablet = useMediaQuery({ minWidth: 992 });
+export default function DataGraph({ setData }) {
+    // const isMobile = useMediaQuery({ maxWidth: 767 });
+    // const isDesktop = useMediaQuery({ minWidth: 992 });
+    // const isNotTablet = useMediaQuery({ minWidth: 992 });
+    const [weekData, setWeekData] = useState(4);
+    function setData(value) {
+        setWeekData(value);
+    }
+    const { width } = useWindowDimensions();
     let headerStyle = {};
     let cellStyle = {};
     let tableGrid = {};
     let flexContainer = {};
 
-    if (isNotTablet) {
+    if (width > 992) {
         headerStyle = {
             color: 'white',
             fontFamily: 'Muli',
@@ -307,7 +312,7 @@ const DataGraph = ({ weekData, setData }) => {
     }
     var container = {};
     var height = 0;
-    if (isDesktop) {
+    if (width > 992) {
         container = {
         	// maxWidth: '720px',
             marginLeft: '10px',
@@ -316,7 +321,7 @@ const DataGraph = ({ weekData, setData }) => {
         };
         height = '100%'
 
-    } else if (isMobile) {
+    } else if (width > 767) {
         container = {
             marginLeft: '2px',
             marginRight: '2px',
@@ -388,7 +393,7 @@ const DataGraph = ({ weekData, setData }) => {
                                       var search = compareDecks(deck);
                                       if (search.hasOwnProperty('thumbnails')) {
                                           var sprites = search.thumbnails.map((img, key) => {
-                                              if (isDesktop) {
+                                              if (width > 992) {
                                                   return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
                                               } else {
                                                   return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
@@ -411,5 +416,3 @@ const DataGraph = ({ weekData, setData }) => {
         </div>
     );
 };
-
-export default DataGraph;
