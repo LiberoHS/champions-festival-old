@@ -1,33 +1,16 @@
 import React from 'react';
 import { Grid, TextField } from '@material-ui/core';
 
-class SearchBar extends React.Component {
-    state = {
-        searchTerm: ''
-    }
-
-    handleChange = (event) => {
-        this.setState({ searchTerm: event.target.value });
-        this.handleSubmit(event);
-    }
-
-    handleSubmit = (event) => {
-        const { onFormSubmit } = this.props;
-
-        onFormSubmit(event.target.value);
-
+export default function SearchBar(props) {
+    function handleChange(event) {
+        const { onChange } = props;
+        onChange(event.target.value);
         event.preventDefault();
     }
 
-    render() {
-        return (
-            <Grid elevation={6} style={{ padding: '25px' }}>
-                <form onSubmit={this.handleSubmit}>
-                    <TextField fullWidth label="Search..." onChange={this.handleChange} />
-                </form>
-            </Grid>
-        )
-    }
+    return (
+        <Grid elevation={6} style={{ padding: '25px' }}>
+            <TextField fullWidth label="Search..." onChange={handleChange} variant="outlined" />
+        </Grid>
+    )
 }
-
-export default SearchBar;

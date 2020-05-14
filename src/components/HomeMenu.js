@@ -15,7 +15,7 @@ const text = {
 }
 
 export default function HomeMenu(props) {
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
     let playerList = players;
     playerList.sort(function (a, b) {
         return b.points - a.points;

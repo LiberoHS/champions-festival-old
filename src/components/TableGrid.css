@@ -13,3 +13,31 @@
     font-family: 'Muli';
     font-size: 16px;
 }
+
+.grid-container .desktop-table {
+    display: 'flex';
+    flex: 1;
+    background-color: white;
+}
+
+.grid-container .mobile-table {
+    margin: 10px;
+    width: 95%;
+    height: 90%;
+    background-color: white;
+}
+
+.button-container {
+    display: flex;
+}
+
+.button-container .button {
+    margin: 0.5em;
+    width: 12em;
+    height: 4em;
+}
+
+.filter-container .form-container {
+    margin: 0.3em;
+    columns: 2;
+}

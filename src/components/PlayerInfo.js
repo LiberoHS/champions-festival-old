@@ -1,7 +1,7 @@
 import React from 'react';
 import useWindowDimensions from './windowDimensions.js'
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
-import { useStyles } from './useStyles';
+// import { useStyles } from './useStyles';
 import tournamentList from '../data/tournaments.js';
 import decks from '../data/decks.js';
 import './TableGrid.css'
@@ -9,8 +9,8 @@ import './TableGrid.css'
 // Player templating
 
 export default function PlayerInfo(props) {
-    const classes = useStyles();
-    const { height, width } = useWindowDimensions();
+    // const classes = useStyles();
+    const { width } = useWindowDimensions();
     const player = props.player;
     
     function compareDecks(target) {

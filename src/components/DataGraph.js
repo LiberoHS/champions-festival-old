@@ -12,13 +12,14 @@
 // pink: rgba(232,67,216,1)
 // purple: rgba(167,61,224,1)
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import useWindowDimensions from './windowDimensions.js'
 import { Line } from 'react-chartjs-2';
 import { Button, Grid, Paper } from '@material-ui/core';
 import { Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import decks from '../data/decks.js';
+import './TableGrid.css'
 
 var MyMethods = require('../data/report.js');
 var lastSixWeeks = MyMethods.lastSixWeeks;
@@ -42,16 +43,12 @@ const deck4 = DeckList[4][3].deck;
 const deck5 = DeckList[4][4].deck;
 const deck6 = DeckList[4][5].deck;
 
-const memes = [deck1,deck2,deck3,deck4,deck5,deck6];
+const memes = DeckList[4].map((item) => { return item.deck });
 
 var data = {
-    labels: [
-        lastSixWeeks[5].dayEnd+' - '+lastSixWeeks[4].dayStart,
-        lastSixWeeks[4].dayEnd+' - '+lastSixWeeks[3].dayStart,
-        lastSixWeeks[3].dayEnd+' - '+lastSixWeeks[2].dayStart,
-        lastSixWeeks[2].dayEnd+' - '+lastSixWeeks[1].dayStart,
-        lastSixWeeks[1].dayEnd+' - '+lastSixWeeks[0].dayStart,
-    ],
+    labels: [0, 1, 2, 3, 4].map((i) => {
+        return (lastSixWeeks[5 - i].dayEnd + ' - ' + lastSixWeeks[4 - i].dayStart)
+    }),
     datasets: [
     {
         label: '',
@@ -72,39 +69,8 @@ var data = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [
-            DeckList[0].find(data => data.deck === deck1) ? DeckList[0].findIndex(data => data.deck === deck1) + 1: null,
-            DeckList[1].find(data => data.deck === deck1) ? DeckList[1].findIndex(data => data.deck === deck1) + 1: null,
-            DeckList[2].find(data => data.deck === deck1) ? DeckList[2].findIndex(data => data.deck === deck1) + 1: null,
-            DeckList[3].find(data => data.deck === deck1) ? DeckList[3].findIndex(data => data.deck === deck1) + 1: null,
-            DeckList[4].find(data => data.deck === deck1) ? DeckList[4].findIndex(data => data.deck === deck1) + 1: null,
-        ]},
-    {
-        label: '',
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: '',
-        borderColor: '',
-        borderCapStyle: 'butt',
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: '',
-        pointBackgroundColor: '#fff',
-        pointBorderWidth: 10,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: '',
-        pointHoverBorderColor: '',
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
-        data: [
-            DeckList[0].find(data => data.deck === deck2) ? DeckList[0].findIndex(data => data.deck === deck2) + 1: null,
-            DeckList[1].find(data => data.deck === deck2) ? DeckList[1].findIndex(data => data.deck === deck2) + 1: null,
-            DeckList[2].find(data => data.deck === deck2) ? DeckList[2].findIndex(data => data.deck === deck2) + 1: null,
-            DeckList[3].find(data => data.deck === deck2) ? DeckList[3].findIndex(data => data.deck === deck2) + 1: null,
-            DeckList[4].find(data => data.deck === deck2) ? DeckList[4].findIndex(data => data.deck === deck2) + 1: null,
-        ]
+        data: [0, 1, 2, 3, 4].map((i) =>
+        { return DeckList[i].find(data => data.deck === deck1) ? DeckList[i].findIndex(data => data.deck === deck1) + 1 : null})
     },
     {
         label: '',
@@ -125,13 +91,8 @@ var data = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [
-            DeckList[0].find(data => data.deck === deck3) ? DeckList[0].findIndex(data => data.deck === deck3) + 1: null,
-            DeckList[1].find(data => data.deck === deck3) ? DeckList[1].findIndex(data => data.deck === deck3) + 1: null,
-            DeckList[2].find(data => data.deck === deck3) ? DeckList[2].findIndex(data => data.deck === deck3) + 1: null,
-            DeckList[3].find(data => data.deck === deck3) ? DeckList[3].findIndex(data => data.deck === deck3) + 1: null,
-            DeckList[4].find(data => data.deck === deck3) ? DeckList[4].findIndex(data => data.deck === deck3) + 1: null,
-        ]
+        data: [0, 1, 2, 3, 4].map((i) => 
+        { return DeckList[i].find(data => data.deck === deck2) ? DeckList[i].findIndex(data => data.deck === deck2) + 1 : null })
     },
     {
         label: '',
@@ -152,13 +113,8 @@ var data = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [
-            DeckList[0].find(data => data.deck === deck4) ? DeckList[0].findIndex(data => data.deck === deck4) + 1 : null,
-            DeckList[1].find(data => data.deck === deck4) ? DeckList[1].findIndex(data => data.deck === deck4) + 1 : null,
-            DeckList[2].find(data => data.deck === deck4) ? DeckList[2].findIndex(data => data.deck === deck4) + 1 : null,
-            DeckList[3].find(data => data.deck === deck4) ? DeckList[3].findIndex(data => data.deck === deck4) + 1 : null,
-            DeckList[4].find(data => data.deck === deck4) ? DeckList[4].findIndex(data => data.deck === deck4) + 1 : null,
-        ]
+        data: [0, 1, 2, 3, 4].map((i) =>
+        { return DeckList[i].find(data => data.deck === deck3) ? DeckList[i].findIndex(data => data.deck === deck3) + 1 : null })
     },
     {
         label: '',
@@ -179,13 +135,8 @@ var data = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [
-            DeckList[0].find(data => data.deck === deck5) ? DeckList[0].findIndex(data => data.deck === deck5) + 1: null,
-            DeckList[1].find(data => data.deck === deck5) ? DeckList[1].findIndex(data => data.deck === deck5) + 1: null,
-            DeckList[2].find(data => data.deck === deck5) ? DeckList[2].findIndex(data => data.deck === deck5) + 1: null,
-            DeckList[3].find(data => data.deck === deck5) ? DeckList[3].findIndex(data => data.deck === deck5) + 1: null,
-            DeckList[4].find(data => data.deck === deck5) ? DeckList[4].findIndex(data => data.deck === deck5) + 1: null,
-        ]
+        data: [0, 1, 2, 3, 4].map((i) =>
+        { return DeckList[i].find(data => data.deck === deck4) ? DeckList[i].findIndex(data => data.deck === deck4) + 1 : null })
     },
     {
         label: '',
@@ -206,13 +157,30 @@ var data = {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [
-            DeckList[0].find(data => data.deck === deck6) ? DeckList[0].findIndex(data => data.deck === deck6) + 1: null,
-            DeckList[1].find(data => data.deck === deck6) ? DeckList[1].findIndex(data => data.deck === deck6) + 1: null,
-            DeckList[2].find(data => data.deck === deck6) ? DeckList[2].findIndex(data => data.deck === deck6) + 1: null,
-            DeckList[3].find(data => data.deck === deck6) ? DeckList[3].findIndex(data => data.deck === deck6) + 1: null,
-            DeckList[4].find(data => data.deck === deck6) ? DeckList[4].findIndex(data => data.deck === deck6) + 1: null,
-        ]
+        data: [0, 1, 2, 3, 4].map((i) =>
+        { return DeckList[i].find(data => data.deck === deck5) ? DeckList[i].findIndex(data => data.deck === deck5) + 1 : null })
+    },
+    {
+        label: '',
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: '',
+        borderColor: '',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: '',
+        pointBackgroundColor: '#fff',
+        pointBorderWidth: 10,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: '',
+        pointHoverBorderColor: '',
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: [0, 1, 2, 3, 4].map((i) =>
+        { return DeckList[i].find(data => data.deck === deck6) ? DeckList[i].findIndex(data => data.deck === deck6) + 1 : null })
     },
     ]
 };
@@ -259,74 +227,12 @@ for (let i = 0; i < 6; i++) {
     data.datasets[i].pointHoverBorderColor = colorPalette[i].filled;
 }
 
-export default function DataGraph({ setData }) {
-    // const isMobile = useMediaQuery({ maxWidth: 767 });
-    // const isDesktop = useMediaQuery({ minWidth: 992 });
-    // const isNotTablet = useMediaQuery({ minWidth: 992 });
+export default function DataGraph() {
     const [weekData, setWeekData] = useState(4);
+    const { width } = useWindowDimensions();
+
     function setData(value) {
         setWeekData(value);
-    }
-    const { width } = useWindowDimensions();
-    let headerStyle = {};
-    let cellStyle = {};
-    let tableGrid = {};
-    let flexContainer = {};
-
-    if (width > 992) {
-        headerStyle = {
-            color: 'white',
-            fontFamily: 'Muli',
-            fontSize: '16px'
-        };
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '20px'
-        };
-        tableGrid = {
-            margin: '20px',
-            width: '40%',
-            height: '80%',
-            backgroundColor: 'white'
-        };
-        flexContainer = {
-            display: 'flex',
-            flex: 1
-        }
-    } else {
-        headerStyle = {
-            color: 'white',
-            fontFamily: 'Muli',
-            fontSize: '12px'
-        };
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '16px'
-        };
-        tableGrid = {
-            margin: '10px',
-            width: '95%',
-            height: '90%',
-            backgroundColor: 'white'
-        };
-    }
-    var container = {};
-    var height = 0;
-    if (width > 992) {
-        container = {
-        	// maxWidth: '720px',
-            marginLeft: '10px',
-            marginRight: '10px',
-        	padding: '1em',
-        };
-        height = '100%'
-
-    } else if (width > 767) {
-        container = {
-            marginLeft: '2px',
-            marginRight: '2px',
-        };
-        height = '500px';
     }
 
     function compareDecks(target) {
@@ -357,61 +263,56 @@ export default function DataGraph({ setData }) {
     const classes = useStyles();
 
   return (
-      <div>
-          <div style={container}>
+        <div>
+          <div>
             <h3>Weekly Data</h3>
-            <Line data={data} height={height} options={options}/>
+            <Line data={data} height={width > 992 ? '100%' : '500px' } options={options}/>
           </div>
-          <div style={container}>
-          <Grid style={container}>
-            <Button variant="outlined" className={classes.button} color="primary" onClick={() => setData(0)}>
-                {lastSixWeeks[5].dayEnd+' - '+lastSixWeeks[4].dayStart}</Button>
-            <Button variant="outlined" className={classes.button} color="primary" onClick={() => setData(1)}>
-                {lastSixWeeks[4].dayEnd+' - '+lastSixWeeks[3].dayStart}</Button>
-            <Button variant="outlined" className={classes.button} color="primary" onClick={() => setData(2)}>
-                {lastSixWeeks[3].dayEnd+' - '+lastSixWeeks[2].dayStart}</Button>
-            <Button variant="outlined" className={classes.button} color="primary" onClick={() => setData(3)}>
-                {lastSixWeeks[2].dayEnd+' - '+lastSixWeeks[1].dayStart}</Button>
-            <Button variant="outlined" className={classes.button} color="primary" onClick={() => setData(4)}>
-                {lastSixWeeks[1].dayEnd+' - '+lastSixWeeks[0].dayStart}</Button>
+          <div>
+              <Grid className="button-container">
+              {[0,1,2,3,4].map((i) => {
+                  return(
+                      <Button variant="outlined" className="button" value={i} color={weekData === i ? "secondary" : "primary"} onClick={() => setData(i)}>
+                          {lastSixWeeks[5-i].dayEnd + ' - ' + lastSixWeeks[4-i].dayStart}</Button>
+              )})}
           </Grid>
-              <Grid style={flexContainer}>
-                  <Grid item xs={11} style={tableGrid}>
-                      <h3>Weekly CP Decks</h3>
-                      <Paper className={classes.root}>
-                          <div className={classes.tableWrapper}>
-                              <Table>
-                                  <TableHead>
-                                      <TableRow style={{backgroundColor: '#424242'}}>
-                                          <TableCell align="left" style={headerStyle}>Deck</TableCell>
-                                          <TableCell align="left" style={headerStyle}></TableCell>
-                                          <TableCell align="left" style={headerStyle}>Points</TableCell>
-                                      </TableRow>
-                                  </TableHead>
-                                  <TableBody>
-                                  {DeckList[weekData].map((deck, key) => {
-                                      var search = compareDecks(deck);
-                                      if (search.hasOwnProperty('thumbnails')) {
-                                          var sprites = search.thumbnails.map((img, key) => {
-                                              if (width > 992) {
-                                                  return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
-                                              } else {
-                                                  return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
-                                              }
-                                      })};
-                                      return(
-                                      <TableRow key={key}>
-                                          <TableCell align="left" style={cellStyle}>{deck.deck}</TableCell>
-                                          <TableCell align="left" style={cellStyle}>{sprites}</TableCell>
-                                          <TableCell align="left" style={cellStyle}>{deck.currCP}</TableCell>
-                                      </TableRow>
-                                  )})}
-                                  </TableBody>
-                              </Table>
-                          </div>
-                      </Paper>
-                  </Grid>
+            <Grid className="grid-container">
+                  <Grid item xs={11} className={width > 992 ? "desktop-table" : "mobile-table"}>
+                    <h3>Weekly CP Decks</h3>
+                    <Paper className={classes.root}>
+                        <div className={classes.tableWrapper}>
+                            <Table>
+                                <TableHead>
+                                    <TableRow style={{backgroundColor: '#424242'}}>
+                                        <TableCell align="left" className="table-header">Deck</TableCell>
+                                        <TableCell align="left" className="table-header"></TableCell>
+                                        <TableCell align="left" className="table-header">Points</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                {DeckList[weekData].map((deck, key) => {
+                                    var search = compareDecks(deck);
+                                    if (search.hasOwnProperty('thumbnails')) {
+                                        var sprites = search.thumbnails.map((img, key) => {
+                                            if (width > 992) {
+                                                return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
+                                            } else {
+                                                return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
+                                            }
+                                    })};
+                                    return(
+                                    <TableRow key={key}>
+                                        <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{deck.deck}</TableCell>
+                                        <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{sprites}</TableCell>
+                                        <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{deck.currCP}</TableCell>
+                                    </TableRow>
+                                )})}
+                                </TableBody>
+                            </Table>
+                        </div>
+                    </Paper>
                 </Grid>
+            </Grid>
             </div>
         </div>
     );

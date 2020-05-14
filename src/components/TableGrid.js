@@ -2,15 +2,13 @@ import React from 'react';
 import Moment from 'react-moment';
 import useWindowDimensions from './windowDimensions.js'
 import { Grid, Link, Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
-import { Paper } from '@material-ui/core';
 // import { Grid, Table, TableHeaderRow } from '@devexpress/dx-react-grid-material-ui';
-import { useStyles } from './useStyles';
+// import { useStyles } from './useStyles';
 import './TableGrid.css'
 
 export default function TableGrid(props) {
-
-    const classes = useStyles();
-    const { height, width } = useWindowDimensions();
+    // const classes = useStyles();
+    const { width } = useWindowDimensions();
     
     return (
         <Grid className="grid-container">

@@ -1,0 +1,46 @@
+.phantom-style {
+    display: block;
+    padding: 20px;
+    height: 60px;
+    width: 100%;
+}
+
+.desktop-footer {
+    background-color: #555555;
+    font-size: 18px;
+    color: white;
+    border-top: 1px solid #E7E7E7;
+    text-align: center;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+}
+
+.desktop-footer .desktop-icon {
+    color: white;
+    margin-right: 1%;
+    width: 30px;
+    height: 30px;
+}
+
+.mobile-footer {
+    background-color: #555555;
+    font-size: 12px;
+    color: white;
+    border-top: 1px solid #E7E7E7;
+    text-align: center;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+}
+
+.mobile-footer .mobile-icon {
+    color: white;
+    margin-right: 2%;
+    width: 20px;
+    height: 20px;
+}

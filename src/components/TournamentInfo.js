@@ -11,7 +11,7 @@ import './TableGrid.css'
 
 export default function TournamentInfo(props) {
     const classes = useStyles();
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
     const tournament = props.tournament;
 
     function compareDecks(target) {

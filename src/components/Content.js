@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Grid, Switch, FormControlLabel, IconButton } from '@material-ui/core';
-import { DataGraph, Footer, HomeMenu, NavBar, PlayerInfo, PlayerList, SearchBar, TableGrid, TournamentInfo, TournamentList } from '../components';
-
-const buttonStyle = {
-    height: '25px',
-    width: '40px',
-    bottom: '10px'
-};
+import React, { useState } from 'react';
+// import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+// import { Grid, Switch, FormControlLabel, IconButton } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
+import { DataGraph, Footer, HomeMenu, NavBar, PlayerInfo, PlayerList, TableGrid, TournamentInfo, TournamentList } from '../components';
 
 export default function Content() {
     const [show, setShow] = useState('home');
@@ -20,11 +15,13 @@ export default function Content() {
         setShow(tab);
     }
 
+    // sets the selected tournament for TournamentInfo component
     function setCurrentTournament(tournament) {
         setTournament(tournament);
         setShow('tournamentInfo');
     }
 
+    // sets the selected player for PlayerInfo component
     function setCurrentPlayer(player) {
         setPlayer(player);
         setShow('playerInfo');
