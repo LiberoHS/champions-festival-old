@@ -11,6 +11,7 @@ export default function TournamentList(props) {
     const classes = useStyles();
     const { width } = useWindowDimensions();
     const [tournamentList, setList] = useState(tournaments);
+    const [filteredList, setFilteredList] = useState(tournaments);
     // filter states
     const [challengeSwitch, setChallenges] = useState(false);
     const [majorSwitch, setMajors] = useState(false);
@@ -19,7 +20,7 @@ export default function TournamentList(props) {
 
     // search bar
     async function handleChange(searchTerm) {
-        setList(tournamentList.filter((tournament, key) => {
+        setList(filteredList.filter((tournament, key) => {
             if (tournament.name.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0) {
                 return tournament;
             }
@@ -88,15 +89,16 @@ export default function TournamentList(props) {
             });
         }
 
-
-
+        setFilteredList(filteredTournaments);
         setList(filteredTournaments);
     }
 
     // reset all filters to false
     function revertFilters() {
         setChallenges(false);
+        setMajors(false);
         setList(tournaments);
+        setFilteredList(tournaments);
         setRegion('all');
     }
     
