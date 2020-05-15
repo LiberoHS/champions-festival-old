@@ -1,22 +1,45 @@
 .grid-container .table-header {
+    padding: 0.6em;
     color: white;
     font-family: 'Muli';
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .grid-container .desktop-cell {
-    font-family: 'Muli';
-    font-size: 20px;
-}
-
-.grid-container .mobile-cell {
+    padding: 0.4em;
     font-family: 'Muli';
     font-size: 16px;
 }
 
-.grid-container .desktop-table {
-    display: 'flex';
+.grid-container .mobile-cell {
+    padding: 0.4em;
+    margin-left: 100%;
+    font-family: 'Muli';
+    font-size: 12px;
+}
+
+.desktop-icon {
+    padding: 0;
+    height: 50px;
+    width: 50px;
+}
+
+.mobile-icon {
+    padding: 0;
+    height: 40px;
+    width: 40px;
+}
+
+.flex-container {
+    display: flex;
     flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: white;
+}
+
+.grid-container .desktop-table {
     background-color: white;
 }
 
@@ -38,6 +61,10 @@
 }
 
 .filter-container .form-container {
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     margin: 0.3em;
     columns: 2;
 }

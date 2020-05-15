@@ -36,7 +36,7 @@ export default function TournamentInfo(props) {
 
     return(
         <Grid item xs={12}>
-            <Grid style={{padding: '10px'}}>
+            <Grid className="grid-container">
                 <h3> {tournament.name} ({tournament.region}) </h3>
                 <p> <b>Date:</b> <Moment format="DD/MM/YY">{tournament.date}</Moment> </p>
                 <p> <b>Number of players:</b> {tournament.attendance} </p>
@@ -59,11 +59,7 @@ export default function TournamentInfo(props) {
                             var search = compareDecks(player);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
-                                    if (width > 961) {
-                                        return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
-                                    } else {
-                                        return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
-                                    }
+                                    return <img key={key} src={img} className={width > 961 ? "desktop-icon" : "mobile-icon"} alt="rekt" />
                             })};
 
                             return(

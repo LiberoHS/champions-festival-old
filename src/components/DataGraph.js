@@ -294,11 +294,7 @@ export default function DataGraph() {
                                     var search = compareDecks(deck);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
-                                            if (width > 992) {
-                                                return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
-                                            } else {
-                                                return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
-                                            }
+                                            return <img key={key} src={img} className={width > 961 ? "desktop-icon" : "mobile-icon"} alt="rekt" />
                                     })};
                                     return(
                                     <TableRow key={key}>

@@ -122,7 +122,7 @@ export default function TournamentList(props) {
                     </FormGroup>
                 </FormControl>
                 <FormControl component="fieldset" className="form-container">
-                    <FormLabel component="legend">AU Filters</FormLabel>
+                    <FormLabel component="legend">Region Filters</FormLabel>
                     <RadioGroup value={region} onChange={toggleRegions}>
                         <FormControlLabel value="all" control={<Radio />} label="All" />
                         <FormControlLabel value="NSW" control={<Radio />} label="NSW" />
@@ -132,7 +132,7 @@ export default function TournamentList(props) {
                     </RadioGroup>
                 </FormControl>
                 <FormControl component="fieldset" className="form-container">
-                    <FormLabel component="legend">AU Filters</FormLabel>
+                    <FormLabel component="legend">Region Filters</FormLabel>
                     <RadioGroup value={region} onChange={toggleRegions}>
                         <FormControlLabel value="WA" control={<Radio />} label="WA" />
                         <FormControlLabel value="TAS" control={<Radio />} label="TAS" />

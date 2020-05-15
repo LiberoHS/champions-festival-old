@@ -40,7 +40,8 @@ export default function Content() {
 
                 {/* Home Menu */}
                 {show === 'home' && <HomeMenu
-                    setCurrentTournament={setCurrentTournament} />}
+                    setCurrentTournament={setCurrentTournament}
+                    setCurrentPlayer={setCurrentPlayer} />}
 
                 {/* TESTING */}
                 {show === 'test' && <TableGrid tournamentList={[]}></TableGrid>}

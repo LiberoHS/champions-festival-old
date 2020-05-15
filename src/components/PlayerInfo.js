@@ -55,11 +55,7 @@ export default function PlayerInfo(props) {
                             var search = compareDecks(achievement);
                             if (search.hasOwnProperty('thumbnails')) {
                                 var sprites = search.thumbnails.map((img, key) => {
-                                    if (width > 961) {
-                                        return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
-                                    } else {
-                                        return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
-                                    }
+                                    return <img key={key} src={img} className={width > 961 ? "desktop-icon" : "mobile-icon"} alt="rekt" />
                             })};
 
                             return(
