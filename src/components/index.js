@@ -1,5 +1,6 @@
 export { default as Content } from './Content';
 export { default as DataGraph } from './DataGraph';
+export { default as DatePicker } from './DatePicker';
 export { default as Footer } from './Footer';
 export { default as HomeMenu } from './HomeMenu';
 export { default as NavBar } from './NavBar';

@@ -1,11 +1,13 @@
 import React, { useState, useCallback} from 'react';
 import Moment from 'react-moment';
 import { Grid, Link, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup,  Table, TableRow, TableCell, TableHead, TableBody } from '@material-ui/core';
-import { SearchBar } from '../components';
+import { DatePicker, SearchBar } from '../components';
 import { useStyles } from './useStyles';
 import useWindowDimensions from './windowDimensions.js'
 import tournaments from '../data/tournaments.js';
 import './TableGrid.css'
+
+var moment = require('moment');
 
 export default function TournamentList(props) {
     const classes = useStyles();
@@ -15,8 +17,27 @@ export default function TournamentList(props) {
     // filter states
     const [challengeSwitch, setChallenges] = useState(false);
     const [majorSwitch, setMajors] = useState(false);
+    const [dateSwitch, setDates] = useState(false);
     const [filter, setFilter] = useState(false);
     const [region, setRegion] = React.useState('all');
+    const [startDate, setStart] = React.useState(moment().subtract('months', 3));
+    const [endDate, setEnd] = React.useState(moment());
+
+    const handleStart = (date) => {
+        // if start date is after start date, change end date to start date
+        if (date > endDate) {
+            setEnd(date);
+        }
+        setStart(date);
+    };
+
+    const handleEnd = (date) => {
+        // if end date is before start date, change start date to end date
+        if (date < startDate) {
+            setStart(date);
+        }
+        setEnd(date);
+    };
 
     // search bar
     async function handleChange(searchTerm) {
@@ -42,6 +63,10 @@ export default function TournamentList(props) {
         setMajors(!majorSwitch);
     });
 
+    const toggleDates = useCallback(() => {
+        setDates(!dateSwitch);
+    });
+
     const toggleRegions = (event) => {
         setRegion(event.target.value);
     };
@@ -49,6 +74,14 @@ export default function TournamentList(props) {
     // set filters based on checkboxes
     function setFilters() {
         var filteredTournaments = tournaments;
+        if (dateSwitch) {
+            filteredTournaments = filteredTournaments.filter((tournament, key) => {
+                if (tournament.date >= startDate && tournament.date <= endDate) {
+                    return tournament;
+                }
+            });
+        }
+
         if (challengeSwitch) {
             filteredTournaments = filteredTournaments.filter((tournament, key) => {
                 if (tournament.type !== 'League Challenge') {
@@ -97,6 +130,9 @@ export default function TournamentList(props) {
     function revertFilters() {
         setChallenges(false);
         setMajors(false);
+        setDates(false);
+        setStart(moment().subtract('months', 3));
+        setEnd(moment());
         setList(tournaments);
         setFilteredList(tournaments);
         setRegion('all');
@@ -139,6 +175,14 @@ export default function TournamentList(props) {
                         <FormControlLabel value="NZ" control={<Radio />} label="NZ" />
                         <FormControlLabel value="other" control={<Radio />} label="Other" />
                     </RadioGroup>
+                </FormControl>
+                <FormControl component="fieldset" className="form-container">
+                    <FormLabel component="legend">Date Filters</FormLabel>
+                    <DatePicker date={startDate} handleChange={handleStart} label="Start Date"></DatePicker>
+                    <DatePicker date={endDate} handleChange={handleEnd} label="End Date"></DatePicker>
+                    <FormControlLabel control={
+                        <Checkbox checked={dateSwitch} onChange={toggleDates} value="checked" />
+                    } label='Apply Date Filters' />
                 </FormControl>
                 <Grid className="button-container">
                     <Button variant="outlined" className="button" color="secondary" size="small" onClick={setFilters}>Apply Filters</Button>

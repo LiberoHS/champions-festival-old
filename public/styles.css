@@ -23,15 +23,6 @@ div {
     font-family: 'Muli', sans-serif;
 }
 
-button {
-    height: 80px;
-    width: 225px;
-    font-size: 16px;
-    font-family: 'Muli';
-    border-radius: 20px;
-    padding: 10px;
-}
-
 .nav-bar {
     display: flex;
     width: 100%;

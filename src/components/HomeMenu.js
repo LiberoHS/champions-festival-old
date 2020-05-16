@@ -27,7 +27,7 @@ export default function HomeMenu(props) {
         setPlayerList(filtered.filter((player, key) => {
             return (key < 10);
         }));
-    });
+    }, [playerList]);
 
     function comparePlayers(name) {
         for (var i = 0; i < players.length; i++) {

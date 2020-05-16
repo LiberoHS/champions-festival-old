@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 // import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // import { Grid, Switch, FormControlLabel, IconButton } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
-import { DataGraph, Footer, HomeMenu, NavBar, PlayerInfo, PlayerList, TableGrid, TournamentInfo, TournamentList } from '../components';
+import { DataGraph, DatePicker, Footer, HomeMenu, NavBar, PlayerInfo, PlayerList, TournamentInfo, TournamentList } from '../components';
+
+var moment = require('moment');
 
 export default function Content() {
     const [show, setShow] = useState('home');
@@ -30,7 +32,7 @@ export default function Content() {
     return (
         <Grid>
             <Grid item xs={10}>
-                <NavBar show={show} setCurrentTab={setCurrentTab} ></NavBar>
+                {show !== 'test' && <NavBar show={show} setCurrentTab={setCurrentTab} ></NavBar>}
             </Grid>
             <Grid style={{ marginLeft: '5%', marginRight: '5%' }}>
 
@@ -40,7 +42,6 @@ export default function Content() {
                     setCurrentPlayer={setCurrentPlayer} />}
 
                 {/* TESTING */}
-                {show === 'test' && <TableGrid tournamentList={[]}></TableGrid>}
 
                 {/* Tournament List */}
                 {show === 'tournamentList' && <TournamentList setCurrentTournament={setCurrentTournament}/>}
@@ -62,7 +63,7 @@ export default function Content() {
                 {show === 'data' && <DataGraph/>}
             </Grid>
             <Grid>
-                {/* <Footer children={footerCopyright} /> */}
+                <Footer children={footerCopyright} />
             </Grid>
         </Grid>
     )
