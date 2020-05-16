@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Moment from 'react-moment';
 import useWindowDimensions from './windowDimensions.js'
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +8,7 @@ import decks from '../data/decks.js';
 import tournaments from '../data/tournaments.js';
 import players from '../data/players.js';
 import topDecks from '../data/topDecks.js';
+import './TableGrid.css'
 
 const text = {
     margin: '15px',
@@ -16,56 +17,35 @@ const text = {
 
 export default function HomeMenu(props) {
     const { width } = useWindowDimensions();
-    let playerList = players;
-    playerList.sort(function (a, b) {
-        return b.points - a.points;
+    const [playerList, setPlayerList] = useState(players);
+
+    useEffect(() => {
+        const filtered = playerList.sort(function (a, b) {
+            return b.points - a.points;
+        });
+
+        setPlayerList(filtered.filter((player, key) => {
+            return (key < 10);
+        }));
     });
 
-    playerList = playerList.filter((player, key) => {
-        return (key < 10);
-    });
+    function comparePlayers(name) {
+        for (var i = 0; i < players.length; i++) {
+            if (players[i].name === name) {
+                return players[i];
+            }
+        }
 
-    let headerStyle = {};
-    let cellStyle = {};
-    let tableGrid = {};
+        return name
+    }
+
     let flexContainer = {};
 
     if (width > 992) {
-        headerStyle = {
-            color: 'white',
-            fontFamily: 'Muli',
-            fontSize: '16px'
-        };
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '20px'
-        };
-        tableGrid = {
-            margin: '20px',
-            width: '40%',
-            height: '80%',
-            backgroundColor: 'white'
-        };
         flexContainer = {
             display: 'flex',
             flex: 1
         }
-    } else {
-        headerStyle = {
-            color: 'white',
-            fontFamily: 'Muli',
-            fontSize: '12px'
-        };
-        cellStyle = {
-            fontFamily: 'Muli',
-            fontSize: '16px'
-        };
-        tableGrid = {
-            margin: '10px',
-            width: '95%',
-            height: '90%',
-            backgroundColor: 'white'
-        };
     }
 
     function compareDecks(target) {
@@ -99,17 +79,17 @@ export default function HomeMenu(props) {
     return (
         <Grid>
             <Grid container>
-                <Grid item xs={11} style={tableGrid}>
+                <Grid item xs={11} className="grid-container">
                     <h3 style={text}>Latest Tournament Winners | {newestFormat}</h3>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
                                 <TableHead>
                                     <TableRow style={{backgroundColor: '#424242'}}>
-                                        <TableCell align="left" style={headerStyle}>Date</TableCell>
-                                        <TableCell align="left" style={headerStyle}>Tournament</TableCell>
-                                        <TableCell align="left" style={headerStyle}>Name</TableCell>
-                                        {width > 768 && <TableCell align="left" style={headerStyle}>Deck</TableCell>}
+                                        <TableCell align="left" className="table-header">Date</TableCell>
+                                        <TableCell align="left" className="table-header">Tournament</TableCell>
+                                        {width > 768 && <TableCell align="left" className="table-header">Name</TableCell>}
+                                        {width > 768 && <TableCell align="left" className="table-header">Deck</TableCell>}
                                         {width > 768 && <TableCell align="left"></TableCell>}
                                     </TableRow>
                                 </TableHead>
@@ -118,21 +98,21 @@ export default function HomeMenu(props) {
                                     var search = compareDecks(tournament.standings[0]);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
-                                            if (width > 992) {
-                                                return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
-                                            } else {
-                                                return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
-                                            }
+                                            return <img key={key} src={img} className={width > 992 ? "desktop-icon" : "mobile-icon"}  alt="rekt" />
                                     })};
 
                                     return(
                                     <TableRow key={key}>
-                                        <TableCell align="left" style={cellStyle}><Moment format="DD/MM/YY">{tournament.date}</Moment></TableCell>
-                                        <TableCell component="th" align="left" style={cellStyle}>
+                                        <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}><Moment format="DD/MM/YY">{tournament.date}</Moment></TableCell>
+                                        <TableCell component="th" align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
                                             <Link style={{cursor: 'pointer'}} onClick={() => props.setCurrentTournament(tournament)}>{tournament.name}</Link>
                                         </TableCell>
-                                        <TableCell align="left" style={cellStyle}>{tournament.standings[0].name}</TableCell>
-                                        {width > 768 && <TableCell align="left" style={cellStyle}>{tournament.standings[0].deck}</TableCell>}
+                                        {width > 768 && <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
+                                                <Link style={{ cursor: 'pointer' }} onClick={() => props.setCurrentPlayer(comparePlayers(tournament.standings[0].name))}>{tournament.standings[0].name}</Link>
+                                        </TableCell>}
+                                        {width > 768 && <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
+                                            {tournament.standings[0].deck}
+                                        </TableCell>}
                                         {width > 768 && <TableCell align="left">
                                         <p>{sprites}</p>
                                         </TableCell>}
@@ -171,16 +151,16 @@ export default function HomeMenu(props) {
                 </Grid> */}
             </Grid>
             <Grid style={flexContainer}>
-                <Grid item xs={11} style={tableGrid}>
+                <Grid item xs={11} className="grid-container">
                     <h3 style={text}>Top Performing Decks</h3>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
                                 <TableHead>
                                     <TableRow style={{backgroundColor: '#424242'}}>
-                                        <TableCell align="left" style={headerStyle}>Deck</TableCell>
-                                        <TableCell align="left" style={headerStyle}></TableCell>
-                                        <TableCell align="left" style={headerStyle}>Points</TableCell>
+                                        <TableCell align="left" className="table-header">Deck</TableCell>
+                                        <TableCell align="left" className="table-header"></TableCell>
+                                        {width > 768 && <TableCell align="left" className="table-header">Points</TableCell>}
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -188,17 +168,13 @@ export default function HomeMenu(props) {
                                     var search = compareDecks(deck);
                                     if (search.hasOwnProperty('thumbnails')) {
                                         var sprites = search.thumbnails.map((img, key) => {
-                                            if (width > 992) {
-                                                return <img key={key} src={img} style={{height: '75px', width: '75px'}}  alt="rekt" />
-                                            } else {
-                                                return <img key={key} src={img} style={{height: '50px', width: '50px'}}  alt="rekt" />
-                                            }
+                                            return <img key={key} src={img} className={width > 992 ? "desktop-icon" : "mobile-icon"} alt="rekt" />
                                     })};
                                     return(
                                     <TableRow key={key}>
-                                        <TableCell align="left" style={cellStyle}>{deck.deck}</TableCell>
-                                        <TableCell align="left" style={cellStyle}>{sprites}</TableCell>
-                                        <TableCell align="left" style={cellStyle}>{deck.currCP}</TableCell>
+                                        <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{deck.deck}</TableCell>
+                                        <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{sprites}</TableCell>
+                                        {width > 768 && <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{deck.currCP}</TableCell>}
                                     </TableRow>
                                 )})}
                                 </TableBody>
@@ -206,23 +182,25 @@ export default function HomeMenu(props) {
                         </div>
                     </Paper>
                 </Grid>
-                <Grid item xs={11} style={tableGrid}>
+                <Grid item xs={11} className="grid-container">
                     <h3 style={text}>Top Performing Players</h3>
                     <Paper className={classes.root}>
                         <div className={classes.tableWrapper}>
                             <Table>
                                 <TableHead>
                                     <TableRow style={{backgroundColor: '#424242'}}>
-                                        <TableCell align="left" style={headerStyle}>Name</TableCell>
-                                        <TableCell align="left" style={headerStyle}>Points</TableCell>
+                                        <TableCell align="left" className="table-header">Name</TableCell>
+                                        <TableCell align="left" className="table-header">Points</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
                                 {players.slice(0,10).map((player, key) => {
                                     return(
                                     <TableRow key={key}>
-                                        <TableCell align="left" style={cellStyle}>{player.name}</TableCell>
-                                        <TableCell align="left" style={cellStyle}>{player.points}</TableCell>
+                                            <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>
+                                                <Link style={{ cursor: 'pointer' }} onClick={() => props.setCurrentPlayer(comparePlayers(player.name))}>{player.name}</Link>
+                                            </TableCell>
+                                        <TableCell align="left" className={width > 768 ? "desktop-cell" : "mobile-cell"}>{player.points}</TableCell>
                                     </TableRow>
                                 )})}
                                 </TableBody>

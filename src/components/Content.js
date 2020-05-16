@@ -29,18 +29,15 @@ export default function Content() {
 
     return (
         <Grid>
-            <Grid container>
-                <Grid item xs={10}>
-                    <nav className="nav-bar">
-                        <NavBar show={show} setCurrentTab={setCurrentTab} ></NavBar>
-                    </nav>
-                </Grid>
+            <Grid item xs={10}>
+                <NavBar show={show} setCurrentTab={setCurrentTab} ></NavBar>
             </Grid>
             <Grid style={{ marginLeft: '5%', marginRight: '5%' }}>
 
                 {/* Home Menu */}
                 {show === 'home' && <HomeMenu
-                    setCurrentTournament={setCurrentTournament} />}
+                    setCurrentTournament={setCurrentTournament}
+                    setCurrentPlayer={setCurrentPlayer} />}
 
                 {/* TESTING */}
                 {show === 'test' && <TableGrid tournamentList={[]}></TableGrid>}
@@ -65,7 +62,7 @@ export default function Content() {
                 {show === 'data' && <DataGraph/>}
             </Grid>
             <Grid>
-                <Footer children={footerCopyright} />
+                {/* <Footer children={footerCopyright} /> */}
             </Grid>
         </Grid>
     )

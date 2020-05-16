@@ -34,24 +34,36 @@ button {
 
 .nav-bar {
     display: flex;
-    height: 100%;
+    width: 100%;
     align-items: center;
     padding: 0 1rem;
 }
 
-.nav-bar-items {
-    display: flex;
+.nav-bar-desktop {
     height: 100%;
-    align: center;
+    width: 100%;
 }
 
-.nav-bar-items ul {
+.nav-bar-desktop ul {
     list-style: none;
     margin: 5;
     padding: 0;
     display: flex;
 }
 
-.nav-bar-items li {
+.nav-bar-mobile ul {
+    list-style: none;
+    margin: 5;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar-desktop li {
     padding: 0 0.5rem;
+    font-size: 0.9em;
+}
+
+.nav-bar-mobile li {
+    padding: 0 0.5rem;
+    font-size: 0.7em;
 }

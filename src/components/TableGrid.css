@@ -1,17 +1,17 @@
 .grid-container .table-header {
     color: white;
     font-family: 'Muli';
-    font-size: 16px;
+    font-size: 0.6em;
 }
 
 .grid-container .desktop-cell {
     font-family: 'Muli';
-    font-size: 20px;
+    font-size: 0.8em;
 }
 
 .grid-container .mobile-cell {
     font-family: 'Muli';
-    font-size: 16px;
+    font-size: 0.6em;
 }
 
 .grid-container .desktop-table {
@@ -40,4 +40,14 @@
 .filter-container .form-container {
     margin: 0.3em;
     columns: 2;
+}
+
+.desktop-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.mobile-icon {
+    height: 40px;
+    width: 40px;
 }
