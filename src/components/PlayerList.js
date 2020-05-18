@@ -23,7 +23,7 @@ export default function PlayerList(props) {
 
     return (
         <Grid>
-            <SearchBar onChange={handleChange} />
+            <SearchBar label="Search Players" onChange={handleChange} />
             <Grid className="grid-container">
                 <Table className={classes.table}>
                     <TableHead>

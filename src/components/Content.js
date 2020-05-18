@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 // import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // import { Grid, Switch, FormControlLabel, IconButton } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
-import { DataGraph, DatePicker, Footer, HomeMenu, NavBar, PlayerInfo, PlayerList, TournamentInfo, TournamentList } from '../components';
-
-var moment = require('moment');
+import { DataGraph, Footer, HomeMenu, NavBar, PlayerInfo, PlayerList, TournamentInfo, TournamentList } from '../components';
 
 export default function Content() {
     const [show, setShow] = useState('home');
@@ -40,8 +38,6 @@ export default function Content() {
                 {show === 'home' && <HomeMenu
                     setCurrentTournament={setCurrentTournament}
                     setCurrentPlayer={setCurrentPlayer} />}
-
-                {/* TESTING */}
 
                 {/* Tournament List */}
                 {show === 'tournamentList' && <TournamentList setCurrentTournament={setCurrentTournament}/>}

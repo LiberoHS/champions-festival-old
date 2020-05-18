@@ -9,8 +9,8 @@ export default function SearchBar(props) {
     }
 
     return (
-        <Grid elevation={6} style={{ padding: '25px' }}>
-            <TextField fullWidth label="Search..." onChange={handleChange} variant="outlined" />
+        <Grid elevation={6} style={{ padding: '10px' }}>
+            <TextField fullWidth label={props.label} onChange={handleChange} variant="outlined" />
         </Grid>
     )
 }

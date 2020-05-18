@@ -140,7 +140,7 @@ export default function TournamentList(props) {
     
     return (
         <Grid>
-            <SearchBar onChange={handleChange} />
+            <SearchBar label="Search Tournaments" onChange={handleChange} />
             <Grid className="button-container">
                 {!filter && <Button variant="outlined" className="button" color="primary" size="small" onClick={toggleFilter}>Show Filters</Button>}
                 {filter && <Button variant="outlined" className="button" color="primary" size="small" onClick={toggleFilter}>Hide Filters</Button>}
